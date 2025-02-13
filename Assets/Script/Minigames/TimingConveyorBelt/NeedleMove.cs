@@ -9,11 +9,11 @@ public class NeedleMove : MonoBehaviour
     private float leftPosX, leftPosY, rightPos;
     private bool isInsideBar;
 
-    private GameManager gameManager;
+    private PlayerHealth playerHealthSC;
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        playerHealthSC = FindObjectOfType<PlayerHealth>();
 
         //initialize pin positioning
         leftPosY = leftPosTar.transform.position.y;
@@ -28,22 +28,22 @@ public class NeedleMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            if (isInsideBar && gameManager.health >= 1)
+            if (isInsideBar && playerHealthSC.health >= 1)
             {
                 Debug.Log("Timed");
             }
 
-            if (isInsideBar == false && gameManager.health > 0)
+            if (isInsideBar == false && playerHealthSC.health > 0)
             {
                 Debug.Log("Missed");
-                gameManager.health--;
-                gameManager.UpdateHeartsUI();
+                playerHealthSC.health--;
+                playerHealthSC.UpdateHeartsUI();
             }
 
-            if (isInsideBar == false && gameManager.health == 0)
+            if (isInsideBar == false && playerHealthSC.health == 0)
             {
                 Debug.Log("Missed & ran out of health, 'stopping' game");
-                gameManager.UpdateHeartsUI();
+                playerHealthSC.UpdateHeartsUI();
                 Time.timeScale = 0; //this just "turns the game off" or turns time to 0
                 //nilagay ko lang to parang fake game over
             }
