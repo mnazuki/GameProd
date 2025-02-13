@@ -9,8 +9,12 @@ public class NeedleMove : MonoBehaviour
     private float leftPosX, leftPosY, rightPos;
     private bool isInsideBar;
 
+    private GameManager gameManager;
+
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+
         //initialize pin positioning
         leftPosY = leftPosTar.transform.position.y;
         leftPosX = leftPosTar.transform.position.x;
@@ -24,14 +28,24 @@ public class NeedleMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            if (isInsideBar)
+            if (isInsideBar && gameManager.health >= 1)
             {
                 Debug.Log("Timed");
             }
-            else
+
+            if (isInsideBar == false && gameManager.health > 0)
             {
                 Debug.Log("Missed");
-                //DITO YUNG LIFE SYSTEM
+                gameManager.health--;
+                gameManager.UpdateHeartsUI();
+            }
+
+            if (isInsideBar == false && gameManager.health == 0)
+            {
+                Debug.Log("Missed & ran out of health, 'stopping' game");
+                gameManager.UpdateHeartsUI();
+                Time.timeScale = 0; //this just "turns the game off" or turns time to 0
+                //nilagay ko lang to parang fake game over
             }
         }
     }
