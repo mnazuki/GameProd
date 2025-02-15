@@ -297,7 +297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d41709962affd1a41896d2e665eb73d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c812f12d7eb49e8459c53b8fcc3a6ac0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -925,7 +925,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1cea7b2609d92bd44881100efe2bf8c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9106e97b75e39c4aa4ae12e71d50cfb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1049,7 +1049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1105225529}
-  - component: {fileID: 1105225528}
+  - component: {fileID: 1105225530}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1057,27 +1057,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1105225528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1105225527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5248f39d32aaf1b4bb39fb7130525ad4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  numberOfHearts: 3
-  hearts:
-  - {fileID: 1969844271}
-  - {fileID: 868824056}
-  - {fileID: 1802507149}
-  fullHeart: {fileID: 21300000, guid: a97fd5a3092dc42478d3933dddd6a79f, type: 3}
-  emptyHeart: {fileID: 21300000, guid: 4a72b1840b7ee254691c7d35ccf3d3bd, type: 3}
-  isGameOver: 0
 --- !u!4 &1105225529
 Transform:
   m_ObjectHideFlags: 0
@@ -1093,6 +1072,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1105225530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105225527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 497536cce81909a45927ee4a1a00d23b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  numberOfHearts: 3
+  hearts:
+  - {fileID: 1969844271}
+  - {fileID: 868824056}
+  - {fileID: 1802507149}
+  fullHeart: {fileID: 21300000, guid: a97fd5a3092dc42478d3933dddd6a79f, type: 3}
+  emptyHeart: {fileID: 21300000, guid: 4a72b1840b7ee254691c7d35ccf3d3bd, type: 3}
+  isGameOver: 0
 --- !u!1 &1131989501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d41709962affd1a41896d2e665eb73d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9106e97b75e39c4aa4ae12e71d50cfb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2d7f10342e99a2344bdebfd18fd12d64, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad6133f70f674af43b5e944eccda1596, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1827,7 +1827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 953c7683aa71ef744b12d33eeb7470e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c5ecf267bee9f443afd34ee8898c1fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1902,7 +1902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1cea7b2609d92bd44881100efe2bf8c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9106e97b75e39c4aa4ae12e71d50cfb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1cea7b2609d92bd44881100efe2bf8c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c812f12d7eb49e8459c53b8fcc3a6ac0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

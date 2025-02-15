@@ -1,23 +1,27 @@
 using System;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class MoleculeConveyor : MonoBehaviour
 {
     [SerializeField] Transform initialTarget, middleTarget, finalTarget;
     public Sprite missedMolecule;
-    public float barSpeed, conveyorSpeed, maxTimer; //change this depending on difficulty
+    public float barSpeed, maxTimer; //change this depending on difficulty
     private Vector3 initialPos, middlePos, finalPos;
-    private bool tookDamage, isCenter;
-    private float timer;
+    private bool isCenter;
+    private float timer, conveyorSpeed;
 
     private PlayerHealth playerHealthSC;
+    private NeedleMove needleMove;
 
     private void Start()
     {
-        playerHealthSC = FindObjectOfType<PlayerHealth>();
+        playerHealthSC = FindFirstObjectByType<PlayerHealth>();
+        needleMove = FindFirstObjectByType<NeedleMove>();
 
-        tookDamage = false;
+        conveyorSpeed = maxTimer/2.5f;
+        isCenter = false;
         initialPos = initialTarget.position;
         middlePos = middleTarget.position;
         finalPos = finalTarget.position;
@@ -27,33 +31,38 @@ public class MoleculeConveyor : MonoBehaviour
 
     private void Update()
     {
-        
-        MoveToCenter();
+        if (!isCenter && ! needleMove.tookDamage)
+        {
+            MoveToCenter();
+        }
 
-        if (this.transform.position == middlePos && playerHealthSC.health > 0 /*iscenter*/)
+        if (this.transform.position == middlePos)
+        {
+            isCenter = true;
+        }
+
+        if (isCenter)
         {
             timer += Time.deltaTime;
             timer = Mathf.Clamp(timer, 0, maxTimer);
         }
 
-        if (timer >= 3 && playerHealthSC.health > 0)
+        if (timer >= 3)
         {
             Debug.Log("TooSlow");
             TakeDamageOnce();
-
-            this.transform.position = Vector2.MoveTowards(this.transform.position, finalPos, conveyorSpeed); //need Iscenter handler
             MoveToFinal();
-            if (this.transform.position == finalPos)
-            {
-                tookDamage = false;
-                
-                Destroy(this.gameObject);
-            }
+            isCenter = false;
 
         }
 
+        if (!isCenter && this.transform.position == finalPos)
+        {
+            needleMove.tookDamage = false;
 
-        
+            Destroy(this.gameObject);
+        }
+
         Debug.Log(timer);
 /*      if (isCenter &&)
         {
@@ -71,11 +80,11 @@ public class MoleculeConveyor : MonoBehaviour
     }
     public void TakeDamageOnce()
     {
-        if (!tookDamage)
+        if (!needleMove.tookDamage)
         {
             playerHealthSC.health--;
             playerHealthSC.UpdateHeartsUI();
-            tookDamage = true;
+            needleMove.tookDamage = true;
         }
     }
 }

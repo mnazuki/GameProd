@@ -6,14 +6,15 @@ public class NeedleMove : MonoBehaviour
 {
     [SerializeField] GameObject leftPosTar, rigthPosTar;
     public float Speed;
-    private float leftPosX, leftPosY, rightPos;
+    private float leftPosX, leftPosY, rightPos, score;
     private bool isInsideBar;
+    public bool isScoreOnce, tookDamage;
 
     private PlayerHealth playerHealthSC;
 
     private void Start()
     {
-        playerHealthSC = FindObjectOfType<PlayerHealth>();
+        playerHealthSC = FindFirstObjectByType<PlayerHealth>();
 
         //initialize pin positioning
         leftPosY = leftPosTar.transform.position.y;
@@ -30,14 +31,24 @@ public class NeedleMove : MonoBehaviour
         {
             if (isInsideBar && playerHealthSC.health >= 1)
             {
-                Debug.Log("Timed");
+                if (!isScoreOnce)
+                {
+                    score++;
+                    isScoreOnce = true;
+                    Debug.Log("Timed");
+                }
             }
 
             if (isInsideBar == false && playerHealthSC.health > 0)
             {
-                Debug.Log("Missed");
-                playerHealthSC.health--;
-                playerHealthSC.UpdateHeartsUI();
+                
+                if (!tookDamage)
+                {
+                    tookDamage = true;
+                    playerHealthSC.health--;
+                    playerHealthSC.UpdateHeartsUI();
+                    Debug.Log("Missed");
+                }
             }
 
             if (isInsideBar == false && playerHealthSC.health == 0)
