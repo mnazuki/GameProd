@@ -26,7 +26,7 @@ public class TaskManager : MonoBehaviour
         taskText = GameObject.Find("Task").GetComponent<Text>();
         scoreText = GameObject.Find("Score").GetComponent<Text>();
         moleculeSpawner = new MoleculeSpawner();
-        moleculeSpawner.spawnRate = moleculeSpawner.minSpawnRate;
+        //moleculeSpawner.spawnRate = moleculeSpawner.minSpawnRate;
 
         ShuffleTasks();
 
