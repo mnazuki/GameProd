@@ -252,6 +252,157 @@ public class CombinationScript : MonoBehaviour
         CreateDNA();
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        string objName = collision.gameObject.name.Replace("(Clone)", "").Trim();
+
+        // CARBS
+        if (objName == "Glucose")
+        {
+            if (glucoseInstance == collision.gameObject)
+            {
+                glucoseInstance = null;
+                isGlucoseIn = false;
+                Debug.Log("Glucose 1 exited");
+            }
+            else if (glucoseInstance2 == collision.gameObject)
+            {
+                glucoseInstance2 = null;
+                isSecondGlucoseIn = false;
+                Debug.Log("Glucose 2 exited");
+            }
+        }
+
+        if (objName == "Fructose")
+        {
+            if (fructoseInstance == collision.gameObject)
+            {
+                fructoseInstance = null;
+                isFructoseIn = false;
+                Debug.Log("Fructose 1 exited");
+            }
+            else if (fructoseInstance2 == collision.gameObject)
+            {
+                fructoseInstance2 = null;
+                isSecondFructoseIn = false;
+                Debug.Log("Fructose 2 exited");
+            }
+        }
+
+        if (objName == "Galactose")
+        {
+            if (galactoseInstance == collision.gameObject)
+            {
+                galactoseInstance = null;
+                isGalactoseIn = false;
+                Debug.Log("Galactose 1 exited");
+            }
+            else if (galactoseInstance2 == collision.gameObject)
+            {
+                galactoseInstance2 = null;
+                isSecondGalactoseIn = false;
+                Debug.Log("Galactose 2 exited");
+            }
+        }
+
+        // NUCLEOTIDES/DNA
+        if (objName == "Adenine+Thymine")
+        {
+            if (adenineThymineInstance == collision.gameObject)
+            {
+                adenineThymineInstance = null;
+                isAdenineThymineIn = false;
+                Debug.Log("Adenine+Thymine 1 exited");
+            }
+            else if (adenineThymineInstance2 == collision.gameObject)
+            {
+                adenineThymineInstance2 = null;
+                isSecondAdenineThymineIn = false;
+                Debug.Log("Adenine+Thymine 2 exited");
+            }
+        }
+
+        if (objName == "Guanine+Cytosine")
+        {
+            if (guanineCytosineInstance == collision.gameObject)
+            {
+                guanineCytosineInstance = null;
+                isGuanineCytosineIn = false;
+                Debug.Log("Guanine+Cytosine 1 exited");
+            }
+            else if (guanineCytosineInstance2 == collision.gameObject)
+            {
+                guanineCytosineInstance2 = null;
+                isSecondGuanineCytosineIn = false;
+                Debug.Log("Guanine+Cytosine 2 exited");
+            }
+        }
+
+        if (objName == "Adenine")
+        {
+            if (adenineInstance == collision.gameObject)
+            {
+                adenineInstance = null;
+                isAdenineIn = false;
+                Debug.Log("Adenine 1 exited");
+            }
+            else if (adenineInstance2 == collision.gameObject)
+            {
+                adenineInstance2 = null;
+                isSecondAdenineIn = false;
+                Debug.Log("Adenine 2 exited");
+            }
+        }
+
+        if (objName == "Thymine")
+        {
+            if (thymineInstance == collision.gameObject)
+            {
+                thymineInstance = null;
+                isThymineIn = false;
+                Debug.Log("Thymine 1 exited");
+            }
+            else if (thymineInstance2 == collision.gameObject)
+            {
+                thymineInstance2 = null;
+                isSecondThymineIn = false;
+                Debug.Log("Thymine 2 exited");
+            }
+        }
+
+        if (objName == "Guanine")
+        {
+            if (guanineInstance == collision.gameObject)
+            {
+                guanineInstance = null;
+                isGuanineIn = false;
+                Debug.Log("Guanine 1 exited");
+            }
+            else if (guanineInstance2 == collision.gameObject)
+            {
+                guanineInstance2 = null;
+                isSecondGuanineIn = false;
+                Debug.Log("Guanine 2 exited");
+            }
+        }
+
+        if (objName == "Cytosine")
+        {
+            if (cytosineInstance == collision.gameObject)
+            {
+                cytosineInstance = null;
+                isCytosineIn = false;
+                Debug.Log("Cytosine 1 exited");
+            }
+            else if (cytosineInstance2 == collision.gameObject)
+            {
+                cytosineInstance2 = null;
+                isSecondCytosineIn = false;
+                Debug.Log("Cytosine 2 exited");
+            }
+        }
+    }
+
     void CreateDissacharide()
     {
         // Valid combinations
@@ -478,7 +629,7 @@ public class CombinationScript : MonoBehaviour
             Debug.Log("spawning dna");
         }
 
-        // Invalid combos for Base Pairs
+        //invalid combos for Base Pairs
         else if (isAdenineThymineIn && isSecondAdenineThymineIn)
         {
             HandleInvalidCombination(adenineThymineInstance, adenineThymineInstance2);
@@ -499,7 +650,7 @@ public class CombinationScript : MonoBehaviour
             HandleInvalidCombination(adenineThymineInstance, cytosineInstance);
             Debug.Log("Adenine-Thymine + Cytosine = nothing, destroying");
         }
-        // Invalid combos for Sugars + Base Pairs / Nucleotides
+        //invalid combos for Sugars + Base Pairs / Nucleotides
         else if (isGlucoseIn && isAdenineThymineIn)
         {
             HandleSugarInvalidCombination(glucoseInstance, adenineThymineInstance);

@@ -14,6 +14,7 @@ public class MoleculeSpawner : MonoBehaviour
     public float spawnRangeY; // Height of the spawn area
 
     private TaskManager taskManager;
+    public GameManager gameManager;
 
     public bool isGameFinished = false;
 
@@ -41,10 +42,15 @@ public class MoleculeSpawner : MonoBehaviour
 
     IEnumerator SpawnMolecules()
     {
-        while (true)
+        while (!isGameFinished)
         {
-            if (!isGameFinished)
-            {
+
+                // Pause spawning if hint screen is open
+                while (gameManager.hintScreenOpen)
+                {
+                    yield return null;  // Wait until hint screen closes
+                }
+
                 GameObject randomMolecule = moleculePrefabs[Random.Range(0, moleculePrefabs.Length)];
                 float randomX = Random.Range(-spawnRangeX, spawnRangeX);
                 float randomY = Random.Range(-spawnRangeY, spawnRangeY);
@@ -53,16 +59,16 @@ public class MoleculeSpawner : MonoBehaviour
                 Instantiate(randomMolecule, spawnPosition, Quaternion.identity);
 
                 yield return new WaitForSeconds(1f);
-            }
-            if (taskManager.currentTaskIndex >= taskManager.taskColors.Length)
-            {
-                // All tasks are completed
-                taskManager.gameOver();
-                isGameFinished = true;
-                //spawnRate = minSpawnRate;
-                Debug.Log("All tasks completed. Stopping spawner.");
-                yield break; // Exit the coroutine
-            }
+            //if (taskManager.currentTaskIndex >= taskManager.taskColors.Length)
+            //if 
+            //{
+            //    // All tasks are completed
+            //    taskManager.gameOver();
+            //    isGameFinished = true;
+            //    //spawnRate = minSpawnRate;
+            //    Debug.Log("All tasks completed. Stopping spawner.");
+            //    yield break; // Exit the coroutine
+            //}
 
         }
     }
