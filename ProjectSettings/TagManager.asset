@@ -4,13 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Pyruvate
-  - Bacteria
-  - Glucose
-  - FunnelCollider
-  - MiniPyruvate
-  - NADH
-  - ATP
+  - HighlightedBar
+  - InitialTarget
+  - MiddleTarget
+  - FinalTarget
+  - Molecule
   layers:
   - Default
   - TransparentFX
