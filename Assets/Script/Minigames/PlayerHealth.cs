@@ -9,21 +9,18 @@ public class PlayerHealth : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public int score;
+    public int scoreMax;
 
     public bool isGameOver = false;
-
+    private UIConveyor uiConveyor;
     private void Update()
     {
         if (!isGameOver)
         {
-            Debug.Log("Before Clamp: " + health);
-            health = Mathf.Clamp(health, 0, numberOfHearts);
-            Debug.Log("After Clamp: " + health);
-
             if (health == 0) 
             {
                 isGameOver = true;
-                Debug.Log("Game Over");
                 return;
             }
         }

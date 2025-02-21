@@ -6,20 +6,26 @@ public class NeedleMove : MonoBehaviour
 {
     [SerializeField] GameObject leftPosTar, rigthPosTar;
     public float Speed;
-    private float leftPosX, leftPosY, rightPos, score;
+    private float leftPosX, leftPosY, rightPos;
     private bool isInsideBar;
-    public bool isScoreOnce, tookDamage;
+    public bool isScoreOnce, tookDamage, scoredOrMissed;
 
     private PlayerHealth playerHealthSC;
+    private MoleculeConveyor moleculeConveyor;
 
     private void Start()
     {
         playerHealthSC = FindFirstObjectByType<PlayerHealth>();
+        moleculeConveyor = FindFirstObjectByType<MoleculeConveyor>();
 
         //initialize pin positioning
         leftPosY = leftPosTar.transform.position.y;
         leftPosX = leftPosTar.transform.position.x;
         rightPos = rigthPosTar.transform.position.x;
+
+        scoredOrMissed = false;
+        isScoreOnce = false;
+        tookDamage = false;
 
         this.transform.position = new Vector2 (leftPosX, leftPosY);
         this.transform.DOMoveX(rightPos, Speed).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
@@ -29,35 +35,31 @@ public class NeedleMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
-            if (isInsideBar && playerHealthSC.health >= 1)
+            if (isInsideBar && playerHealthSC.health >= 1 && !scoredOrMissed && moleculeConveyor.isCenter)
             {
-                if (!isScoreOnce)
-                {
-                    score++;
+                    playerHealthSC.score++;
                     isScoreOnce = true;
-                    Debug.Log("Timed");
-                }
+                Debug.Log("Timed");
             }
 
-            if (isInsideBar == false && playerHealthSC.health > 0)
+            if (isInsideBar == false && playerHealthSC.health > 0 && !scoredOrMissed && moleculeConveyor.isCenter)
             {
-                
-                if (!tookDamage)
-                {
                     tookDamage = true;
                     playerHealthSC.health--;
                     playerHealthSC.UpdateHeartsUI();
                     Debug.Log("Missed");
-                }
             }
 
             if (isInsideBar == false && playerHealthSC.health == 0)
             {
                 Debug.Log("Missed & ran out of health, 'stopping' game");
                 playerHealthSC.UpdateHeartsUI();
-                Time.timeScale = 0; //this just "turns the game off" or turns time to 0
-                //nilagay ko lang to parang fake game over
             }
+        }
+
+        if (isScoreOnce || tookDamage)
+        {
+            scoredOrMissed = true;
         }
     }
 
