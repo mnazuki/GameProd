@@ -4,6 +4,18 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Pyruvate
+  - Bacteria
+  - Glucose
+  - FunnelCollider
+  - MiniPyruvate
+  - NADH
+  - ATP
+  - HighlightedBar
+  - InitialTarget
+  - MiddleTarget
+  - FinalTarget
+  - Molecule
   - Task
   - Score
   - Activation
