@@ -1,0 +1,65 @@
+* [33mb2060d26[m[33m ([m[1;32mmaster[m[33m)[m Initial commit to my branch
+* [33m2876c386[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mprince-branch[m[33m, [m[1;31morigin/prince-branch[m[33m, [m[1;32mprince-name[m[33m)[m Delete library directory
+* [33m2f69e14b[m Delete assets directory
+* [33mfc2dc0b7[m Create ConfigurationCache
+* [33m2f984f04[m Create APIUpdater
+* [33m7493ea95[m Create library
+* [33m7b3285f9[m Add files via upload
+* [33md385d6bc[m Add files via upload
+* [33mcb17c38c[m Create sample
+* [33me6654bd6[m Delete assets
+* [33m4c59618c[m Create assets
+* [33mb168f864[m Delete ProjectSettings directory
+* [33m471f6e88[m Delete Packages directory
+* [33m0e8897dd[m Delete Assets directory
+[31m|[m * [33mbce436b5[m[33m ([m[1;31morigin/main[m[33m)[m Update TagManager.asset
+[31m|[m *   [33md9fea8b2[m Merge branch 'main' of https://github.com/mnazuki/GameProd
+[31m|[m [33m|[m[34m\[m  
+[31m|[m [33m|[m * [33mbae70ca0[m fixed conflicting gamemanager scripts
+[31m|[m * [34m|[m   [33mbd920439[m Merge branch 'prince-branch'
+[31m|[m [34m|[m[31m\[m [34m\[m  
+[31m|[m [34m|[m[31m/[m [34m/[m  
+[31m|[m[31m/[m[34m|[m [34m/[m   
+[31m|[m [34m|[m[34m/[m    
+* [34m|[m [33m482b0fdc[m prototype
+[36m|[m *   [33m9ad95f88[m Merge branch 'Omi'
+[36m|[m [1;31m|[m[1;32m\[m  
+[36m|[m [1;31m|[m * [33ma7dc4283[m[33m ([m[1;31morigin/Omi[m[33m)[m Map Update
+[36m|[m [1;31m|[m * [33ma0ebd3b9[m gdg
+[36m|[m [1;31m|[m * [33m757ed513[m Map Blockings
+[36m|[m [1;31m|[m * [33m5bcc92a5[m Testing Isometric Map
+[36m|[m * [1;32m|[m   [33m64b6e8ca[m Merge branch 'prince-branch'
+[36m|[m [1;33m|[m[36m\[m [1;32m\[m  
+[36m|[m [1;33m|[m[36m/[m [1;32m/[m  
+[36m|[m[36m/[m[1;33m|[m [1;32m|[m   
+* [1;33m|[m [1;32m|[m [33m715aa890[m minigame
+* [1;33m|[m [1;32m|[m [33m5b73d809[m working music slider
+[1;34m|[m * [1;32m|[m [33maa955a44[m added ic & aubrey tags to jason branch
+[1;34m|[m * [1;32m|[m   [33md5e158ce[m Merge branch 'jason'
+[1;34m|[m [1;35m|[m[1;36m\[m [1;32m\[m  
+[1;34m|[m [1;35m|[m * [1;32m|[m [33m6a444caa[m[33m ([m[1;31morigin/jason[m[33m)[m hint screen inactive
+[1;34m|[m [1;35m|[m * [1;32m|[m [33mdfb1fa38[m Demo Prep
+[1;34m|[m [1;35m|[m * [1;32m|[m [33ma95734a4[m 2/18 combination script + collection script
+[1;34m|[m [1;35m|[m * [1;32m|[m [33m2d9d089a[m Anabolism Minigame 1 Prototype
+[1;34m|[m [1;35m|[m [1;32m|[m[1;32m/[m  
+[1;34m|[m * [1;32m|[m [33m8a3f47da[m added aubrey tags to icy tags
+[1;34m|[m * [1;32m|[m   [33m459e82f0[m Merge branch 'Icy-Branch'
+[1;34m|[m [31m|[m[32m\[m [1;32m\[m  
+[1;34m|[m [31m|[m * [1;32m|[m [33m5998a9d0[m[33m ([m[1;31morigin/Icy-Branch[m[33m)[m Spawn
+[1;34m|[m [31m|[m * [1;32m|[m [33m9258e12a[m Code Fix
+[1;34m|[m [31m|[m * [1;32m|[m [33mbc30da9e[m molecules func
+[1;34m|[m [31m|[m * [1;32m|[m [33mb3a7d487[m Life System
+[1;34m|[m [31m|[m * [1;32m|[m [33me32b8080[m First
+[1;34m|[m [31m|[m [1;32m|[m[1;32m/[m  
+[1;34m|[m * [1;32m/[m [33m77da3c40[m[33m ([m[1;31morigin/Aubrey[m[33m)[m Feb 18 - glycolysis draft
+[1;34m|[m [1;32m|[m[1;32m/[m  
+[1;34m|[m *   [33m68e3eaf9[m Merge pull request #1 from mnazuki/prince-branch
+[1;34m|[m [33m|[m[1;34m\[m  
+[1;34m|[m [33m|[m[1;34m/[m  
+[1;34m|[m[1;34m/[m[33m|[m   
+* [33m|[m [33mc878d6f2[m Working MainMenu / Option menu (in progress music slider)
+* [33m|[m [33m85c18f2d[m Create SceneTemplateSettings.json
+* [33m|[m [33mac27c965[m Working MainMenu / Option button (in progress music slider)
+[33m|[m[33m/[m  
+* [33me646e02a[m initial commit
+* [33mf3ab957d[m Initial commit
