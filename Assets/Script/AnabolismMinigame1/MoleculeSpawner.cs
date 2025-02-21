@@ -14,7 +14,7 @@ public class MoleculeSpawner : MonoBehaviour
     public float spawnRangeY; // Height of the spawn area
 
     private TaskManager taskManager;
-    public GameManager gameManager;
+    public AnabolismGameManager gameManager;
 
     public bool isGameFinished = false;
 
