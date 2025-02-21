@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class AnabolismGameManager : MonoBehaviour
 {
     public GameObject hintScreen;
     public bool hintScreenOpen = false;
