@@ -11,6 +11,7 @@ public class CollectionScript : MonoBehaviour
     public MoleculeSpawner moleculeSpawner;
 
     [SerializeField] private bool gameEnded = false;
+    public int gameRound = 0;
 
     private void OnValidate()
     {
@@ -20,20 +21,28 @@ public class CollectionScript : MonoBehaviour
             {
                 taskManager.AddScore();
             }
-            CheckForGameCompletion();
+            CheckForRoundCompletion();
         }
     }
 
 
-    void CheckForGameCompletion()
+    void CheckForRoundCompletion()
     {
         if (!gameEnded && sucroseCollected == 2 && lactoseCollected == 2 && maltoseCollected == 2 && dnaCollected == 2)
         {
-            gameEnded = true;
-            moleculeSpawner.isGameFinished = true;
-            taskManager.gameOver();
-            Debug.Log("Game completed!");
+            gameRound++;
+            Debug.Log("Round " + gameRound + " completed!");
+            taskManager.nextRound(); // Call TaskManager to start next round
         }
+    }
+
+    public void ResetCollection()
+    {
+        sucroseCollected = 0;
+        lactoseCollected = 0;
+        maltoseCollected = 0;
+        dnaCollected = 0;
+        gameEnded = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +55,7 @@ public class CollectionScript : MonoBehaviour
                 sucroseCollected++;
                 taskManager.AddScore();
                 Debug.Log("Sucrose collected. Total: " + sucroseCollected);
-                CheckForGameCompletion();
+                CheckForRoundCompletion();
 
             }
             else if (collision.gameObject.name.Contains("Lactose"))
@@ -54,22 +63,22 @@ public class CollectionScript : MonoBehaviour
                 lactoseCollected++;
                 taskManager.AddScore();
                 Debug.Log("Lactose collected. Total: " + lactoseCollected);
-                CheckForGameCompletion();
+                CheckForRoundCompletion();
             }
             else if (collision.gameObject.name.Contains("Maltose"))
             {
                 maltoseCollected++;
                 taskManager.AddScore();
                 Debug.Log("Maltose collected. Total: " + maltoseCollected);
-                CheckForGameCompletion();
+                CheckForRoundCompletion();
             }
             else if (collision.gameObject.name.Contains("DNA"))
             {
                 dnaCollected++;
                 taskManager.AddScore();
                 Debug.Log("DNA collected. Total: " + dnaCollected);
-                CheckForGameCompletion();
-
+                CheckForRoundCompletion();
+                    
             }
             CombinationScript.moleculeInstances.Remove(collision.gameObject);
             Destroy(collision.gameObject);
