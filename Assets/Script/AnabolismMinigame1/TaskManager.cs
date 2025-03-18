@@ -30,6 +30,15 @@ public class TaskManager : MonoBehaviour
     {
         collectionScript.ResetCollection(); // Reset collected molecules
         nextRoundScreen.SetActive(true); // Show next round screen
+
+        ResetScore(); // Reset the score
+
+        int currentRound = collectionScript.gameRound;
+        Debug.Log("Next round started: " + currentRound);
+
+
+        moleculeSpawner.UpdateSpawnDelay(currentRound); // Adjust spawn delay
+        moleculeSpawner.RestartSpawning(); // Resume spawning
     }
 
     private void ContinueToNextRound()
@@ -58,6 +67,12 @@ public class TaskManager : MonoBehaviour
     public void AddScore()
     {
         playerScore++;
+        scoreText.text = playerScore.ToString();
+    }
+
+    public void ResetScore()
+    {
+        playerScore = 0;
         scoreText.text = playerScore.ToString();
     }
 
