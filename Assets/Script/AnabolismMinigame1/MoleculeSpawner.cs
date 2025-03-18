@@ -33,7 +33,7 @@ public class MoleculeSpawner : MonoBehaviour
     public void RestartSpawning()
     {
         StopAllCoroutines();  // Stop any existing spawning coroutine
-        isGameFinished = false;  // Ensure the game is still running
+        isGameFinished = false;  // Reset game state
         StartCoroutine(SpawnMolecules());  // Restart spawning
     }
 
@@ -57,7 +57,7 @@ public class MoleculeSpawner : MonoBehaviour
         Gizmos.DrawLine(bottomLeft, topLeft);
     }
 
-    IEnumerator SpawnMolecules()
+    public IEnumerator SpawnMolecules()
     {
         while (!isGameFinished)
         {

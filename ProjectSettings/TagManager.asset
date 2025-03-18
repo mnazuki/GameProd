@@ -8,6 +8,7 @@ TagManager:
   - Score
   - Activation
   - Combination
+  - Molecule
   layers:
   - Default
   - TransparentFX

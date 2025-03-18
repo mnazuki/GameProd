@@ -30,9 +30,14 @@ public class CollectionScript : MonoBehaviour
     {
         if (!gameEnded && sucroseCollected == 2 && lactoseCollected == 2 && maltoseCollected == 2 && dnaCollected == 2)
         {
+            gameEnded = true;  // Stop future checks
             gameRound++;
             Debug.Log("Round " + gameRound + " completed!");
-            taskManager.nextRound(); // Call TaskManager to start next round
+
+            moleculeSpawner.isGameFinished = true; // Stop molecule spawning
+            StopCoroutine(moleculeSpawner.SpawnMolecules()); // Stop spawning coroutine
+
+            taskManager.nextRound(); // Show the next round screen
         }
     }
 

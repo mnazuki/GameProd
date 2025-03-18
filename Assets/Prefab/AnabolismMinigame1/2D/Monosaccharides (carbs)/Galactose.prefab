@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -8460113784459868432}
   m_Layer: 0
   m_Name: Galactose
-  m_TagString: Untagged
+  m_TagString: Molecule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
