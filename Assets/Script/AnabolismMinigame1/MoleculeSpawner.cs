@@ -6,8 +6,8 @@ public class MoleculeSpawner : MonoBehaviour
 {
     public GameObject[] moleculePrefabs;
 
-    public float spawnRangeX; // Width of the spawn area
-    public float spawnRangeY; // Height of the spawn area
+    public float spawnRangeX;
+    public float spawnRangeY; 
 
     private TaskManager taskManager;
     private CollectionScript collectionScript;
@@ -32,9 +32,9 @@ public class MoleculeSpawner : MonoBehaviour
 
     public void RestartSpawning()
     {
-        StopAllCoroutines();  // Stop any existing spawning coroutine
-        isGameFinished = false;  // Reset game state
-        StartCoroutine(SpawnMolecules());  // Restart spawning
+        StopAllCoroutines();
+        isGameFinished = false; 
+        StartCoroutine(SpawnMolecules());
     }
 
 
@@ -43,8 +43,8 @@ public class MoleculeSpawner : MonoBehaviour
         Debug.Log("Drawing Gizmos...");
         Gizmos.color = Color.red;
 
-        float minY = -spawnRangeY * 0.5f; // Adjust the bottom Y limit
-        float maxY = spawnRangeY;         // Keep the top limit the same
+        float minY = -spawnRangeY * 0.5f; // adjusts bottom y limit
+        float maxY = spawnRangeY;
 
         Vector3 topLeft = new Vector3(-spawnRangeX, maxY, 0);
         Vector3 topRight = new Vector3(spawnRangeX, maxY, 0);
@@ -61,10 +61,9 @@ public class MoleculeSpawner : MonoBehaviour
     {
         while (!isGameFinished)
         {
-                // Pause spawning if hint screen is open
                 while (gameManager.hintScreenOpen)
                 {
-                    yield return null;  // Wait until hint screen closes
+                    yield return null;
                 }
 
                 GameObject randomMolecule = moleculePrefabs[Random.Range(0, moleculePrefabs.Length)];

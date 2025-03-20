@@ -8,17 +8,20 @@ public class TaskManager : MonoBehaviour
     public Text scoreText;
     public int playerScore = 0;
     public GameObject gameOverScreen;
-    public GameObject nextRoundScreen; // Reference to the Next Round UI panel
-    public Button continueButton; // Reference to the Continue button
+    public GameObject nextRoundScreen;
+    public Button continueButton;
 
     public CollectionScript collectionScript;
     public MoleculeSpawner moleculeSpawner;
 
     private void Start()
     {
-        moleculeSpawner = FindObjectOfType<MoleculeSpawner>(); // Ensure it's assigned
-        nextRoundScreen.SetActive(false); // Hide the screen at the start
-        continueButton.onClick.AddListener(ContinueToNextRound); // Assign button click event
+        moleculeSpawner = FindObjectOfType<MoleculeSpawner>();
+        nextRoundScreen.SetActive(false);
+        continueButton.onClick.AddListener(ContinueToNextRound); 
+
+        moleculeSpawner.isGameFinished = false;
+        moleculeSpawner.RestartSpawning();
     }
 
     public void gameOver()
@@ -28,17 +31,25 @@ public class TaskManager : MonoBehaviour
 
     public void nextRound()
     {
-        collectionScript.ResetCollection(); // Reset collected molecules
-        nextRoundScreen.SetActive(true); // Show next round screen
+        Debug.Log("nextRound() called!");
 
-        ResetScore(); // Reset the score
+        if (collectionScript != null)
+        {
+            collectionScript.ResetCollection(); // Reset molecule collection
+        }
+        else
+        {
+            Debug.LogError("collectionScript is NULL in nextRound!");
+        }
+
+        nextRoundScreen.SetActive(true); // Show UI for the next round
+        ResetScore(); // Reset score
 
         int currentRound = collectionScript.gameRound;
         Debug.Log("Next round started: " + currentRound);
 
-
-        moleculeSpawner.UpdateSpawnDelay(currentRound); // Adjust spawn delay
-        moleculeSpawner.RestartSpawning(); // Resume spawning
+        moleculeSpawner.UpdateSpawnDelay(currentRound);
+        moleculeSpawner.RestartSpawning();
     }
 
     private void ContinueToNextRound()
@@ -55,13 +66,22 @@ public class TaskManager : MonoBehaviour
         moleculeSpawner.RestartSpawning(); // Resume spawning
     }
 
-    private void ClearExistingMolecules()
+    public void ClearExistingMolecules()
     {
         GameObject[] molecules = GameObject.FindGameObjectsWithTag("Molecule");
         foreach (GameObject molecule in molecules)
         {
             Destroy(molecule);
         }
+    }
+
+    public void UpdateTaskText(int sucroseGoal, int lactoseGoal, int maltoseGoal, int dnaGoal,
+                           int sucroseCollected, int lactoseCollected, int maltoseCollected, int dnaCollected)
+    {
+        taskText.text = $"Collect: Sucrose {sucroseCollected}/{sucroseGoal}, " +
+                        $"Lactose {lactoseCollected}/{lactoseGoal}, " +
+                        $"Maltose {maltoseCollected}/{maltoseGoal}, " +
+                        $"DNA {dnaCollected}/{dnaGoal}";
     }
 
     public void AddScore()
