@@ -26,6 +26,8 @@ TagManager:
   - Proton
   - RealProton
   - Exit
+  - Pickup
+  - DropOff
   layers:
   - Default
   - TransparentFX

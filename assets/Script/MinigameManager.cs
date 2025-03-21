@@ -5,6 +5,8 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
+public enum SpeedLevel { Slow, Normal, Fast }
+
 public class MinigameManager : MonoBehaviour
 {
     [Header("UI Elements")]
@@ -13,6 +15,7 @@ public class MinigameManager : MonoBehaviour
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI protonCounterText;
     public GameObject gameOverScreen;
+    public GameObject winningScreen; // Win UI panel
     public Button connectButton;
     public Button resetButton;
 
@@ -35,10 +38,9 @@ public class MinigameManager : MonoBehaviour
     private int maxRounds = 1;
     private int currentRound = 0;
     private int currentBoothNumber;
-    private List<GameObject> movingProtons = new List<GameObject>();
     private Coroutine moveProtonsCoroutine;
 
-    public enum SpeedLevel { Slow, Normal, Fast }
+    public enum Difficulty { Easy = 1, Medium = 2, Hard = 3 } // Not used here but available if needed.
 
     [Header("Speed Settings for Booth 3")]
     public SpeedLevel booth3Speed = SpeedLevel.Normal;
@@ -46,10 +48,10 @@ public class MinigameManager : MonoBehaviour
     void Start()
     {
         gameOverScreen.SetActive(false);
+        winningScreen.SetActive(false);
         minigamePanel.SetActive(false);
         hpText.text = "HP: " + playerHP;
         protonCounterText.text = $"Protons: {totalProtonsCollected}/24";
-
         resetButton.onClick.AddListener(ResetGame);
     }
 
@@ -97,18 +99,15 @@ public class MinigameManager : MonoBehaviour
             return;
         }
 
-        // Stop the previous movement coroutine if it exists
         if (moveProtonsCoroutine != null)
         {
             StopCoroutine(moveProtonsCoroutine);
             moveProtonsCoroutine = null;
         }
 
-        // Reset round-specific state
         protonsClicked = 0;
         connectButton.interactable = true;
 
-        // For the 3rd minigame, reset the timer to give the player more time each round
         if (difficultyLevel == 3)
         {
             timeLeft = maxTime;
@@ -119,25 +118,18 @@ public class MinigameManager : MonoBehaviour
         SpawnProtons(currentBoothNumber);
         StartCoroutine(CountdownTimer());
 
-        // If it's the 3rd minigame, start the movement coroutine
         if (difficultyLevel == 3)
-        {
             moveProtonsCoroutine = StartCoroutine(MoveProtonsRandomly());
-        }
 
         currentRound++;
     }
-
-
 
     void ClearProtons()
     {
         foreach (GameObject proton in spawnedProtons)
         {
             if (proton != null)
-            {
                 Destroy(proton);
-            }
         }
         spawnedProtons.Clear();
         Debug.Log("Cleared UI protons.");
@@ -147,14 +139,12 @@ public class MinigameManager : MonoBehaviour
     {
         ClearProtons();
 
-        // For minigame 2, use random positions.
         if (boothNumber == 2)
         {
             List<Vector2> usedPositions = new List<Vector2>();
             float minDistance = 100f;
             int maxAttempts = 50;
 
-            // Spawn real protons randomly.
             for (int i = 0; i < 4; i++)
             {
                 GameObject proton = Instantiate(protonPrefab, protonContainer);
@@ -177,7 +167,6 @@ public class MinigameManager : MonoBehaviour
                 protonButton.onClick.AddListener(() => OnProtonClicked(proton, protonButton));
             }
 
-            // For booth 2, there are 2 fake protons.
             int fakeProtonCount = 2;
             for (int i = 0; i < fakeProtonCount; i++)
             {
@@ -196,19 +185,13 @@ public class MinigameManager : MonoBehaviour
 
                 usedPositions.Add(newPosition);
                 rect.anchoredPosition = newPosition;
-
-                // Ensure fake protons are rendered behind real ones.
                 fakeProton.transform.SetAsFirstSibling();
             }
         }
-        else // For other minigames, use a circular (spread out) layout.
+        else
         {
             int realProtonCount = 4;
-            int fakeProtonCount = 0;
-            if (boothNumber >= 2)
-            {
-                fakeProtonCount = (boothNumber == 2) ? 2 : 4;
-            }
+            int fakeProtonCount = (boothNumber == 3) ? 4 : 0;
             int totalProtons = realProtonCount + fakeProtonCount;
             float radius = 100f;
 
@@ -236,9 +219,6 @@ public class MinigameManager : MonoBehaviour
         }
     }
 
-
-
-
     IEnumerator CountdownTimer()
     {
         if (isTimerRunning) yield break;
@@ -254,25 +234,17 @@ public class MinigameManager : MonoBehaviour
         isTimerRunning = false;
 
         if (timeLeft == 0 && isMinigameActive)
-        {
             LoseMinigame();
-        }
     }
 
     IEnumerator MoveProtonsRandomly()
     {
         float moveInterval;
-        // For rounds 2 and 3 in the 3rd minigame, force normal speed (1 second)
         if (difficultyLevel == 3 && currentRound > 1)
-        {
             moveInterval = 1f;
-        }
         else
-        {
-            // Otherwise, use the speed setting from the inspector
             moveInterval = booth3Speed == SpeedLevel.Slow ? 1.5f :
                            (booth3Speed == SpeedLevel.Normal ? 1f : 0.5f);
-        }
 
         while (isMinigameActive)
         {
@@ -281,14 +253,12 @@ public class MinigameManager : MonoBehaviour
                 if (proton == null) continue;
                 RectTransform rect = proton.GetComponent<RectTransform>();
                 if (rect == null) continue;
-
                 Vector2 newPosition = new Vector2(Random.Range(-150, 150), Random.Range(-100, 100));
                 rect.anchoredPosition = newPosition;
             }
             yield return new WaitForSeconds(moveInterval);
         }
     }
-
 
     void OnProtonClicked(GameObject proton, Button button)
     {
@@ -305,15 +275,10 @@ public class MinigameManager : MonoBehaviour
             totalProtonsCollected += 4;
             protonCounterText.text = $"Protons: {totalProtonsCollected}/24";
 
-            // Check if more rounds are available.
             if (currentRound < maxRounds)
-            {
                 StartRound();
-            }
             else
-            {
                 EndMinigame();
-            }
         }
     }
 
@@ -321,7 +286,7 @@ public class MinigameManager : MonoBehaviour
     {
         isMinigameActive = false;
         StopAllCoroutines();
-        moveProtonsCoroutine = null; // Reset our reference
+        moveProtonsCoroutine = null;
         isTimerRunning = false;
         minigamePanel.SetActive(false);
         foreach (var proton in protonsInBooth)
@@ -345,32 +310,28 @@ public class MinigameManager : MonoBehaviour
         hpText.text = "HP: " + playerHP;
 
         if (playerHP <= 0)
-        {
             GameOver();
-        }
         else
         {
-            // Reset clicked count and re-enable the connect button if needed
             protonsClicked = 0;
             connectButton.interactable = true;
-
             SpawnProtons(currentBoothNumber);
             timeLeft = maxTime;
             StartCoroutine(CountdownTimer());
-
-            // Restart moving protons if on difficulty level 3
             if (difficultyLevel == 3)
-            {
                 StartCoroutine(MoveProtonsRandomly());
-            }
         }
     }
-
-
 
     void GameOver()
     {
         gameOverScreen.SetActive(true);
+    }
+
+    public void WinGame()
+    {
+        winningScreen.SetActive(true);
+        Debug.Log("Win UI is now active.");
     }
 
     void ResetGame()
@@ -383,16 +344,20 @@ public class MinigameManager : MonoBehaviour
         foreach (var pos in existingPositions)
         {
             if (Vector2.Distance(newPos, pos) < minDist)
-            {
                 return true;
-            }
         }
         return false;
     }
 
-    public int TotalProtonsCollected
-    {
-        get { return totalProtonsCollected; }
-    }
+    public int TotalProtonsCollected { get { return totalProtonsCollected; } }
 
+    public void QuitGame()
+    {
+        Debug.Log("Quit game requested.");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }
