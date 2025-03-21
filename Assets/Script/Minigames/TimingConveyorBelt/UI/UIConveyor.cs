@@ -23,7 +23,7 @@ public class UIConveyor : MonoBehaviour
 
     private void Update()
     {
-        scoreTxt.text = "Score: " + playerHealthSC.score;
+        scoreTxt.text = "Score: " + playerHealthSC.score + "/5";
         TimerTxt.text = "Timer: " + Mathf.Round(moleculeConveyor.timer) + "/3";
 
         if (playerHealthSC.isGameOver)
