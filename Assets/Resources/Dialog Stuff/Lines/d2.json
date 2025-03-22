@@ -1,0 +1,28 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Glucose Glorie",
+        "sprite": "Melanie",
+        "text": "Yo we hav enough ATP!!!!"
+      },
+      {
+        "id": 2,
+        "character": "Glucose Glorie",
+        "sprite": "Clear",
+        "text": "Congrats blah blah"
+      },
+      {
+        "id": 3,
+        "character": "Glucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "Win message"
+      },
+      {
+        "id": 4,
+        "character": "Melania",
+        "sprite": "Melanie",
+        "text": "Congratulations to Me!"
+      }
+    ]
+  }

@@ -17,6 +17,10 @@ public class WinLose : MonoBehaviour
     public HealthManager hp;
     public EnergyBar energy;
     public Spawning energyReq;
+    //public DialogueManager dialogueManager;
+    public GameObject d2;
+
+    
 
     private int cycles = 0;
     private int previousCycles;
@@ -34,7 +38,9 @@ public class WinLose : MonoBehaviour
 
             
             if (cycles == requiredCycles){
-                winscreen.win(); //Change to WIN
+                d2.SetActive(true);
+                //winscreen.win();//Change to WIN
+                
             }    
 
             //LOSE CONDITIONS //////////////////////////////////////////

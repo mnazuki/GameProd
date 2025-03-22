@@ -23,7 +23,12 @@ public class DialogueSystem : MonoBehaviour
         //jsonPath = Path.Combine(Application.dataPath, "Dialog Stuff/Lines/td.json");
         dialogueSet.SetActive(true);
         dialogueLines = new List<DialogueLine>();
+        
+        Debug.Log(currentIndex);
+
+        
         LoadDialogue(json.text);
+        DisplayAllDialogueItems();
         DisplayDialogue();
         
     }
@@ -33,11 +38,7 @@ public class DialogueSystem : MonoBehaviour
     {
         if (jsonText!=null)
         {
-
-            //string jsonText = File.ReadAllText(jsonPath);
-            
             DialogueData data = JsonUtility.FromJson<DialogueData>(jsonText);
-            
             
             dialogueLines.Clear();
 
@@ -82,11 +83,40 @@ public class DialogueSystem : MonoBehaviour
             currentIndex++;
         }else{
             Debug.Log("End of Dialogue");
+            dialogueSet.SetActive(false);
         }
     }
 
     public void OnNextButtonPressed(){
         DisplayDialogue();
     }
+
+    public void ResetDialogue()
+    {
+        currentIndex = 0; // Reset to the first dialogue
+        dialogueLines.Clear(); // Optionally clear the previous dialogue lines
+        LoadDialogue(json.text); // Reload the dialogue for the new GameObject
+        dialogueSet.SetActive(true); // Ensure the dialogue UI is active
+    }
+
+    void DisplayAllDialogueItems()
+{
+    // Check if the dialogue lines exist
+    if (dialogueLines != null && dialogueLines.Count > 0)
+    {
+        // Loop through all the dialogue lines and log them to the console
+        foreach (var line in dialogueLines)
+        {
+            // Display the dialogue information in the console
+            Debug.Log($"Character: {line.character.name}, Dialogue: {line.line}");
+            Debug.Log($"Character: {dialogueLines.Count}");
+        }
+    }
+    else
+    {
+        Debug.LogWarning("No dialogue lines found!");
+    }
+}
+
 }
 

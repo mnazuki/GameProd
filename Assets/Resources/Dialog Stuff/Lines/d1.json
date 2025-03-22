@@ -1,0 +1,28 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "Oh my God it's Glycolisis"
+      },
+      {
+        "id": 2,
+        "character": "You",
+        "sprite": "Clear",
+        "text": "Yeah"
+      },
+      {
+        "id": 3,
+        "character": "Glucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "lorem ipsum dolor sit amet"
+      },
+      {
+        "id": 4,
+        "character": "You",
+        "sprite": "Melanie",
+        "text": "Si fili cite tibi vi sacramentum"
+      }
+    ]
+  }
