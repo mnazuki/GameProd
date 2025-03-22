@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:assets/Resources/DOTweenSettings.asset.meta
 guid: b9e003769c6d75449b41bad9feb22376
+=======
+guid: 8253623480c336c449895538b989b8db
+>>>>>>> main:Assets/Resources/DOTweenSettings.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

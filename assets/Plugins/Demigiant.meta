@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:assets/Plugins/Demigiant.meta
 guid: 77ec928833ee73a4787229501e0efc99
+=======
+guid: 16ead7a0ed03d814687fe0c733ba275f
+>>>>>>> main:Assets/Plugins/Demigiant.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
