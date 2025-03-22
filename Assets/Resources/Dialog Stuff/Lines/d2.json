@@ -23,6 +23,18 @@
         "character": "Melania",
         "sprite": "Melanie",
         "text": "Congratulations to Me!"
+      },
+      {
+        "id": 5,
+        "character": "Malenia",
+        "sprite": "Melanie",
+        "text": "Congratulations to Me!"
+      },
+      {
+        "id": 6,
+        "character": "Glucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "Congratulations to Me!"
       }
     ]
   }

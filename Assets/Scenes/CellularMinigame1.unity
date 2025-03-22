@@ -1952,9 +1952,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1260950209}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueSystem, Assembly-CSharp
-        m_MethodName: OnNextButtonPressed
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3174,6 +3174,7 @@ MonoBehaviour:
     dialogueText: {fileID: 554617691}
     chSprite: {fileID: 928165942}
   json: {fileID: 4900000, guid: 003d9d912cccb714b8264ee04dacb870, type: 3}
+  nextButton: {fileID: 0}
 --- !u!1 &528903979
 GameObject:
   m_ObjectHideFlags: 0
@@ -6659,6 +6660,7 @@ MonoBehaviour:
     dialogueText: {fileID: 1320892573}
     chSprite: {fileID: 1220317509}
   json: {fileID: 4900000, guid: 38758c5cb605ff94f8338b421d1d4cc9, type: 3}
+  nextButton: {fileID: 311673817}
 --- !u!1 &1141534044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7425,6 +7427,7 @@ MonoBehaviour:
     dialogueText: {fileID: 1320892573}
     chSprite: {fileID: 1220317509}
   json: {fileID: 4900000, guid: e6d70e767ff0a9643881b0e2855c0b48, type: 3}
+  nextButton: {fileID: 311673817}
 --- !u!1 &1283145811
 GameObject:
   m_ObjectHideFlags: 0

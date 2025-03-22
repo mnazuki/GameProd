@@ -38,8 +38,13 @@ public class WinLose : MonoBehaviour
 
             
             if (cycles == requiredCycles){
+                if (d2 != null){
                 d2.SetActive(true);
-                //winscreen.win();//Change to WIN
+                }
+                if(d2 == null){
+                    winscreen.win();//Change to WIN
+                }
+              
                 
             }    
 

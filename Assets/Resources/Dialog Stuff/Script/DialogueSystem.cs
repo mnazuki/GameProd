@@ -5,6 +5,7 @@ using System;
 using NUnit.Framework.Internal;
 using System.Runtime.CompilerServices;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueSet;
@@ -14,17 +15,25 @@ public class DialogueSystem : MonoBehaviour
 
     //private string jsonPath;
     [SerializeField] private TextAsset json; //Set dialogue json per trigger
+    [SerializeField] private Button nextButton;
 
 
 
     void Start()
     {
+        if (nextButton == null)
+        { 
+            nextButton = GameObject.Find("Next")?.GetComponent<Button>();
+        }
+        if ( nextButton != null)
+        {   nextButton.onClick.AddListener(OnNextButtonPressed);
+        }
+        else{ Debug.LogError("Next Button not found!"); }
 
-        //jsonPath = Path.Combine(Application.dataPath, "Dialog Stuff/Lines/td.json");
         dialogueSet.SetActive(true);
         dialogueLines = new List<DialogueLine>();
         
-        Debug.Log(currentIndex);
+        Debug.Log($"Index: {currentIndex}");
 
         
         LoadDialogue(json.text);
@@ -76,6 +85,7 @@ public class DialogueSystem : MonoBehaviour
     public void DisplayDialogue(){
         if (currentIndex < dialogueLines.Count)
         {
+            Debug.Log($"currentIndex: {currentIndex}"); 
             DialogueLine line = dialogueLines[currentIndex];
             _dialogueContainer.nameText.text = line.character.name;
             _dialogueContainer.dialogueText.text = line.line;            
@@ -83,7 +93,9 @@ public class DialogueSystem : MonoBehaviour
             currentIndex++;
         }else{
             Debug.Log("End of Dialogue");
+            Debug.Log($"Index: {currentIndex},Count: {dialogueLines.Count}");
             dialogueSet.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 
@@ -91,13 +103,13 @@ public class DialogueSystem : MonoBehaviour
         DisplayDialogue();
     }
 
-    public void ResetDialogue()
-    {
-        currentIndex = 0; // Reset to the first dialogue
-        dialogueLines.Clear(); // Optionally clear the previous dialogue lines
-        LoadDialogue(json.text); // Reload the dialogue for the new GameObject
-        dialogueSet.SetActive(true); // Ensure the dialogue UI is active
-    }
+    // public void ResetDialogue()
+    // {
+    //     currentIndex = 0; // Reset to the first dialogue
+    //     dialogueLines.Clear(); // Optionally clear the previous dialogue lines
+    //     LoadDialogue(json.text); // Reload the dialogue for the new GameObject
+    //     dialogueSet.SetActive(true); // Ensure the dialogue UI is active
+    // }
 
     void DisplayAllDialogueItems()
 {
@@ -109,7 +121,7 @@ public class DialogueSystem : MonoBehaviour
         {
             // Display the dialogue information in the console
             Debug.Log($"Character: {line.character.name}, Dialogue: {line.line}");
-            Debug.Log($"Character: {dialogueLines.Count}");
+            Debug.Log($"Count: {dialogueLines.Count}");
         }
     }
     else
