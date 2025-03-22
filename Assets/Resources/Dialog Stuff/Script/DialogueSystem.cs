@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using UnityEngine.Rendering;
 public class DialogueSystem : MonoBehaviour
 {
+    [SerializeField] private GameObject dialogueSet;
     [SerializeField] private DialogueContainer _dialogueContainer = new DialogueContainer();
     private List<DialogueLine> dialogueLines;
     private int currentIndex = 0;
@@ -20,10 +21,11 @@ public class DialogueSystem : MonoBehaviour
     {
 
         //jsonPath = Path.Combine(Application.dataPath, "Dialog Stuff/Lines/td.json");
+        dialogueSet.SetActive(true);
         dialogueLines = new List<DialogueLine>();
-
         LoadDialogue(json.text);
         DisplayDialogue();
+        
     }
 
 

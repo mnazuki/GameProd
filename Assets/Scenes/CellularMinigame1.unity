@@ -3167,6 +3167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ad6af01724c7041a0604305db1d7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueSet: {fileID: 0}
   _dialogueContainer:
     root: {fileID: 1030627876}
     nameText: {fileID: 580156922}
@@ -5495,7 +5496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.34901962}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.36078432}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6531,7 +6532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1127671951
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7319,6 +7320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ad6af01724c7041a0604305db1d7fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueSet: {fileID: 1834181863}
   _dialogueContainer:
     root: {fileID: 2022365185}
     nameText: {fileID: 101202553}
@@ -10223,7 +10225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6392157}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.6117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
