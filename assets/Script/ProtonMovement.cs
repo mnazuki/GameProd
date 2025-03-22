@@ -5,13 +5,11 @@ using UnityEngine;
 public class ProtonMovement : MonoBehaviour
 {
     private List<Transform> waypoints = new List<Transform>(); // Set via ProtonSpawner
-    public float speed = 2f;       // Maximum speed (used as maxSpeed in SmoothDamp)
-    public float smoothTime = 0.2f;  // Time to reach the target smoothly
+    public float speed = 2f;
     private int currentWaypointIndex = 0;
     private bool isMoving = true;
     private bool isCarried = false;
     private BoothManager currentBooth;
-    private Vector3 velocity = Vector3.zero; // Used for SmoothDamp
 
     public void AssignWaypoints(List<Transform> assignedWaypoints)
     {
@@ -30,9 +28,7 @@ public class ProtonMovement : MonoBehaviour
     void Update()
     {
         if (!isCarried && isMoving && currentWaypointIndex < waypoints.Count)
-        {
             MoveToNextWaypoint();
-        }
     }
 
     void MoveToNextWaypoint()
@@ -40,33 +36,29 @@ public class ProtonMovement : MonoBehaviour
         if (currentWaypointIndex >= waypoints.Count)
             return;
 
-        Transform target = waypoints[currentWaypointIndex];
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
 
-        // Smooth movement toward the target using SmoothDamp.
-        transform.position = Vector3.SmoothDamp(transform.position, target.position, ref velocity, smoothTime, speed);
-
-        // When the proton is close enough to the target...
-        if (Vector3.Distance(transform.position, target.position) < 0.1f)
+        if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
         {
-            if (target.CompareTag("Booth"))
+            if (waypoints[currentWaypointIndex].CompareTag("Booth"))
             {
-                BoothManager booth = target.GetComponent<BoothManager>();
+                BoothManager booth = waypoints[currentWaypointIndex].GetComponent<BoothManager>();
                 if (booth != null)
                 {
                     StopAtBooth(booth);
                     return;
                 }
             }
-            else if (target.CompareTag("Train"))
+            else if (waypoints[currentWaypointIndex].CompareTag("Train"))
             {
-                TrainMovement train = target.GetComponent<TrainMovement>();
+                TrainMovement train = waypoints[currentWaypointIndex].GetComponent<TrainMovement>();
                 if (train != null)
                 {
                     StopAtTrain(train);
                     return;
                 }
             }
-            else if (target.CompareTag("Exit"))
+            else if (waypoints[currentWaypointIndex].CompareTag("Exit"))
             {
                 StopAtExit();
                 MinigameManager mgm = Object.FindFirstObjectByType<MinigameManager>();
@@ -76,7 +68,6 @@ public class ProtonMovement : MonoBehaviour
             }
             else
             {
-                // Otherwise, just proceed to the next waypoint.
                 currentWaypointIndex++;
             }
         }
