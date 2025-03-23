@@ -86,7 +86,11 @@ public class Spawning : MonoBehaviour
 
 
             // Remove glucose
-            PlayExitAnim(currentGlucose);//Exit anim has DestroyObject event on last frame.
+            Destroy(currentGlucose);
+
+            //Instantiates a separate copy of glucose at exact position to play exit anim without causing errors.
+            GameObject exitGlucose = Instantiate(glucosePrefab, glucoseSpawnPoint.position, Quaternion.identity);
+            PlayExitAnim(exitGlucose); //This Anim has a Destroy(gameObject) event at the end frame.
             
 
             // Spawn ATP and NADH at specific spawn points
