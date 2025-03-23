@@ -7,6 +7,7 @@ using NUnit.Framework.Internal;
 using System.Runtime.CompilerServices;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox; //The Scene's Dialogue Box
@@ -16,6 +17,8 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private TextAsset json; //Set dialogue json per trigger. Drag & Drop in inspector
     [SerializeField] private Button nextButton;
     [SerializeField] private Button skipButton;
+    [SerializeField] private AudioSource audioSource; // 🎵 Typing sound source
+    [SerializeField] private AudioClip typingSound; // 🎵 Sound clip
 
     //[SerializeField] private float typeSpeed = 0.1f; [For some reason this works very inconsistently. For now just change the value directly below in the TypeText Coroutine.]
 
@@ -110,7 +113,12 @@ public class DialogueSystem : MonoBehaviour
 
         foreach (char letter in text){
             _dialogueContainer.dialogueText.text += letter;
-            yield return new WaitForSeconds(0.025f);
+
+            if (audioSource != null && typingSound != null){
+                audioSource.pitch = Random.Range(1f, 1f);
+                audioSource.PlayOneShot(typingSound);
+            }
+            yield return new WaitForSeconds(0.028f);
         }
 
         isTyping = false;
