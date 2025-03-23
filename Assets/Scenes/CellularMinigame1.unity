@@ -5287,6 +5287,8 @@ MonoBehaviour:
     chSprite: {fileID: 1220317509}
   json: {fileID: 4900000, guid: 38758c5cb605ff94f8338b421d1d4cc9, type: 3}
   nextButton: {fileID: 311673817}
+  skipButton: {fileID: 92208861}
+  typeSpeed: 0.4
 --- !u!1 &1141534044
 GameObject:
   m_ObjectHideFlags: 0
@@ -5933,6 +5935,8 @@ MonoBehaviour:
     chSprite: {fileID: 1220317509}
   json: {fileID: 4900000, guid: e6d70e767ff0a9643881b0e2855c0b48, type: 3}
   nextButton: {fileID: 311673817}
+  skipButton: {fileID: 92208861}
+  typeSpeed: 0.4
 --- !u!1 &1283145811
 GameObject:
   m_ObjectHideFlags: 0
@@ -10217,5 +10221,5 @@ SceneRoots:
   - {fileID: 2082641606}
   - {fileID: 967158765}
   - {fileID: 1151315703}
-  - {fileID: 158295376}
   - {fileID: 2088625684}
+  - {fileID: 158295376}

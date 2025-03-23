@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using System.IO;
 using System;
 using NUnit.Framework.Internal;
@@ -14,16 +15,26 @@ public class DialogueSystem : MonoBehaviour
     private int currentIndex = 0;
     [SerializeField] private TextAsset json; //Set dialogue json per trigger. Drag & Drop in inspector
     [SerializeField] private Button nextButton;
+    [SerializeField] private Button skipButton;
 
+    //[SerializeField] private float typeSpeed = 0.1f; [For some reason this works very inconsistently. For now just change the value directly below in the TypeText Coroutine.]
+
+    private Coroutine typing;
+    private bool isTyping = false;
 
 
     void Start()
     {
 
-        //FInds & Assigns The Next Button.
+        //FInds & Assigns The NEXT Button.
         if (nextButton == null){ nextButton = GameObject.Find("Next")?.GetComponent<Button>(); }
         if ( nextButton != null){ nextButton.onClick.AddListener(OnNextButtonPressed); } 
         else { Debug.LogError("Next Button not found!"); }
+
+        //FInds & Assigns The SKIP Button.
+        if (skipButton == null){ skipButton = GameObject.Find("Skip")?.GetComponent<Button>(); }
+        if ( skipButton != null){ skipButton.onClick.AddListener(OnSkipButtonPressed); } 
+        else { Debug.LogError("Skip Button not found!"); }
 
         //Activates
         dialogueBox.SetActive(true);
@@ -71,13 +82,20 @@ public class DialogueSystem : MonoBehaviour
     //Displays the dialogue
     public void DisplayDialogue(){
         if (currentIndex < dialogueLines.Count)
-        {
+        {            
             Debug.Log($"currentIndex: {currentIndex}");
             DialogueLine line = dialogueLines[currentIndex]; //Passes the items in dialogueLines to the list to be displayed.
             _dialogueContainer.nameText.text = line.character.name;
-            _dialogueContainer.dialogueText.text = line.line;            
+            //_dialogueContainer.dialogueText.text = line.line;            
             _dialogueContainer.chSprite.sprite = line.character.icon;
-            currentIndex++;
+
+            if (typing != null){
+                StopCoroutine(typing);
+            }
+
+            typing = StartCoroutine(TypeText(line.line));
+
+            //currentIndex++;
         }else{
             Debug.Log("End of Dialogue");
             Debug.Log($"Index: {currentIndex},Count: {dialogueLines.Count}");
@@ -86,9 +104,35 @@ public class DialogueSystem : MonoBehaviour
         }
     }
 
+    IEnumerator TypeText(string text){
+        isTyping = true;
+        _dialogueContainer.dialogueText.text = "";
+
+        foreach (char letter in text){
+            _dialogueContainer.dialogueText.text += letter;
+            yield return new WaitForSeconds(0.025f);
+        }
+
+        isTyping = false;
+        currentIndex++;
+    }
+
     //Next Button Function
     public void OnNextButtonPressed(){
+        if (isTyping){
+            StopCoroutine(typing);
+            _dialogueContainer.dialogueText.text = dialogueLines[currentIndex].line;
+            isTyping = false;
+            currentIndex++;
+        }
+        
         DisplayDialogue();
+    }
+
+    public void OnSkipButtonPressed(){
+         Debug.Log("End of Dialogue");
+         dialogueBox.SetActive(false);
+         Destroy(this.gameObject);
     }
 
 
