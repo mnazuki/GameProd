@@ -656,7 +656,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You
+  m_text: Melanie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: de81f937de400fe42bb80a5a20bae8b9, type: 2}
   m_sharedMaterial: {fileID: 6311303494408408638, guid: de81f937de400fe42bb80a5a20bae8b9, type: 2}
@@ -823,12 +823,12 @@ MonoBehaviour:
     nameText: {fileID: 2300761887854751289}
     dialogueText: {fileID: 1877183094121421153}
     chSprite: {fileID: 4951315911510053692}
-  json: {fileID: 4900000, guid: e6d70e767ff0a9643881b0e2855c0b48, type: 3}
   nextButton: {fileID: 350537736810185563}
   skipButton: {fileID: 2263914148197018751}
   autoButton: {fileID: 2321512028439552227}
   audioSource: {fileID: 5681613399303227954}
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
+  json: {fileID: 4900000, guid: e6d70e767ff0a9643881b0e2855c0b48, type: 3}
 --- !u!82 &5681613399303227954
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Yep Yep HomeSlice
+  m_text: Musta Gar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 14c7587053c8f74429b08bd002727750, type: 2}
   m_sharedMaterial: {fileID: 2868754583743661231, guid: 14c7587053c8f74429b08bd002727750, type: 2}
