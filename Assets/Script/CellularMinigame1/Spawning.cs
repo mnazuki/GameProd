@@ -28,6 +28,10 @@ public class Spawning : MonoBehaviour
     [SerializeField] private float energyCostToFormPyruvate; // Energy cost to form pyruvate, 2 (edit in inspector)
     public bool emptyEnergy = false; //[NEW] For lose condition
 
+    [Header("SFX")]
+    public AudioSource src;
+    public AudioClip spGlucose;
+
     private GameObject currentGlucose;
     private float pyruvateSeparation = 2f; // distance between pyruvates
 
@@ -41,6 +45,7 @@ public class Spawning : MonoBehaviour
             {
             emptyEnergy = true; //[NEW] True for lose condition
             }else{
+            src.clip = spGlucose; src.Play();
             currentGlucose = Instantiate(glucosePrefab, glucoseSpawnPoint.position, Quaternion.identity);PlaySpawnAnim(currentGlucose);
 
             // reset ATP & NADH collection count

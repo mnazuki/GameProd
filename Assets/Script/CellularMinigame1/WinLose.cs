@@ -24,7 +24,18 @@ public class WinLose : MonoBehaviour
 
     [Header("DIALOGUE TRIGGERS")]
     public GameObject d2;
-    public GameObject d3;   
+    public GameObject d3; 
+
+    [Header("Minigame BGM")]
+    public AudioSource src;
+    public AudioClip bgm;
+
+
+    void Start()
+    {
+     src.clip = bgm;
+     src.Play();   
+    }
 
     void Update()
     {
@@ -50,6 +61,7 @@ public class WinLose : MonoBehaviour
                 }
                 if(d2 == null){
                     winscreen.win();//Change to WIN
+                    src.Stop();
             }}    
 
             // [[LOSE CONDITIONS]] //////////////////////////////////////////
@@ -57,11 +69,13 @@ public class WinLose : MonoBehaviour
             //Lose Condition 1: Out of HP
             if (hp.HealthCheck() == true){
                 gameover.gmOver();
+                src.Stop();
             }
 
             //Lose Condition 2: Out of Energy
             if (energyReq.emptyEnergy == true){
-                gameover.gmOver();              
+                gameover.gmOver();
+                src.Stop();              
             }
     }
 
