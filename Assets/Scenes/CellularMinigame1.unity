@@ -3254,7 +3254,8 @@ MonoBehaviour:
   energyCostToFormPyruvate: 2
   emptyEnergy: 0
   src: {fileID: 764237420}
-  spGlucose: {fileID: 8300000, guid: 4ecd8f1a5f06c6c4ea331cf15c21585b, type: 3}
+  sfxGlucose: {fileID: 8300000, guid: 4ecd8f1a5f06c6c4ea331cf15c21585b, type: 3}
+  sfxFormPyru: {fileID: 8300000, guid: 481e60b993532b047860dd711c3d541c, type: 3}
 --- !u!4 &651530924
 Transform:
   m_ObjectHideFlags: 0

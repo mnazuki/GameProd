@@ -30,7 +30,7 @@ public class Spawning : MonoBehaviour
 
     [Header("SFX")]
     public AudioSource src;
-    public AudioClip spGlucose;
+    public AudioClip sfxGlucose, sfxFormPyru;
 
     private GameObject currentGlucose;
     private float pyruvateSeparation = 2f; // distance between pyruvates
@@ -45,7 +45,7 @@ public class Spawning : MonoBehaviour
             {
             emptyEnergy = true; //[NEW] True for lose condition
             }else{
-            src.clip = spGlucose; src.Play();
+            src.clip = sfxGlucose; src.Play();
             currentGlucose = Instantiate(glucosePrefab, glucoseSpawnPoint.position, Quaternion.identity);PlaySpawnAnim(currentGlucose);
 
             // reset ATP & NADH collection count
@@ -91,6 +91,7 @@ public class Spawning : MonoBehaviour
             //Instantiates a separate copy of glucose at exact position to play exit anim without causing errors.
             GameObject exitGlucose = Instantiate(glucosePrefab, glucoseSpawnPoint.position, Quaternion.identity);
             PlayExitAnim(exitGlucose); //This Anim has a Destroy(gameObject) event at the end frame.
+            src.PlayOneShot(sfxFormPyru);
             
 
             // Spawn ATP and NADH at specific spawn points
