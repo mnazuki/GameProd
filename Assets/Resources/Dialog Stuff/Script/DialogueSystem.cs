@@ -59,6 +59,13 @@ public class DialogueSystem : MonoBehaviour
         
     }
 
+    void Update()
+    {
+        // [PLACEHOLDER VISUAL CUE] In final version this will be likely a sprite change.
+        Color autoColor = isAutoMode ? Color.black : Color.white; 
+        autoButton.GetComponent<Image>().color = autoColor;
+    }
+
     //////// Loads the entries in the JSON into the list created above
     void LoadDialogue(string jsonText)
     {
@@ -109,10 +116,11 @@ public class DialogueSystem : MonoBehaviour
             typing = StartCoroutine(TypeText(line.line));
 
             }else{
+            
             Debug.Log("End of Dialogue");
             Debug.Log($"Index: {currentIndex},Count: {dialogueLines.Count}");
+            isAutoMode = false;
             dialogueBox.SetActive(false);
-
             Destroy(this.gameObject); //IMPORTANT. For some reason w/o this, multiple dialogue sets won't work properly. So any other script that checks for this must always have a null check to prevent log flooding.
         }
     }
@@ -163,6 +171,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void OnSkipButtonPressed(){
          Debug.Log("End of Dialogue");
+         isAutoMode = false;
          dialogueBox.SetActive(false);
          Destroy(this.gameObject);
     }
@@ -171,10 +180,6 @@ public class DialogueSystem : MonoBehaviour
     {
         isAutoMode = !isAutoMode;
         Debug.Log("Auto Mode: " + (isAutoMode ? "ON" : "OFF"));
-
-        // [PLACEHOLDER VISUAL CUE] In final version this will be likely a sprite change.
-        Color autoColor = isAutoMode ? Color.black : Color.white; 
-        autoButton.GetComponent<Image>().color = autoColor;
 
         if (isAutoMode && !isTyping)
         { DisplayDialogue(); }

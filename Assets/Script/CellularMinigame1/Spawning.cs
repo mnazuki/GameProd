@@ -41,7 +41,7 @@ public class Spawning : MonoBehaviour
             {
             emptyEnergy = true; //[NEW] True for lose condition
             }else{
-            currentGlucose = Instantiate(glucosePrefab, glucoseSpawnPoint.position, Quaternion.identity);
+            currentGlucose = Instantiate(glucosePrefab, glucoseSpawnPoint.position, Quaternion.identity);PlaySpawnAnim(currentGlucose);
 
             // reset ATP & NADH collection count
             if (PyruvateSpawner.Instance != null)
@@ -81,7 +81,8 @@ public class Spawning : MonoBehaviour
 
 
             // Remove glucose
-            Destroy(currentGlucose);
+            PlayExitAnim(currentGlucose);//Exit anim has DestroyObject event on last frame.
+            
 
             // Spawn ATP and NADH at specific spawn points
             SpawnMolecules();
@@ -158,15 +159,28 @@ public class Spawning : MonoBehaviour
 
 
     //// [NEW] Animation Methods For Molecules ////////////////////////////////////////////////////////////////////////////
-    private void PlaySpawnAnim(GameObject obj){ //Spawn Anim Method. Necessary incase different molecules end up with different spawn animation. (Big glucose, mini glucose, mini mols, mini pyru)
+    
+    //Spawn Anim Method. Necessary incase different molecules end up with different spawn animation.
+    private void PlaySpawnAnim(GameObject obj){ 
 
         Animator animator = obj.GetComponent<Animator>();
 
         if (animator != null){
-            animator.Play("spawn");            
+            animator.Play("spawn");
+            animator.Play("glucoseSpawn");            
         }
         
         StartCoroutine(FadeIn(obj)); //Calls in fade animation from below
+    }
+
+    //Exit Anim Method.
+    private void PlayExitAnim(GameObject obj){ 
+
+        Animator animator = obj.GetComponent<Animator>();
+
+        if (animator != null){
+            animator.Play("glucoseProcessed");            
+        }        
     }
 
     //[NEW] Fade in animation for Molecule Entry//
