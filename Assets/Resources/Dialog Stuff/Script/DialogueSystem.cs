@@ -8,34 +8,29 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 public class DialogueSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject dialogueSet;
-    [SerializeField] private DialogueContainer _dialogueContainer = new DialogueContainer();
+    [SerializeField] private GameObject dialogueBox; //The Scene's Dialogue Box
+    [SerializeField] private DialogueContainer _dialogueContainer = new DialogueContainer(); //
     private List<DialogueLine> dialogueLines;
     private int currentIndex = 0;
-
-    //private string jsonPath;
-    [SerializeField] private TextAsset json; //Set dialogue json per trigger
+    [SerializeField] private TextAsset json; //Set dialogue json per trigger. Drag & Drop in inspector
     [SerializeField] private Button nextButton;
 
 
 
     void Start()
     {
-        if (nextButton == null)
-        { 
-            nextButton = GameObject.Find("Next")?.GetComponent<Button>();
-        }
-        if ( nextButton != null)
-        {   nextButton.onClick.AddListener(OnNextButtonPressed);
-        }
-        else{ Debug.LogError("Next Button not found!"); }
 
-        dialogueSet.SetActive(true);
+        //FInds & Assigns The Next Button.
+        if (nextButton == null){ nextButton = GameObject.Find("Next")?.GetComponent<Button>(); }
+        if ( nextButton != null){ nextButton.onClick.AddListener(OnNextButtonPressed); } 
+        else { Debug.LogError("Next Button not found!"); }
+
+        //Activates
+        dialogueBox.SetActive(true);
         dialogueLines = new List<DialogueLine>();
         
         Debug.Log($"Index: {currentIndex}");
-
-        
+       
         LoadDialogue(json.text);
         DisplayAllDialogueItems();
         DisplayDialogue();
@@ -55,38 +50,30 @@ public class DialogueSystem : MonoBehaviour
                 DialogueCharacter character = new DialogueCharacter { name = entry.character, icon = LoadSprite(entry.sprite)};
                 DialogueLine line = new DialogueLine { character = character, line = entry.text};
                 dialogueLines.Add(line);
-
-            }
-        }
-        else{
-            Debug.LogError("Dialogue JSON file not found");
-        }
+            }}
+        else{ Debug.LogError("Dialogue JSON file not found");}
     }
 
+
+    //Sprite Manager
      Sprite LoadSprite(string spriteName)
     {
-        if (string.IsNullOrEmpty(spriteName))
-        {
-            Debug.LogWarning("Sprite name is empty, returning null.");
-            return null;
-        }
-
-        // Load from Resources/Dialogue Stuff/Characters/
+        // Load from Assets/Resources/Dialogue Stuff/Characters/ [Important that the assets are in the main Resources folder]
         Sprite loadedSprite = Resources.Load<Sprite>($"Dialog Stuff/Character/{spriteName}");
 
         if (loadedSprite == null)
-        {
-            Debug.LogError($"Sprite not found: {spriteName}");
-        }
+        { Debug.LogError($"Sprite not found: {spriteName}"); }
 
         return loadedSprite;
     }
 
+
+    //Displays the dialogue
     public void DisplayDialogue(){
         if (currentIndex < dialogueLines.Count)
         {
-            Debug.Log($"currentIndex: {currentIndex}"); 
-            DialogueLine line = dialogueLines[currentIndex];
+            Debug.Log($"currentIndex: {currentIndex}");
+            DialogueLine line = dialogueLines[currentIndex]; //Passes the items in dialogueLines to the list to be displayed.
             _dialogueContainer.nameText.text = line.character.name;
             _dialogueContainer.dialogueText.text = line.line;            
             _dialogueContainer.chSprite.sprite = line.character.icon;
@@ -94,41 +81,31 @@ public class DialogueSystem : MonoBehaviour
         }else{
             Debug.Log("End of Dialogue");
             Debug.Log($"Index: {currentIndex},Count: {dialogueLines.Count}");
-            dialogueSet.SetActive(false);
-            Destroy(this.gameObject);
+            dialogueBox.SetActive(false);
+            Destroy(this.gameObject); //IMPORTANT. For some reason w/o this, multiple dialogue sets won't work properly. So any other script that checks for this must always have a null check to prevent log flooding.
         }
     }
 
+    //Next Button Function
     public void OnNextButtonPressed(){
         DisplayDialogue();
     }
 
-    // public void ResetDialogue()
-    // {
-    //     currentIndex = 0; // Reset to the first dialogue
-    //     dialogueLines.Clear(); // Optionally clear the previous dialogue lines
-    //     LoadDialogue(json.text); // Reload the dialogue for the new GameObject
-    //     dialogueSet.SetActive(true); // Ensure the dialogue UI is active
-    // }
 
+    //For Debugging
     void DisplayAllDialogueItems()
-{
-    // Check if the dialogue lines exist
-    if (dialogueLines != null && dialogueLines.Count > 0)
     {
-        // Loop through all the dialogue lines and log them to the console
-        foreach (var line in dialogueLines)
+        if (dialogueLines != null && dialogueLines.Count > 0)
         {
-            // Display the dialogue information in the console
-            Debug.Log($"Character: {line.character.name}, Dialogue: {line.line}");
-            Debug.Log($"Count: {dialogueLines.Count}");
+            foreach (var line in dialogueLines)
+            {
+                Debug.Log($"Character: {line.character.name}, Dialogue: {line.line}");
+                Debug.Log($"Count: {dialogueLines.Count}");
+            }
         }
+        else
+        { Debug.LogWarning("No dialogue lines found!"); }
     }
-    else
-    {
-        Debug.LogWarning("No dialogue lines found!");
-    }
-}
 
 }
 

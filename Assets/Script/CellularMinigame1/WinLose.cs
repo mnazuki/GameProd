@@ -17,7 +17,8 @@ public class WinLose : MonoBehaviour
     public HealthManager hp;
     public EnergyBar energy;
     public Spawning energyReq;
-    //public DialogueManager dialogueManager;
+
+    //Dialogue Stuff
     public GameObject d2;
 
     

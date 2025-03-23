@@ -4,25 +4,25 @@
         "id": 1,
         "character": "Melanie",
         "sprite": "Melanie",
-        "text": "Oh my God it's Glycolisis"
+        "text": "Oh my God it's Glycolisis!"
       },
       {
         "id": 2,
         "character": "You",
         "sprite": "Clear",
-        "text": "Yeah"
+        "text": "Yeah. This is where the glucose gets processed yeah?"
       },
       {
         "id": 3,
         "character": "Glucose Glorie",
         "sprite": "Glucose Glorie",
-        "text": "lorem ipsum dolor sit amet"
+        "text": "Why are you talking to yourself? Also yes, this is where pyruvate is made & the start of the process begins."
       },
       {
         "id": 4,
-        "character": "You",
+        "character": "Melanie",
         "sprite": "Melanie",
-        "text": "Si fili cite tibi vi sacramentum"
+        "text": "Sweeeet. Can I tag along?"
       }
     ]
   }

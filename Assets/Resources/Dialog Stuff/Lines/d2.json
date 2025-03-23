@@ -4,37 +4,49 @@
         "id": 1,
         "character": "Glucose Glorie",
         "sprite": "Melanie",
-        "text": "Yo we hav enough ATP!!!!"
+        "text": "Yow we have enough ATP!!!!"
       },
       {
         "id": 2,
-        "character": "Glucose Glorie",
+        "character": "You",
         "sprite": "Clear",
-        "text": "Congrats blah blah"
+        "text": "Lesgowwww!!!!"
       },
       {
         "id": 3,
-        "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
-        "text": "Win message"
+        "character": "Proton Pete",
+        "sprite": "Proton Pete",
+        "text": "Sheeesh napakaangas!! Eyyy!!"
       },
       {
         "id": 4,
         "character": "Melania",
         "sprite": "Melanie",
-        "text": "Congratulations to Me!"
+        "text": "I am Melania, Blade of Miquella. And I have never known defeat"
       },
       {
         "id": 5,
-        "character": "Malenia",
-        "sprite": "Melanie",
-        "text": "Congratulations to Me!"
+        "character": "Amphibolisius",
+        "sprite": "Amphibolism",
+        "text": "Weh. Anyways, great job everyone! We can now move on to The Krebs Cycle"
       },
       {
         "id": 6,
         "character": "Glucose Glorie",
         "sprite": "Glucose Glorie",
-        "text": "Congratulations to Me!"
+        "text": "That we are! Mini pyruvates, to me!"
+      },
+      {
+        "id": 7,
+        "character": "....",
+        "sprite": "Clear",
+        "text": "*footsteps*"
+      },
+      {
+        "id": 8,
+        "character": "Manager Cata",
+        "sprite": "Manager Cata",
+        "text": "Hello guys! Ang daming lamok nmn rito.. kelangan ko ata ng katol..... KATOLad mo ;D HAHAHA guys.... guys?"
       }
     ]
   }
