@@ -1,0 +1,16 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Proton Pete",
+        "sprite": "Proton Pete",
+        "text": "kumain ka na?"
+      },
+      {
+        "id": 2,
+        "character": "Professor Synthetica",
+        "sprite": "Professor Synthetica",
+        "text": "oo pag nilibre mo"
+      }
+    ]
+  }

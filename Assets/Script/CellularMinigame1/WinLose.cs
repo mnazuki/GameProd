@@ -20,6 +20,8 @@ public class WinLose : MonoBehaviour
 
     //Dialogue Stuff
     public GameObject d2;
+    public GameObject d3;
+    
 
     
 
@@ -37,7 +39,16 @@ public class WinLose : MonoBehaviour
                 previousCycles = cycles;
             }
 
-            
+            if (cycles == requiredCycles/2){
+             if (d3 != null){
+                d3.SetActive(true);
+             }
+             if (d3 == null){
+                
+             }
+
+            }
+
             if (cycles == requiredCycles){
                 if (d2 != null){
                 d2.SetActive(true);

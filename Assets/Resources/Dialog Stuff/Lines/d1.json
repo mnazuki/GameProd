@@ -23,6 +23,24 @@
         "character": "Melanie",
         "sprite": "Melanie",
         "text": "Sweeeet. Can I tag along?"
+      },
+      {
+        "id": 5,
+        "character": "Glucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "Sweeeet. Can I tag along?"
+      },
+      {
+        "id": 6,
+        "character": "Hakdog",
+        "sprite": "Amphibolism",
+        "text": "Hello Hi Kamusta Ka Na"
+      },
+      {
+        "id": 7,
+        "character": "GAAAAAAAAlucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "Sweeeet. Can I tag along?"
       }
     ]
   }
