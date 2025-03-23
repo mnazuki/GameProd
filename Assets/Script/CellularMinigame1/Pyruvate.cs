@@ -1,4 +1,4 @@
-// placed on the pyruvate 1 & 2 prefabs (add component)
+// Placed on the pyruvate 1 & 2 prefabs (add component)
 
 using UnityEngine;
 
@@ -45,7 +45,7 @@ public class Pyruvate : MonoBehaviour
                     // if yes, spawn mini pyruvates
                     PyruvateSpawner.Instance.SpawnMiniPyruvates();
                 }
-                // else
+                // [DEBUG SECTION] else
                 // {
                 //     // Debug.Log("Mini pyruvates will NOT spawn. Collect all ATP and NADH first.");
                 // }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Gameover : MonoBehaviour
 {
-    //[NEW] Activates GameOver Canvas
+    //Activates GameOver Canvas
     public void gmOver(){
         gameObject.SetActive(true);
     }

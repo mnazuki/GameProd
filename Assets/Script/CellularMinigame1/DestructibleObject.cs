@@ -1,4 +1,4 @@
-// placed on the NADH, ATP, and Bacteria prefabs (add component)
+// Placed on the NADH, ATP, and Bacteria prefabs (add component)
 
 using UnityEngine;
 using System.Collections;

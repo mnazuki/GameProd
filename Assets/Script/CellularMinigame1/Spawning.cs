@@ -1,5 +1,5 @@
-// placed on Game Manager Spawner at the hierarchy (add component)
-// used by buttons to spawn glucose, form pyruvate, and spawn ATP, NADH, and Bacteria (onclick)
+// Placed on Game Manager Spawner at the hierarchy (add component)
+// Used by buttons to spawn glucose, form pyruvate, and spawn ATP, NADH, and Bacteria (onclick)
 
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +22,7 @@ public class Spawning : MonoBehaviour
     [SerializeField] private Transform ATP_NADHspawnPoint1, ATP_NADHspawnPoint2, ATP_NADHspawnPoint3, ATP_NADHspawnPoint4;
     [SerializeField] private Transform bacteriaSpawnPoint1, bacteriaSpawnPoint2, bacteriaSpawnPoint3, bacteriaSpawnPoint4, bacteriaSpawnPoint5, bacteriaSpawnPoint6;
 
+
     [Header("Energy System")]
     [SerializeField] private EnergyBar energyBar; // Energy bar that will be lessened when forming pyruvate
     [SerializeField] private float energyCostToFormPyruvate; // Energy cost to form pyruvate, 2 (edit in inspector)
@@ -35,15 +36,20 @@ public class Spawning : MonoBehaviour
     {
         if (GameObject.FindWithTag("Pyruvate") == null && GameObject.FindWithTag("Glucose") == null && GameObject.FindWithTag("MiniPyruvate") == null)
         {
+            //[NEW] Moved this here from "Form Pyruvate" in order for lose condition to occur on Import Glucose click.
+            if (!energyBar.CanUseEnergy(energyCostToFormPyruvate))
+            {
+            emptyEnergy = true; //[NEW] True for lose condition
+            }else{
             currentGlucose = Instantiate(glucosePrefab, glucoseSpawnPoint.position, Quaternion.identity);
 
             // reset ATP & NADH collection count
             if (PyruvateSpawner.Instance != null)
             {
                 PyruvateSpawner.Instance.ResetCollection();
-            }
+            }}
         }
-        // else if (GameObject.FindWithTag("Pyruvate") != null)
+        // [[DEBUG SECTION]] else if (GameObject.FindWithTag("Pyruvate") != null)
         // {
         //     // Script: Warning 
         //     Debug.Log("Cannot spawn glucose while pyruvates exist.");
@@ -58,9 +64,9 @@ public class Spawning : MonoBehaviour
         //     // Script: Warning 
         //     Debug.Log("Cannot spawn. Pyruvate is not transported yet / Pyruvate is not ywt oxidized.");
         // }
-
     }
 
+    
     // converts glucose to pyruvate and removes glucose (only if enough energy is available)
     public void FormPyruvate()
     {
@@ -83,21 +89,16 @@ public class Spawning : MonoBehaviour
             // Spawn bacteria at specific spawn points
             SpawnBacteria();
         }
-        // else if (currentGlucose == null){
+        // [[DEBUG SECTION]] else if (currentGlucose == null){
         //     // Script: Warning 
         //     Debug.Log("No glucose to convert to pyruvate!");
         // }
 
         // if there's not enough energy to for pyruvate to be formed
-        else if (!energyBar.CanUseEnergy(energyCostToFormPyruvate))
-        {
-            // Script: Warning 
-            //Debug.Log("Not enough energy to form pyruvate!");
-            emptyEnergy = true; //[NEW] True for lose condition
-        }
+        
     }
 
-    // randomly spawns NADH and ATP at assigned spawn points
+    // Randomly spawns NADH and ATP at assigned spawn points
     private void SpawnMolecules()
     {
         List<Transform> availableSpawnPoints = new List<Transform> { 
@@ -148,7 +149,7 @@ public class Spawning : MonoBehaviour
         }
     }
 
-    // destroys object after a set time
+    // Destroys object after a set time
     private IEnumerator DestroyAfterTime(GameObject obj, float delay)
     {
         yield return new WaitForSeconds(delay);
@@ -156,10 +157,7 @@ public class Spawning : MonoBehaviour
     }
 
 
-
-
-
-    //[NEW] Animation Methods For Molecules ////////////////////////////////////////////////////////////////////////////
+    //// [NEW] Animation Methods For Molecules ////////////////////////////////////////////////////////////////////////////
     private void PlaySpawnAnim(GameObject obj){ //Spawn Anim Method. Necessary incase different molecules end up with different spawn animation. (Big glucose, mini glucose, mini mols, mini pyru)
 
         Animator animator = obj.GetComponent<Animator>();
@@ -171,7 +169,7 @@ public class Spawning : MonoBehaviour
         StartCoroutine(FadeIn(obj)); //Calls in fade animation from below
     }
 
-    //[NEW] Fade in animation for Molecule Entry //////////////////////////////////////////////////////////////////////
+    //[NEW] Fade in animation for Molecule Entry//
        private IEnumerator FadeIn(GameObject obj)
     {
         Renderer renderer = obj.GetComponent<Renderer>(); //Gets the rendered because we modify Alpha Value

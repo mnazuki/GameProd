@@ -35,7 +35,7 @@ public class PyruvateSpawner : MonoBehaviour
         } 
     }
 
-    //[NEW] Update function responsible for Screen Display
+    //[NEW] Update function responsible for Monitor Screen Display
     private void Update(){ 
         //[NEW] If mini pyruvates haven't spawned, it means either cycle is ongoing or failed, therefore no Net Yield display. 
         if (!hasSpawnedMiniPyruvates){ 
@@ -103,13 +103,11 @@ public class PyruvateSpawner : MonoBehaviour
 
     // used in Start Oxidation button (on click)
     public void DestroyMiniPyruvate(){
-        // could add here for other restrictions with update text like if the text is not yet done showing something before oxidation, etc.
+        
         if (GameObject.FindWithTag("MiniPyruvate") != null){
             Destroy(GameObject.FindWithTag("MiniPyruvate"));
-            // could add code execution to add the collected number of 2ATP 1Glucose, maybe not, not sure
 
-            //[NEW] Keeps track of the # of successful cycles. 2 Mini Pyru = 1 Cycle. Win condition is here too.
-            //NOTE: [Game management a bit messy but very functional. Next minigame probably could use a proper game manager]
+            //Keeps track of the # of successful cycles. 2 Mini Pyru [MP] = 1 Cycle. Win condition is here too.
             collectedMP++;
         }        
     }

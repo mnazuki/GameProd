@@ -1,4 +1,4 @@
-// placed on Energy at the hierarchy (add component) with 10 max count for energy
+// Placed on Energy at the hierarchy (add component) with 10 max count for energy
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,7 +7,7 @@ public class EnergyBar : MonoBehaviour
 {
     [SerializeField] private Image energyBar;
     [SerializeField] private float energyMaxCount;
-    public float _currentEnergyCount; //[NEW UPDATE] Changed to Public for references in other scripts.
+    public float _currentEnergyCount; 
 
     void Start()
     {

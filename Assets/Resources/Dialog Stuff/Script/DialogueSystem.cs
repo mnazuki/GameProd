@@ -10,20 +10,21 @@ using UnityEngine.UI;
 using Random = UnityEngine.Random;
 public class DialogueSystem : MonoBehaviour
 {
+    [Header("UI ASSIGNMENT")]
     [SerializeField] private GameObject dialogueBox; //The Scene's Dialogue Set, including the Box, Sprite, Texts & Buttons
     [SerializeField] private DialogueContainer _dialogueContainer = new DialogueContainer(); //The space where the text goes.
-    private List<DialogueLine> dialogueLines;
-    private int currentIndex = 0;
-    [SerializeField] private TextAsset json; //Set dialogue json per trigger. Drag & Drop in inspector
     [SerializeField] private Button nextButton;
     [SerializeField] private Button skipButton;
     [SerializeField] private Button autoButton;
+
+    [Header("AUDIO & TEXT")]
     [SerializeField] private AudioSource audioSource; // 🎵 Typing sound source
     [SerializeField] private AudioClip typingSound; // 🎵 Sound clip
+    [SerializeField] private TextAsset json; //Set dialogue json per trigger. Drag & Drop in inspector
 
-    //[SerializeField] private float typeSpeed = 0.1f; [For some reason this works very inconsistently. For now just change the value directly below in the TypeText Coroutine.]
-
+    private List<DialogueLine> dialogueLines;
     private Coroutine typing;
+    private int currentIndex = 0;   
     private bool isTyping = false;
     private bool isAutoMode = false;
 
@@ -58,15 +59,15 @@ public class DialogueSystem : MonoBehaviour
         
     }
 
-    //////// [Loads the entries in the JSON into the list created above]
+    //////// Loads the entries in the JSON into the list created above
     void LoadDialogue(string jsonText)
     {
         if (jsonText!=null)
         {
-            DialogueData data = JsonUtility.FromJson<DialogueData>(jsonText);
-            
+            DialogueData data = JsonUtility.FromJson<DialogueData>(jsonText);             
             dialogueLines.Clear();
 
+            //For each entry in json, load it into their respective spots in each line of the list.
             foreach (var entry in data.dialogues){
                 DialogueCharacter character = new DialogueCharacter { name = entry.character, icon = LoadSprite(entry.sprite)};
                 DialogueLine line = new DialogueLine { character = character, line = entry.text};
@@ -79,7 +80,7 @@ public class DialogueSystem : MonoBehaviour
     //////// [Sprite Manager]
      Sprite LoadSprite(string spriteName)
     {
-        // Load from Assets/Resources/Dialogue Stuff/Characters/ [Important that the assets are in the main Resources folder]
+        // Load from Assets/Resources/Dialogue Stuff/Characters/ [Important that the assets are in the main "Resources" folder]
         Sprite loadedSprite = Resources.Load<Sprite>($"Dialog Stuff/Character/{spriteName}");
 
         if (loadedSprite == null)
@@ -94,26 +95,30 @@ public class DialogueSystem : MonoBehaviour
         if (currentIndex < dialogueLines.Count)
         {            
             Debug.Log($"currentIndex: {currentIndex}");
-            DialogueLine line = dialogueLines[currentIndex]; //Passes the items in dialogueLines to the list to be displayed.
-            _dialogueContainer.nameText.text = line.character.name;
-            //_dialogueContainer.dialogueText.text = line.line;            
+
+            //Passes the items in dialogueLines to the list to be displayed.
+            DialogueLine line = dialogueLines[currentIndex]; 
+            _dialogueContainer.nameText.text = line.character.name;        
             _dialogueContainer.chSprite.sprite = line.character.icon;
 
+            //If there is text still typing, stop it so we can go to the next line.
             if (typing != null){
-                StopCoroutine(typing);
-            }
+                StopCoroutine(typing);}
 
+            //Renders the next line of text
             typing = StartCoroutine(TypeText(line.line));
 
-                   }else{
+            }else{
             Debug.Log("End of Dialogue");
             Debug.Log($"Index: {currentIndex},Count: {dialogueLines.Count}");
             dialogueBox.SetActive(false);
+
             Destroy(this.gameObject); //IMPORTANT. For some reason w/o this, multiple dialogue sets won't work properly. So any other script that checks for this must always have a null check to prevent log flooding.
         }
     }
 
-    //////// [For the Text Typing Animation]
+
+    //////// [For the "Per Letter" Text Typing Animation]
     IEnumerator TypeText(string text){
         isTyping = true;
         _dialogueContainer.dialogueText.text = "";
@@ -121,24 +126,27 @@ public class DialogueSystem : MonoBehaviour
         foreach (char letter in text){
             _dialogueContainer.dialogueText.text += letter;
 
-            //Text Beeps
+            //Text Beeps. If you want variations in the sound pitch per letter, play around with the Random values.
             if (audioSource != null && typingSound != null){
-                audioSource.pitch = Random.Range(1f, 1f); //If you want variations in the sound pitch per letter, play around with these values.
+                audioSource.pitch = Random.Range(1f, 1f); 
                 audioSource.PlayOneShot(typingSound);
             }
-            yield return new WaitForSeconds(0.028f); //[Sidenote: Using a variable doesn't seem to work properly here. Just adjust it here directly for now]
-        }
 
+            // Seconds to wait before next letter appears. [Sidenote: Using a variable doesn't seem to work properly here. Just adjust it here directly for now]
+            yield return new WaitForSeconds(0.028f); 
+        }
         isTyping = false;
         currentIndex++;
 
-        //
+        ////Checks if Auto Button is Toggled & automates displaying the next line if it is.
         if (isAutoMode)
         {
-            yield return new WaitForSeconds(1f); // Seconds to wait before next dialogue loads. [Sidenote: Same issue as above. Just change here directly]
+            // Seconds to wait before next dialogue loads. [Sidenote: Same issue as above. Just change here directly]
+            yield return new WaitForSeconds(1f); 
             DisplayDialogue();
         }
     }
+
 
     //////// [Next & Skip & Auto Button Functions]
     public void OnNextButtonPressed(){
@@ -149,8 +157,7 @@ public class DialogueSystem : MonoBehaviour
             _dialogueContainer.dialogueText.text = dialogueLines[currentIndex].line;
             isTyping = false;
             currentIndex++;
-        }
-        
+        }        
         DisplayDialogue();
     }
 
@@ -165,13 +172,12 @@ public class DialogueSystem : MonoBehaviour
         isAutoMode = !isAutoMode;
         Debug.Log("Auto Mode: " + (isAutoMode ? "ON" : "OFF"));
 
-        Color autoColor = isAutoMode ? Color.black : Color.white;
+        // [PLACEHOLDER VISUAL CUE] In final version this will be likely a sprite change.
+        Color autoColor = isAutoMode ? Color.black : Color.white; 
         autoButton.GetComponent<Image>().color = autoColor;
 
         if (isAutoMode && !isTyping)
-        {
-            DisplayDialogue();
-        }
+        { DisplayDialogue(); }
     }
 
 

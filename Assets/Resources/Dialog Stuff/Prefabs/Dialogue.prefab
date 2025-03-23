@@ -1260,8 +1260,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yep Yep HomeSlice
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c599d88877719284281bcd9f137fd9de, type: 2}
-  m_sharedMaterial: {fileID: 2868754583743661231, guid: c599d88877719284281bcd9f137fd9de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14c7587053c8f74429b08bd002727750, type: 2}
+  m_sharedMaterial: {fileID: 2868754583743661231, guid: 14c7587053c8f74429b08bd002727750, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

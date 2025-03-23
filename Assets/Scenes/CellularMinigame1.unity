@@ -3200,6 +3200,7 @@ MonoBehaviour:
   bacteriaSpawnPoint4: {fileID: 12546730}
   bacteriaSpawnPoint5: {fileID: 69860234}
   bacteriaSpawnPoint6: {fileID: 609229841}
+  gmOver: {fileID: 1151315704}
   energyBar: {fileID: 1059872601}
   energyCostToFormPyruvate: 2
   emptyEnergy: 0
@@ -6289,8 +6290,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yep Yep HomeSlice
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c599d88877719284281bcd9f137fd9de, type: 2}
-  m_sharedMaterial: {fileID: 2868754583743661231, guid: c599d88877719284281bcd9f137fd9de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14c7587053c8f74429b08bd002727750, type: 2}
+  m_sharedMaterial: {fileID: 2868754583743661231, guid: 14c7587053c8f74429b08bd002727750, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7448,8 +7449,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: IMPORT GLUCOSE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c599d88877719284281bcd9f137fd9de, type: 2}
-  m_sharedMaterial: {fileID: 2868754583743661231, guid: c599d88877719284281bcd9f137fd9de, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 14c7587053c8f74429b08bd002727750, type: 2}
+  m_sharedMaterial: {fileID: 2868754583743661231, guid: 14c7587053c8f74429b08bd002727750, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

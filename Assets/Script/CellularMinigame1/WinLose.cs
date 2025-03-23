@@ -8,7 +8,7 @@ public class WinLose : MonoBehaviour
      
     [SerializeField] private int requiredCycles; //Change in inspector or Start(). Initializing here does weird activities.
     
-    
+    [Header("UI")]
     public TextMeshProUGUI cyclesText;
     public TextMeshProUGUI ATPtext;
     public WinScreen winscreen;
@@ -16,51 +16,43 @@ public class WinLose : MonoBehaviour
     public PyruvateSpawner pyru;
     public HealthManager hp;
     public EnergyBar energy;
-    public Spawning energyReq;
 
-    //Dialogue Stuff
-    public GameObject d2;
-    public GameObject d3;
-    
-
-    
-
+     [Header("CONDITIONS")]
+    public Spawning energyReq; //Required Energy to Win. Changable in Inspector.
     private int cycles = 0;
     private int previousCycles;
 
+    [Header("DIALOGUE TRIGGERS")]
+    public GameObject d2;
+    public GameObject d3;   
+
     void Update()
     {
-            //WIN CONDITION: Player has successfully ////////////////////
+            //// [[WIN CONDITION]] : Player has successfully collected enough Mini Pyru
             cycles = pyru.showCollectedMP() / 2; //2 Pyru = 1 Successful Cycle
-            cyclesText.text = ("Glucose Processed: " + cycles + "/" + requiredCycles); //Shows player's progress to Win
+            cyclesText.text = "Glucose Processed: " + cycles + "/" + requiredCycles; //Shows player's progress to Win
 
             if (cycles > previousCycles){
                 ATPtext.text = "Total ATP: " + pyru.showCollectedMP();
                 previousCycles = cycles;
             }
 
+            //// [Dialogue Trigger] : When player is halfway to victory.
             if (cycles == requiredCycles/2){
              if (d3 != null){
                 d3.SetActive(true);
-             }
-             if (d3 == null){
-                
-             }
+            }}
 
-            }
-
+            //// [Dialogue Trigger & WinScreen] : When player wins.
             if (cycles == requiredCycles){
                 if (d2 != null){
                 d2.SetActive(true);
                 }
                 if(d2 == null){
                     winscreen.win();//Change to WIN
-                }
-              
-                
-            }    
+            }}    
 
-            //LOSE CONDITIONS //////////////////////////////////////////
+            // [[LOSE CONDITIONS]] //////////////////////////////////////////
 
             //Lose Condition 1: Out of HP
             if (hp.HealthCheck() == true){

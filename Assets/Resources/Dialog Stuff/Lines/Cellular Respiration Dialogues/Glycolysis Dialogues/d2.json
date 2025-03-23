@@ -16,22 +16,16 @@
         "id": 3,
         "character": "Proton Pete",
         "sprite": "Proton Pete",
-        "text": "Sheeesh napakaangas!! Eyyy!! [Pete Test Dialogue]"
+        "text": "Sheeesh, napakaangas!! Eyyy~"
       },
       {
         "id": 4,
-        "character": "Melania",
-        "sprite": "Melanie",
-        "text": "I am Melania, Blade of Miquella. And I have never known defeat"
+        "character": "Amphibolisius",
+        "sprite": "Amphibolism",
+        "text": "Weh. Anyways, great job everyone! We can now move on to The Krebs Cycle~!"
       },
       {
         "id": 5,
-        "character": "Amphibolisius",
-        "sprite": "Amphibolism",
-        "text": "Weh. Anyways, great job everyone! We can now move on to The Krebs Cycle"
-      },
-      {
-        "id": 6,
         "character": "Glucose Glorie",
         "sprite": "Glucose Glorie",
         "text": "That we are! Mini pyruvates, to me!"
