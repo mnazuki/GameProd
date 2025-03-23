@@ -2,45 +2,39 @@
     "dialogues": [
       {
         "id": 1,
+        "character": "Alon",
+        "sprite": "Clear",
+        "text": "Test dialogues >.<"
+      },
+      {
+        "id": 2,
         "character": "Melanie",
         "sprite": "Melanie",
         "text": "Oh my God it's Glycolisis!"
       },
       {
-        "id": 2,
+        "id": 3,
         "character": "You",
         "sprite": "Clear",
-        "text": "Yeah. This is where the glucose gets processed yeah?"
+        "text": "Yeah. I believe this is where the glucose gets processed."
       },
       {
-        "id": 3,
+        "id": 4,
         "character": "Glucose Glorie",
         "sprite": "Glucose Glorie",
         "text": "Why are you talking to yourself? Also yes, this is where pyruvate is made & the start of the process begins."
       },
       {
-        "id": 4,
+        "id": 5,
         "character": "Melanie",
         "sprite": "Melanie",
         "text": "Sweeeet. Can I tag along?"
       },
       {
-        "id": 5,
+        "id": 6,
         "character": "Glucose Glorie",
         "sprite": "Glucose Glorie",
-        "text": "Sweeeet. Can I tag along?"
-      },
-      {
-        "id": 6,
-        "character": "Hakdog",
-        "sprite": "Amphibolism",
-        "text": "Hello Hi Kamusta Ka Na"
-      },
-      {
-        "id": 7,
-        "character": "GAAAAAAAAlucose Glorie",
-        "sprite": "Glucose Glorie",
-        "text": "Sweeeet. Can I tag along?"
+        "text": "Make yourself at home~"
       }
     ]
   }

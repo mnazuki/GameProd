@@ -2,7 +2,7 @@
     "dialogues": [
       {
         "id": 1,
-        "character": "Glucose Glorie",
+        "character": "Melanie",
         "sprite": "Melanie",
         "text": "Yow we have enough ATP!!!!"
       },
@@ -16,10 +16,10 @@
         "id": 3,
         "character": "Proton Pete",
         "sprite": "Proton Pete",
-        "text": "Sheeesh napakaangas!! Eyyy!!"
+        "text": "Sheeesh napakaangas!! Eyyy!! [Pete Test Dialogue]"
       },
       {
-        "id": 4,  
+        "id": 4,
         "character": "Melania",
         "sprite": "Melanie",
         "text": "I am Melania, Blade of Miquella. And I have never known defeat"
@@ -46,7 +46,7 @@
         "id": 8,
         "character": "Manager Cata",
         "sprite": "Manager Cata",
-        "text": "Hello guys! Ang daming lamok nmn rito.. kelangan ko ata ng katol..... KATOLad mo ;D HAHAHA guys.... guys?"
+        "text": "Hello guys! Ang daming lamok nmn rito.. kelangan ko ata ng katol..... KATOLad mo ;D HAHAHA guys.... guys? [Cata Test Dialogue]"
       }
     ]
   }
