@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7fbfc46997c348e45af66b248294cebb
+guid: 37adddbebbfa0d94bb20e1e659383c7f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6061376425291583332
-    second: Proton Pete_0
+      213: -6324310268130010240
+    second: Back Icon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Proton Pete_0
+      name: Back Icon_0
       rect:
         serializedVersion: 2
-        x: 44
-        y: 3
-        width: 320
-        height: 1058
+        x: 2
+        y: 1
+        width: 247
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46f8e678eb55e1450800000000000000
-      internalID: 6061376425291583332
+      spriteID: 08b51ca91598b38a0800000000000000
+      internalID: -6324310268130010240
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Proton Pete_0: 6061376425291583332
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
