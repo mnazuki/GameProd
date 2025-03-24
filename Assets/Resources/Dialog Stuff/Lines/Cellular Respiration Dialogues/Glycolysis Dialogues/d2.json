@@ -8,39 +8,39 @@
       },
       {
         "id": 2,
-        "character": "You",
-        "sprite": "Clear",
+        "character": "Melanie",
+        "sprite": "Melanie",
         "text": "Lesgowwww!!!!"
       },
       {
-        "id": 3,
-        "character": "Proton Pete",
-        "sprite": "Proton Pete",
-        "text": "Sheeesh, napakaangas!! Eyyy~"
-      },
-      {
         "id": 4,
-        "character": "Amphibolisius",
-        "sprite": "Amphibolism",
-        "text": "Weh. Anyways, great job everyone! We can now move on to The Krebs Cycle~!"
+        "character": "Glucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "Great job! We can now move on to The Krebs Cycle~!"
       },
       {
         "id": 5,
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "That we are. Oh! Can I lead the mini pyruvates? They're so cuuuute"
+      },
+      {
+        "id": 6,
         "character": "Glucose Glorie",
         "sprite": "Glucose Glorie",
-        "text": "That we are! Mini pyruvates, to me!"
+        "text": "Of course. Mini pyruvates, to us!"
       },
       {
         "id": 7,
-        "character": "....",
-        "sprite": "Clear",
-        "text": "*footsteps*"
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "Yippee ^W^"
       },
       {
         "id": 8,
-        "character": "Manager Cata",
-        "sprite": "Manager Cata",
-        "text": "Hello guys! Ang daming lamok nmn rito.. kelangan ko ata ng katol..... KATOLad mo ;D HAHAHA guys.... guys? [Cata Test Dialogue]"
+        "character": "....",
+        "sprite": "Clear",
+        "text": "*footsteps*"
       }
     ]
   }
