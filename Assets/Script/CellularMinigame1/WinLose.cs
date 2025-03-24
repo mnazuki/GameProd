@@ -66,7 +66,6 @@ public class WinLose : MonoBehaviour
                 }
                 if(d2 == null){
                     winscreen.win();//Change to WIN
-                    bgmsrc.Stop();
             }}    
 
             // [[LOSE CONDITIONS]] //////////////////////////////////////////

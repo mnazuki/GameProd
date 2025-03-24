@@ -4,31 +4,43 @@
         "id": 1,
         "character": "Proton Pete",
         "sprite": "Proton Pete",
-        "text": "HAAA"
+        "text": "Hey hey hey.. you're a natural at this kid!"
       },
       {
         "id": 2,
         "character": "Melanie",
         "sprite": "Melanie",
-        "text": "I believe this is where the glucose gets processed."
+        "text": "Oh.. thanks! But really, it's nothing much, I just learned from the best ;D"
       },
       {
         "id": 3,
         "character": "Glucose Glorie",
         "sprite": "Glucose Glorie",
-        "text": "Hullo! Why are you talking to yourself? Also yes, this is where pyruvate is made & the start of the process begins."
+        "text": "*smirks & combs her hair*"
       },
       {
         "id": 4,
-        "character": "Melanie",
-        "sprite": "Melanie",
-        "text": "Sweeeet. Can I tag along?"
+        "character": "Proton Pete",
+        "sprite": "Proton Pete",
+        "text": "And it's also 'best' not to stroke her ego that much."
       },
       {
         "id": 5,
-        "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
-        "text": "Make yourself at home~"
+        "character": "Proton Pete",
+        "sprite": "Proton Pete",
+        "text": "Anyways, I oughta hire you kid! If ever you decide to stay here and are looking for some work, you know where to find me."
+      },
+      {
+        "id": 6,
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "I'll keep that in mind. But I think I first wanna focus on graduating first TwT. Thanks for the offer though!"
+      },
+      {
+        "id": 7,
+        "character": "Proton Pete",
+        "sprite": "Proton Pete",
+        "text": "That you do kid. Goodluck to you on your studies, and to me cuz I gotta get back to work now. Do enjoy the rest of your stay~ <3"
       }
     ]
   }

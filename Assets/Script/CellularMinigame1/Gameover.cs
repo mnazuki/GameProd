@@ -10,6 +10,14 @@ public class Gameover : MonoBehaviour
     }
 
     public void Restart(){
-        SceneManager.LoadScene("CellularMinigame1");
+        SceneManager.LoadScene("Glycolysis");
+    }
+
+    public void Quit(){
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
