@@ -32,7 +32,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+<<<<<<< HEAD
   - Screen
+=======
+  - Screen 
+>>>>>>> main
   - Water
   - UI
   - Areas
@@ -68,6 +72,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+<<<<<<< HEAD
+=======
+    - name: Screen
+    uniqueID: 2276280449
+    locked: 0
+>>>>>>> main
   - name: Molecule
     uniqueID: 3020574239
     locked: 0
