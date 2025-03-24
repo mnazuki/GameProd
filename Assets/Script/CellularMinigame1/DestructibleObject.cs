@@ -10,7 +10,7 @@ public class DestructibleObject : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioSource src;
-    [SerializeField] private AudioClip molClick;
+    [SerializeField] private AudioClip molClick, hurt;
     
 
 
@@ -26,8 +26,10 @@ public class DestructibleObject : MonoBehaviour
 
         if (CompareTag("Bacteria")) // check if the clicked object is tagged as "Bacteria"
         {
+            src.clip = hurt; src.PlayOneShot(hurt);
             if (healthManager != null)
             {
+                
                 healthManager.DecreaseHealth();
             }
         }
@@ -45,7 +47,7 @@ public class DestructibleObject : MonoBehaviour
         }
 
         // destroy the object (prefabs where this script is added) when clicked         
-            src.clip = molClick; src.Play();
+            src.clip = molClick; src.PlayOneShot(molClick);
             Destroy(gameObject);
     }
 

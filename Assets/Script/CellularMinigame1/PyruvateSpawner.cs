@@ -24,6 +24,11 @@ public class PyruvateSpawner : MonoBehaviour
     public TextMeshProUGUI ATPcounter;
     public TextMeshProUGUI NADHcounter;
 
+    
+    [Header("Audio")]
+    [SerializeField] private AudioSource src;
+    [SerializeField] private AudioClip sfxOxidize;
+
     private void Awake()
     {
         // ensures that only one instance of PyruvateSpawner exists in the scene, is a must when using singleton (getter, setter)
@@ -109,6 +114,7 @@ public class PyruvateSpawner : MonoBehaviour
 
             //Keeps track of the # of successful cycles. 2 Mini Pyru [MP] = 1 Cycle. Win condition is here too.
             collectedMP++;
+            src.PlayOneShot(sfxOxidize);
         }        
     }
 

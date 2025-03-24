@@ -11,6 +11,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private Sprite emptyHeart; // image sprite for empty heart
     [SerializeField] Animator[] animator; //[NEW] For Heart Animations
 
+
     void Update()
     {
         HealthChange();
@@ -40,10 +41,11 @@ public class HealthManager : MonoBehaviour
     // used in decreasing health when bacteria is clicked, references in DestructibleObject.cs
     public void DecreaseHealth()
     {
+        
         if (health > 0)
         {
-            health--;
-
+            health--;           
+            
             //[NEW] Play "shake" Animation each time heart is damaged
             if (animator[health] != null)
             {

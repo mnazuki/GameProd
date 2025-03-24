@@ -11,6 +11,7 @@ public class WinLose : MonoBehaviour
     [Header("UI")]
     public TextMeshProUGUI cyclesText;
     public TextMeshProUGUI ATPtext;
+    public TextMeshProUGUI gameOverText;
     public WinScreen winscreen;
     public Gameover gameover;
     public PyruvateSpawner pyru;
@@ -25,16 +26,20 @@ public class WinLose : MonoBehaviour
     [Header("DIALOGUE TRIGGERS")]
     public GameObject d2;
     public GameObject d3; 
+    public GameObject d4;
+    public GameObject d5;
 
-    [Header("Minigame BGM")]
-    public AudioSource src;
-    public AudioClip bgm;
-
+    [Header("Minigame BGM & SFX")]
+    public AudioSource bgmsrc;
+    public AudioSource sfx;
+    public AudioClip bgm, rumbling, machinefail;
+    public GameObject sfxTrigger;
 
     void Start()
     {
-     src.clip = bgm;
-     src.Play();   
+     bgmsrc.clip = bgm;
+     bgmsrc.loop = true;
+     bgmsrc.Play();   
     }
 
     void Update()
@@ -61,21 +66,39 @@ public class WinLose : MonoBehaviour
                 }
                 if(d2 == null){
                     winscreen.win();//Change to WIN
-                    src.Stop();
+                    bgmsrc.Stop();
             }}    
 
             // [[LOSE CONDITIONS]] //////////////////////////////////////////
 
             //Lose Condition 1: Out of HP
             if (hp.HealthCheck() == true){
+                if(d4 != null){
+                   d4.SetActive(true);
+                   bgmsrc.Stop();
+                   sfx.clip = rumbling;
+                   sfxTrigger.SetActive(true);
+                }
+                if (d4 == null){
+                gameOverText.text = "The System has been Infected";
                 gameover.gmOver();
-                src.Stop();
+                sfx.Stop();
+                }
             }
 
             //Lose Condition 2: Out of Energy
             if (energyReq.emptyEnergy == true){
+                if(d5 != null){
+                   d5.SetActive(true); 
+                   bgmsrc.Stop();
+                   sfx.clip = machinefail;
+                   sfxTrigger.SetActive(true);
+                }
+                if (d5 == null){
+                gameOverText.text = "Out of Energy";
                 gameover.gmOver();
-                src.Stop();              
+                sfx.Stop();
+                }             
             }
     }
 
