@@ -53,7 +53,6 @@ public class MinigameManager : MonoBehaviour
         winningScreen.SetActive(false);
         minigamePanel.SetActive(false);
         // Update hearts UI initially.
-        UpdateHeartsUI();
         protonCounterText.text = $"Protons: {totalProtonsCollected}/24";
         resetButton.onClick.AddListener(ResetGame);
     }
@@ -310,7 +309,6 @@ public class MinigameManager : MonoBehaviour
         timerText.text = "Time: 0";
 
         playerHP--;
-        UpdateHeartsUI(); // Update hearts when damage is taken.
         if (playerHP <= 0)
             GameOver();
         else
@@ -352,24 +350,6 @@ public class MinigameManager : MonoBehaviour
     }
 
     public int TotalProtonsCollected { get { return totalProtonsCollected; } }
-
-    // Hearts UI
-    void UpdateHeartsUI()
-    {
-        // Assume heartImages.Length is 3 (for 3 hearts)
-        for (int i = 0; i < heartImages.Length; i++)
-        {
-            if (i < playerHP)
-                heartImages[i].sprite = fullHeart;
-            else
-                heartImages[i].sprite = emptyHeart;
-        }
-    }
-
-    [Header("Hearts UI")]
-    public Image[] heartImages;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
 
     public void QuitGame()
     {
