@@ -6,7 +6,7 @@ public class ProtonSpawner : MonoBehaviour
 {
     public GameObject protonPrefab;
     public Transform spawnPoint;
-    public List<Transform> waypoints; // Assign these in Inspector
+    public List<Transform> waypoints; // Set in Inspector
 
     void Start()
     {
@@ -20,12 +20,11 @@ public class ProtonSpawner : MonoBehaviour
 
         if (protonMovement != null)
         {
-            protonMovement.AssignWaypoints(waypoints); // Assign waypoints correctly
+            protonMovement.AssignWaypoints(waypoints);
         }
         else
         {
             Debug.LogError("ProtonMovement component not found on spawned proton!");
         }
     }
-
 }

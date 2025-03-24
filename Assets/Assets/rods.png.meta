@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: af7b67a7c2f70f84880841851939f1df
+guid: b2c19c0841721564c9ed1043f9f879b0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2865944181653326263
-    second: Quit Icon Clicked_0
+      213: 4148569691044832407
+    second: rods_0
+  - first:
+      213: 9006798940035161540
+    second: rods_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,43 +99,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Quit Icon Clicked_0
+      name: rods_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 1
-        width: 247
-        height: 250
+        x: 8
+        y: 7
+        width: 39
+        height: 105
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b94b8d7c01e5c720800000000000000
-      internalID: 2865944181653326263
+      spriteID: 794eda8672ea29930800000000000000
+      internalID: 4148569691044832407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rods_1
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 8
+        width: 39
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd19287ae39efc70800000000000000
+      internalID: 9006798940035161540
       vertices: []
       indices: 
       edges: []
@@ -160,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Quit Icon Clicked_0: 2865944181653326263
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

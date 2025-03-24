@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Pause Icon Clicked_0: 5404545683208316420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
