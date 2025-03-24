@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RetryMinigameButton(Pressed)_0: 2069306815244874411
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

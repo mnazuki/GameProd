@@ -11,7 +11,7 @@ public class WinScreen : MonoBehaviour
 
     //Button for next level
     public void Proceed(){
-        //code here once level switching is possible
+       SceneManager.LoadScene("ElectronTransportChain");
     }
 
     public void Restart(){

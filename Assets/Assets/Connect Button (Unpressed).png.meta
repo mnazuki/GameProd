@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Connect Button (Unpressed)_0: 4192246856981225510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

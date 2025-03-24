@@ -62,8 +62,10 @@ public class ProtonMovement : MonoBehaviour
             {
                 StopAtExit();
                 MinigameManager mgm = Object.FindFirstObjectByType<MinigameManager>();
-                if (mgm != null)
+                if (mgm != null){                    
                     mgm.WinGame();
+                    
+                    }
                 return;
             }
             else

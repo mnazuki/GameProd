@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Fake Proton_0: 3749032215553793975
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.Mathematics;
 
 public enum SpeedLevel { Slow, Normal, Fast }
 
@@ -47,14 +48,44 @@ public class MinigameManager : MonoBehaviour
     [Header("Speed Settings for Booth 3")]
     public SpeedLevel booth3Speed = SpeedLevel.Normal;
 
+    //// [[NEW: DIALOGUE STUFF & AUDIO]]
+    [Header("Dialogue Stuff")]
+    public GameObject d2;
+    public GameObject d3;
+    public bool winTrigger = false;
+
+    [Header("Audio BGM")]
+
+    public AudioSource bgmsrc;
+    public AudioClip bgm;
+    //// [[END]]
+
     void Start()
     {
+        bgmsrc.loop = true; bgmsrc.clip = bgm; bgmsrc.Play();
         gameOverScreen.SetActive(false);
         winningScreen.SetActive(false);
         minigamePanel.SetActive(false);
         // Update hearts UI initially.
         protonCounterText.text = $"Protons: {totalProtonsCollected}/24";
         resetButton.onClick.AddListener(ResetGame);
+    }
+
+    void Update()
+    {
+        // [DIALOGUE TRIGGER] Winscreen is now attached to Update() so it will appear when dialogue is done.
+        if(d3 == null){
+        bgmsrc.Stop();
+        winningScreen.SetActive(true);
+        Debug.Log("Win UI is now active.");
+        }
+
+        // [DIALOGUE TRIGGER] LoseScreen is now attached to Update() so it will spawn when dialogue is over.
+        if(d2 == null){
+        bgmsrc.Stop();
+        gameOverScreen.SetActive(true);
+        Debug.Log("Lose UI is now active.");
+        }
     }
 
     public void StartMinigame(List<ProtonMovement> protons, int boothNumber)
@@ -95,6 +126,8 @@ public class MinigameManager : MonoBehaviour
 
     void StartRound()
     {
+
+
         if (currentRound >= maxRounds)
         {
             EndMinigame();
@@ -157,7 +190,7 @@ public class MinigameManager : MonoBehaviour
                 int attempts = 0;
                 do
                 {
-                    newPosition = new Vector2(Random.Range(-150, 150), Random.Range(-100, 100));
+                    newPosition = new Vector2(UnityEngine.Random.Range(-150, 150), UnityEngine.Random.Range(-100, 100));
                     attempts++;
                 }
                 while (IsOverlapping(newPosition, usedPositions, minDistance) && attempts < maxAttempts);
@@ -180,7 +213,7 @@ public class MinigameManager : MonoBehaviour
                 int attempts = 0;
                 do
                 {
-                    newPosition = new Vector2(Random.Range(-150, 150), Random.Range(-100, 100));
+                    newPosition = new Vector2(UnityEngine.Random.Range(-150, 150), UnityEngine.Random.Range(-100, 100));
                     attempts++;
                 }
                 while (IsOverlapping(newPosition, usedPositions, minDistance) && attempts < maxAttempts);
@@ -255,7 +288,7 @@ public class MinigameManager : MonoBehaviour
                 if (proton == null) continue;
                 RectTransform rect = proton.GetComponent<RectTransform>();
                 if (rect == null) continue;
-                Vector2 newPosition = new Vector2(Random.Range(-150, 150), Random.Range(-100, 100));
+                Vector2 newPosition = new Vector2(UnityEngine.Random.Range(-150, 150), UnityEngine.Random.Range(-100, 100));
                 rect.anchoredPosition = newPosition;
             }
             yield return new WaitForSeconds(moveInterval);
@@ -309,9 +342,9 @@ public class MinigameManager : MonoBehaviour
         timerText.text = "Time: 0";
 
         playerHP--;
-        if (playerHP <= 0)
+        if (playerHP <= 0){     
             GameOver();
-        else
+        }else
         {
             protonsClicked = 0;
             connectButton.interactable = true;
@@ -325,13 +358,15 @@ public class MinigameManager : MonoBehaviour
 
     void GameOver()
     {
-        gameOverScreen.SetActive(true);
+        // [DIALOGUE TRIGGER] LoseScreen is now attached to Update() so it will spawn when dialogue is over.
+        d2.SetActive(true);
     }
 
     public void WinGame()
     {
-        winningScreen.SetActive(true);
-        Debug.Log("Win UI is now active.");
+        // [DIALOGUE TRIGGER] WinScreen is now attached to Update() so it will spawn when dialogue is over.
+        d3.SetActive(true);
+
     }
 
     void ResetGame()

@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ExitMinigameButton(Pressed) 1_0: 5342718959035596712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
