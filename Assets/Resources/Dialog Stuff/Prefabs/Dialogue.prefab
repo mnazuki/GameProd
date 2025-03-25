@@ -54,6 +54,8 @@ MonoBehaviour:
   nextButton: {fileID: 7374126755424787683}
   skipButton: {fileID: 352244341686035205}
   autoButton: {fileID: 8432224855016297005}
+  autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
+  autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
   audioSource: {fileID: 600406867212880232}
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: e6d70e767ff0a9643881b0e2855c0b48, type: 3}

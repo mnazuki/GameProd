@@ -16,6 +16,8 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Button nextButton;
     [SerializeField] private Button skipButton;
     [SerializeField] private Button autoButton;
+    [SerializeField] private Sprite autoOn;
+    [SerializeField] private Sprite autoOff;
 
     [Header("AUDIO & TEXT")]
     [SerializeField] private AudioSource audioSource; // 🎵 Typing sound source
@@ -61,9 +63,9 @@ public class DialogueSystem : MonoBehaviour
 
     void Update()
     {
-        // [PLACEHOLDER VISUAL CUE] In final version this will be likely a sprite change.
-        Color autoColor = isAutoMode ? Color.black : Color.white; 
-        autoButton.GetComponent<Image>().color = autoColor;
+         // Change the sprite based on the isAutoMode flag
+        Sprite autoSprite = isAutoMode ? autoOn : autoOff;
+        autoButton.GetComponent<Image>().sprite = autoSprite;
     }
 
     //////// Loads the entries in the JSON into the list created above
