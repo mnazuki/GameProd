@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: e499b9e08d434964a8c317de62a683ad
+guid: 23a7042939ac73b49b582d249d0826bc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6907916989024781017
-    second: Amphibolism_0
+      213: -5243872623035449780
+    second: EnergyBar_Assets_0
+  - first:
+      213: -8152669052087638662
+    second: EnergyBar_Assets_1
+  - first:
+      213: -6513436821867068051
+    second: EnergyBar_Assets_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Amphibolism_0
+      name: EnergyBar_Assets_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 1
-        width: 447
-        height: 1024
+        x: 18
+        y: 673
+        width: 1036
+        height: 364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d245bcd6e9dddf50800000000000000
-      internalID: 6907916989024781017
+      spriteID: c4e7390f1a50a37b0800000000000000
+      internalID: -5243872623035449780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyBar_Assets_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 536
+        width: 868
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75eefa11b6ebde80800000000000000
+      internalID: -8152669052087638662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnergyBar_Assets_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 345
+        width: 868
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d650aad58bf9b95a0800000000000000
+      internalID: -6513436821867068051
       vertices: []
       indices: 
       edges: []

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e499b9e08d434964a8c317de62a683ad
+guid: 68f0e6f01f9ec5a428d6bb1a05a82ccf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6907916989024781017
-    second: Amphibolism_0
+      213: -8671442518292485267
+    second: Amphibolism NPC_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,10 +100,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Amphibolism_0
+      name: Amphibolism NPC_0
       rect:
         serializedVersion: 2
-        x: 239
+        x: 35
         y: 1
         width: 447
         height: 1024
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d245bcd6e9dddf50800000000000000
-      internalID: 6907916989024781017
+      spriteID: d6b25fe09f8d8a780800000000000000
+      internalID: -8671442518292485267
       vertices: []
       indices: 
       edges: []

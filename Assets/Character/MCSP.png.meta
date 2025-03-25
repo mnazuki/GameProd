@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: e499b9e08d434964a8c317de62a683ad
+guid: eb607283be0e48242b6a8d71de4adea4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6907916989024781017
-    second: Amphibolism_0
+      213: -1227186526048773633
+    second: MCSP_0
+  - first:
+      213: 6670536347911941963
+    second: MCSP_1
+  - first:
+      213: -6755506243219813818
+    second: MCSP_2
+  - first:
+      213: -3623347804644611085
+    second: MCSP_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Amphibolism_0
+      name: MCSP_0
       rect:
         serializedVersion: 2
-        x: 239
-        y: 1
-        width: 447
-        height: 1024
+        x: 50
+        y: 10
+        width: 461
+        height: 971
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9d245bcd6e9dddf50800000000000000
-      internalID: 6907916989024781017
+      spriteID: ff997b14b5828fee0800000000000000
+      internalID: -1227186526048773633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCSP_1
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 6
+        width: 320
+        height: 1003
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f6f966771829c50800000000000000
+      internalID: 6670536347911941963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCSP_2
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 9
+        width: 371
+        height: 961
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a03fe2dde9f32a0800000000000000
+      internalID: -6755506243219813818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCSP_3
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 8
+        width: 320
+        height: 1058
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fb67767e5847bdc0800000000000000
+      internalID: -3623347804644611085
       vertices: []
       indices: 
       edges: []
