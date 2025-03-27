@@ -297,7 +297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6a415bc5f0c8f224d99fb5babe6494b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d41709962affd1a41896d2e665eb73d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1822,13 +1822,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 901733952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e994c8e98d9f14c80d565fdb94fcd0, type: 3}
+  m_Script: {fileID: 11500000, guid: b957b2f1d5c8f764db6328a8a761d3b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initialTarget: {fileID: 971465980}
   Canvas: {fileID: 804951119}
   molecule:
-  - {fileID: 4625407517314778006, guid: b644a4306382ba54a8f6c579f15fa3ed, type: 3}
+  - {fileID: 4625407517314778006, guid: f8f4c7b82d749fc44bce00b4e241aa52, type: 3}
   - {fileID: 4625407517314778006, guid: db42de80bf199e94b883a83439897d56, type: 3}
   - {fileID: 4625407517314778006, guid: f1d1fa97d496e4b4d80d07cc92c46ad3, type: 3}
   bar: {fileID: 8352589177290300395, guid: fe81e2e69f22a3641a176d940b1ef238, type: 3}
@@ -1841,7 +1841,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 901733952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 217857bb9f6eeca4db288571df6aea4f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6aeb9ef837bbd5b449fc6f5b558aa254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initialTarget: {fileID: 971465980}
@@ -1865,7 +1865,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 901733952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85b8487864fc6d4428ec4fc09a6a81c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 605caefb67ab258448e818c2a9511a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTxt: {fileID: 2146209954}
@@ -1874,7 +1874,7 @@ MonoBehaviour:
   winPlane: {fileID: 621755825}
   resetButton: {fileID: 505266310}
   nextSceneButton: {fileID: 2028833093}
-  gameOverRetryButton: {fileID: 194461939}
+  gameOverRetryButton: {fileID: 505266310}
 --- !u!1 &971465979
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,15 +1951,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1105225527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5248f39d32aaf1b4bb39fb7130525ad4, type: 3}
+  m_Script: {fileID: 11500000, guid: a706aa7bcb928d0449b7115b85fe4feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
   numberOfHearts: 3
-  hearts:
-  - {fileID: 1969844271}
-  - {fileID: 868824056}
-  - {fileID: 1802507149}
+  hearts: []
   fullHeart: {fileID: 21300000, guid: a97fd5a3092dc42478d3933dddd6a79f, type: 3}
   emptyHeart: {fileID: 21300000, guid: 4a72b1840b7ee254691c7d35ccf3d3bd, type: 3}
   score: 0
@@ -2633,7 +2630,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1676241930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e68b8408bfa3cd4d8c4bfc8fcf43501, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c6a98a6e96280d4f9a18aaf92c480e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftPosTar: {fileID: 322662125}
@@ -2880,7 +2877,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e367a47795a6268449b972f2df83c82c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 953c7683aa71ef744b12d33eeb7470e2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2955,7 +2952,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 50be3123719d5204a86a58ef5205a975, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cea7b2609d92bd44881100efe2bf8c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3264,7 +3261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 50be3123719d5204a86a58ef5205a975, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1cea7b2609d92bd44881100efe2bf8c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
