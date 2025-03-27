@@ -1956,7 +1956,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   numberOfHearts: 3
-  hearts: []
+  hearts:
+  - {fileID: 1969844271}
+  - {fileID: 868824056}
+  - {fileID: 1802507149}
   fullHeart: {fileID: 21300000, guid: a97fd5a3092dc42478d3933dddd6a79f, type: 3}
   emptyHeart: {fileID: 21300000, guid: 4a72b1840b7ee254691c7d35ccf3d3bd, type: 3}
   score: 0
