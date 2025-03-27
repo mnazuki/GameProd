@@ -1828,7 +1828,7 @@ MonoBehaviour:
   initialTarget: {fileID: 971465980}
   Canvas: {fileID: 804951119}
   molecule:
-  - {fileID: 4625407517314778006, guid: b644a4306382ba54a8f6c579f15fa3ed, type: 3}
+  - {fileID: 4625407517314778006, guid: 98485d8c3f461bf48a6653719bae62aa, type: 3}
   - {fileID: 4625407517314778006, guid: db42de80bf199e94b883a83439897d56, type: 3}
   - {fileID: 4625407517314778006, guid: f1d1fa97d496e4b4d80d07cc92c46ad3, type: 3}
   bar: {fileID: 8352589177290300395, guid: fe81e2e69f22a3641a176d940b1ef238, type: 3}
