@@ -10,6 +10,22 @@ public class ProtonSpawner : MonoBehaviour
 
     void Start()
     {
+        if (spawnPoint == null)
+        {
+            Debug.LogError("SpawnPoint is NOT assigned in ProtonSpawner2!");
+            return;
+        }
+        if (protonPrefab == null)
+        {
+            Debug.LogError("Proton Prefab is NOT assigned in ProtonSpawner2!");
+            return;
+        }
+        if (waypoints == null || waypoints.Count == 0)
+        {
+            Debug.LogError("Waypoints list is empty in ProtonSpawner2!");
+            return;
+        }
+        Debug.Log("ProtonSpawner2 Start() running...");
         SpawnProton();
     }
 

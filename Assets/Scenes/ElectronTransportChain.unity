@@ -277,7 +277,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.68, y: 5.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -559,7 +559,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.96, y: 1.98}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -604,7 +604,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.4}
     oldSize: {x: 1.96, y: 1.98}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 1.96, y: 1.98}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -1323,7 +1323,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.99, y: 0.81}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1412,7 +1412,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.05, y: 1.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb61baf7d4c444044bb51ceb67d8db3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  protonPrefab: {fileID: 4121370622770808357, guid: 643a204545e065242aa6d6b698c8477c, type: 3}
+  protonPrefab: {fileID: 4121370622770808357, guid: 727f3c6bd40c75244a09bfaa428089bf, type: 3}
   spawnPoint: {fileID: 1928110247}
   waypoints:
   - {fileID: 1081804906}
@@ -2678,6 +2678,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2090170885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &732420374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 732420376}
+  - component: {fileID: 732420377}
+  m_Layer: 0
+  m_Name: ProtonSpawner (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &732420376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732420374}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.09, y: -4.06, z: 8.775224}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &732420377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732420374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb61baf7d4c444044bb51ceb67d8db3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  protonPrefab: {fileID: 4121370622770808357, guid: 727f3c6bd40c75244a09bfaa428089bf, type: 3}
+  spawnPoint: {fileID: 313088835}
+  waypoints:
+  - {fileID: 1975790607}
+  - {fileID: 2076821616}
+  - {fileID: 72336789}
+  - {fileID: 1895970030}
+  - {fileID: 321059848}
+  - {fileID: 1297591984}
+  - {fileID: 194720624}
+  - {fileID: 858037195}
 --- !u!1 &762198912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,8 +3460,8 @@ MonoBehaviour:
   - {fileID: 1896723668}
   fullHeart: {fileID: -8117498240958108624, guid: df4f3a09447440241b0233315c5ad553, type: 3}
   emptyHeart: {fileID: 3608612302707522923, guid: 36b01565110a7cf4c9ce92455ae11f8e, type: 3}
-  protonPrefab: {fileID: 6267135722858190424, guid: 8b08f0a605bda8f4d8480bc83ec8fc51, type: 3}
-  fakeProtonPrefab: {fileID: 8006786062937585623, guid: 6d8c985b8014c1741a55d5d534789976, type: 3}
+  protonPrefab: {fileID: 6267135722858190424, guid: 6f3bb5ed51192174ea1ef9e2fbef9d27, type: 3}
+  fakeProtonPrefab: {fileID: 8006786062937585623, guid: 15b87cd895488614bbabc815f3a6c153, type: 3}
   protonContainer: {fileID: 2127678431}
   playerHP: 3
   maxTime: 10
@@ -3764,7 +3819,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.68, y: 5.13}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4037,61 +4092,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2090170885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1778954782
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1778954784}
-  - component: {fileID: 1778954785}
-  m_Layer: 0
-  m_Name: ProtonSpawner 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1778954784
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778954782}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.96, y: -0.77, z: 8.775224}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1778954785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778954782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb61baf7d4c444044bb51ceb67d8db3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  protonPrefab: {fileID: 4121370622770808357, guid: 643a204545e065242aa6d6b698c8477c, type: 3}
-  spawnPoint: {fileID: 313088835}
-  waypoints:
-  - {fileID: 1975790607}
-  - {fileID: 2076821616}
-  - {fileID: 72336789}
-  - {fileID: 1895970030}
-  - {fileID: 321059848}
-  - {fileID: 1297591984}
-  - {fileID: 194720624}
-  - {fileID: 858037195}
 --- !u!114 &1824710542 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1776145531708436637, guid: abda6608ea26ddf4f9216a9743964c84, type: 3}
@@ -4148,11 +4148,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1890655629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddfe6c87558c98b49876bffd1cdd5e09, type: 3}
+  m_Script: {fileID: 11500000, guid: df29e7344e31f52439593bf41555eea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawner1: {fileID: 362693472}
-  spawner2: {fileID: 1778954782}
+  spawner2: {fileID: 362693472}
   d1: {fileID: 1110426157}
 --- !u!1 &1895970029
 GameObject:
@@ -4235,7 +4235,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.96, y: 1.98}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4397,7 +4397,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.94, y: 0.81}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4725,7 +4725,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.05, y: 1.1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5047,7 +5047,7 @@ SceneRoots:
   - {fileID: 195205820}
   - {fileID: 214681631}
   - {fileID: 362693474}
-  - {fileID: 1778954784}
+  - {fileID: 732420376}
   - {fileID: 983970789}
   - {fileID: 2090170885}
   - {fileID: 877807136}
