@@ -1,0 +1,46 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "Yow we have enough ATP!!!!"
+      },
+      {
+        "id": 2,
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "Lesgowwww!!!!"
+      },
+      {
+        "id": 4,
+        "character": "Glucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "Great job! We can now move on to The Krebs Cycle~!"
+      },
+      {
+        "id": 5,
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "That we are. Oh! Can I lead the mini pyruvates? They're so cuuuute"
+      },
+      {
+        "id": 6,
+        "character": "Glucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "Of course. Mini pyruvates, to us!"
+      },
+      {
+        "id": 7,
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "Yippee ^W^"
+      },
+      {
+        "id": 8,
+        "character": "....",
+        "sprite": "Clear",
+        "text": "*footsteps*"
+      }
+    ]
+  }
