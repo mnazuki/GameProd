@@ -24,7 +24,7 @@ public class MoleculeConveyor : MonoBehaviour
 
 
 
-        conveyorSpeed = 3f;
+        conveyorSpeed = 1f;
         isCenter = false;
         toDestroy = false;
 

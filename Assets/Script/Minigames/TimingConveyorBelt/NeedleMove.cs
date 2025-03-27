@@ -18,7 +18,7 @@ public class NeedleMove : MonoBehaviour
         playerHealthSC = FindFirstObjectByType<PlayerHealth>();
         moleculeConveyor = FindFirstObjectByType<MoleculeConveyor>();
 
-        //initialize pin positioning
+        //initialize pin positioning // maybe no need to use tweening para nasa update nalang sya,, aka making it scalable
         leftPosY = leftPosTar.transform.position.y;
         leftPosX = leftPosTar.transform.position.x;
         rightPos = rigthPosTar.transform.position.x;
