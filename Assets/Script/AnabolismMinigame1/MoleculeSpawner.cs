@@ -5,18 +5,16 @@ using UnityEngine.Rendering;
 public class MoleculeSpawner : MonoBehaviour
 {
     public GameObject[] moleculePrefabs;
-    //public float minSpawnRate;
-    //public float maxSpawnRate;
-    //public float spawnRate;   // Time between each spawn
-    //public float difficultyIncreaseRate;
 
-    public float spawnRangeX; // Width of the spawn area
-    public float spawnRangeY; // Height of the spawn area
+    public float spawnRangeX;
+    public float spawnRangeY; 
 
     private TaskManager taskManager;
+    private CollectionScript collectionScript;
     public AnabolismGameManager gameManager;
 
     public bool isGameFinished = false;
+    [SerializeField] private float spawnDelay = 1.5f;
 
     private void Start()
     {
@@ -24,15 +22,34 @@ public class MoleculeSpawner : MonoBehaviour
         StartCoroutine(SpawnMolecules());
     }
 
+    public void UpdateSpawnDelay(int gameRound)
+    {
+        if (gameRound == 0) spawnDelay = 1.5f;
+        else if (gameRound == 1) spawnDelay = 1.0f;
+        else if (gameRound == 2) spawnDelay = 0.75f;
+        Debug.Log("Spawn delay updated: " + spawnDelay);
+    }
+
+    public void RestartSpawning()
+    {
+        StopAllCoroutines();
+        isGameFinished = false; 
+        StartCoroutine(SpawnMolecules());
+    }
+
+
     private void OnDrawGizmos()
     {
         Debug.Log("Drawing Gizmos...");
         Gizmos.color = Color.red;
 
-        Vector3 topLeft = new Vector3(-spawnRangeX, spawnRangeY, 0);
-        Vector3 topRight = new Vector3(spawnRangeX, spawnRangeY, 0);
-        Vector3 bottomLeft = new Vector3(-spawnRangeX, -spawnRangeY, 0);
-        Vector3 bottomRight = new Vector3(spawnRangeX, -spawnRangeY, 0);
+        float minY = -spawnRangeY * 0.5f; // adjusts bottom y limit
+        float maxY = spawnRangeY;
+
+        Vector3 topLeft = new Vector3(-spawnRangeX, maxY, 0);
+        Vector3 topRight = new Vector3(spawnRangeX, maxY, 0);
+        Vector3 bottomLeft = new Vector3(-spawnRangeX, minY, 0);
+        Vector3 bottomRight = new Vector3(spawnRangeX, minY, 0);
 
         Gizmos.DrawLine(topLeft, topRight);
         Gizmos.DrawLine(topRight, bottomRight);
@@ -40,43 +57,27 @@ public class MoleculeSpawner : MonoBehaviour
         Gizmos.DrawLine(bottomLeft, topLeft);
     }
 
-    IEnumerator SpawnMolecules()
+    public IEnumerator SpawnMolecules()
     {
         while (!isGameFinished)
         {
-
-                // Pause spawning if hint screen is open
                 while (gameManager.hintScreenOpen)
                 {
-                    yield return null;  // Wait until hint screen closes
+                    yield return null;
                 }
 
                 GameObject randomMolecule = moleculePrefabs[Random.Range(0, moleculePrefabs.Length)];
+                float minY = -spawnRangeY * 0.5f;
                 float randomX = Random.Range(-spawnRangeX, spawnRangeX);
-                float randomY = Random.Range(-spawnRangeY, spawnRangeY);
+                float randomY = Random.Range(minY, spawnRangeY);
                 Vector3 spawnPosition = new Vector3(randomX, randomY, 0);
 
                 Instantiate(randomMolecule, spawnPosition, Quaternion.identity);
 
-                yield return new WaitForSeconds(1f);
-            //if (taskManager.currentTaskIndex >= taskManager.taskColors.Length)
-            //if 
-            //{
-            //    // All tasks are completed
-            //    taskManager.gameOver();
-            //    isGameFinished = true;
-            //    //spawnRate = minSpawnRate;
-            //    Debug.Log("All tasks completed. Stopping spawner.");
-            //    yield break; // Exit the coroutine
-            //}
+                yield return new WaitForSeconds(spawnDelay);
 
         }
     }
 
-    //public float SpawnOverTime()
-    //{
-    //    spawnRate = Mathf.Lerp(minSpawnRate, maxSpawnRate, Time.time * difficultyIncreaseRate);
-    //    return spawnRate;
-    //}
 }
 

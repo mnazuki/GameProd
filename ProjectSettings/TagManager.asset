@@ -4,32 +4,16 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Pyruvate
-  - Bacteria
-  - Glucose
-  - FunnelCollider
-  - MiniPyruvate
-  - NADH
-  - ATP
-  - HighlightedBar
-  - InitialTarget
-  - MiddleTarget
-  - FinalTarget
-  - Molecule
   - Task
   - Score
   - Activation
   - Combination
-  - Station
-  - Booth
-  - Train
-  - Proton
-  - RealProton
+  - Molecule
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Screen 
+  - Screen
   - Water
   - UI
   - Areas
@@ -62,7 +46,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-    - name: Screen
+  - name: Screen
     uniqueID: 2276280449
     locked: 0
   - name: Molecule
