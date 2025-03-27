@@ -1,0 +1,16 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Melanie",
+        "sprite": "Melanie",
+        "text": "Hm? It's not working."
+      },
+      {
+        "id": 2,
+        "character": "Glucose Glorie",
+        "sprite": "Glucose Glorie",
+        "text": "Ouf, our reserves have dried out. We're gonna have to recuperate.... Sorry, but place is closed for now!"
+      }
+    ]
+  }

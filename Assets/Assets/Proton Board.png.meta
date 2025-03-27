@@ -259,7 +259,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Proton Board_0: 1956356932479520947
+      Proton Board_1: 204684913400433946
+      Proton Board_2: 7971765714848918775
+      Proton Board_3: -3479174955874579598
+      Proton Board_4: 4398287478625969787
+      Proton Board_5: -6762787316577851772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
