@@ -59,6 +59,11 @@ public class MinigameManager : MonoBehaviour
     public AudioSource bgmsrc;
     public AudioClip bgm;
 
+    [Header("Star UI Elements")]
+    public Image[] starImages;           // Assign star image UI elements in inspector
+    public Sprite fullStarSprite;        // Full star sprite
+    public Sprite emptyStarSprite;       // Empty star sprite
+
     void Start()
     {
         // Start background music.
@@ -104,20 +109,13 @@ public class MinigameManager : MonoBehaviour
 
     void Update()
     {
-        // [Dialogue Trigger] When d3 is null, show win panel.
-        if (d3 == null)
-        {
-            bgmsrc.Stop();
-            winningScreen.SetActive(true);
-            Debug.Log("Win UI is now active.");
-        }
-        // [Dialogue Trigger] When d2 is null, show lose panel.
-        if (d2 == null)
-        {
-            bgmsrc.Stop();
-            gameOverScreen.SetActive(true);
-            Debug.Log("Lose UI is now active.");
-        }
+        // Remove or comment out this block to prevent immediate win UI activation.
+        // if (d3 == null)
+        // {
+        //     bgmsrc.Stop();
+        //     winningScreen.SetActive(true);
+        //     Debug.Log("Win UI is now active.");
+        // }
     }
 
     public void StartMinigame(List<ProtonMovement> protons, int boothNumber)
@@ -377,16 +375,63 @@ public class MinigameManager : MonoBehaviour
 
     void GameOver()
     {
-        d2.SetActive(true);
+        StartCoroutine(WaitForLoseDialogueAndShowGameOverScreen());
+    }
+
+    private IEnumerator WaitForLoseDialogueAndShowGameOverScreen()
+    {
+        // Activate the lose dialogue if it's not active
+        if (d2 != null && !d2.activeSelf)
+        {
+            d2.SetActive(true);
+        }
+
+        // Wait until the lose dialogue (d2) is no longer active (i.e. finished)
+        while (d2 != null && d2.activeSelf)
+        {
+            yield return null;
+        }
+
+        // Optionally wait a short moment after dialogue ends
+        yield return new WaitForSeconds(0.5f);
+
+        bgmsrc.Stop();
+        gameOverScreen.SetActive(true);
+        Debug.Log("Lose UI is now active.");
     }
 
     public void WinGame()
     {
         if (GetExitProtonCount() >= 2 && totalProtonsCollected >= 24)
         {
-            d3.SetActive(true);
-            Debug.Log("Win UI is now active.");
+            StartCoroutine(WaitForWinDialogueAndShowWinScreen());
         }
+    }
+
+    private IEnumerator WaitForWinDialogueAndShowWinScreen()
+    {
+        // Activate the win dialogue if it's not already active.
+        if (d3 != null && !d3.activeSelf)
+        {
+            d3.SetActive(true);
+        }
+
+        // Wait until the win dialogue (d3) is no longer active.
+        while (d3 != null && d3.activeSelf)
+        {
+            yield return null;
+        }
+
+        // Optional: wait a moment after dialogue ends.
+        yield return new WaitForSeconds(0.5f);
+
+        // Now stop background music and show the win screen.
+        bgmsrc.Stop();
+        winningScreen.SetActive(true);
+        Debug.Log("Win UI is now active.");
+
+        // Animate the stars.
+        Star();
     }
 
     public void ProtonReachedExit(ProtonMovement proton)
@@ -411,29 +456,41 @@ public class MinigameManager : MonoBehaviour
 
     public void ResetMinigame()
     {
-        // Hide any active lose or win panels (or dialogue triggers)
-        if (gameOverScreen != null)
-            gameOverScreen.SetActive(false);
-        if (winningScreen != null)
-            winningScreen.SetActive(false);
-        if (d2 != null)
-            d2.SetActive(false);
-        if (d3 != null)
-            d3.SetActive(false);
+        // Hide lose and win UI elements
+        if (gameOverScreen != null) gameOverScreen.SetActive(false);
+        if (winningScreen != null) winningScreen.SetActive(false);
+        if (d2 != null) d2.SetActive(false);
+        if (d3 != null) d3.SetActive(false);
 
-        // Stop all coroutines and reset minigame state.
+        // Resume game time
+        Time.timeScale = 1;
+
+        // Restart background music if it isn't playing
+        if (bgmsrc != null && !bgmsrc.isPlaying)
+        {
+            bgmsrc.Play();
+        }
+
+        // Reset player's health to full (assuming full health is 3)
+        playerHP = 3;
+        UpdateHeartsUI();
+
+        // Stop all running coroutines and reset minigame state
         StopAllCoroutines();
         moveProtonsCoroutine = null;
         isTimerRunning = false;
 
-        // Reset timer and update UI.
+        // Reset timer and update timer UI
         timeLeft = maxTime;
         timerText.text = "Time: " + timeLeft;
         protonsClicked = 0;
         connectButton.interactable = true;
 
-        // Re-spawn protons and restart timer and movement coroutines.
+        // Clear previous protons and re-spawn new ones
+        ClearProtons();
         SpawnProtons(currentBoothNumber);
+
+        // Restart countdown timer (and proton movement if needed)
         StartCoroutine(CountdownTimer());
         if (difficultyLevel == 3)
             moveProtonsCoroutine = StartCoroutine(MoveProtonsRandomly());
@@ -472,5 +529,67 @@ public class MinigameManager : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    // Added star function with update to star UI
+    public void Star()
+    {
+        int stars = 0;
+        if (totalProtonsCollected >= 24 && exitProtons.Count >= 2)
+        {
+            stars = 3;
+        }
+        else if (totalProtonsCollected >= 16)
+        {
+            stars = 2;
+        }
+        else if (totalProtonsCollected > 0)
+        {
+            stars = 1;
+        }
+        else
+        {
+            stars = 0;
+        }
+        Debug.Log("Star rating: " + stars);
+        StartCoroutine(AnimateStarUI(stars));
+    }
+    private IEnumerator AnimateStarUI(int stars)
+    {
+        // Loop through each star image.
+        for (int i = 0; i < starImages.Length; i++)
+        {
+            if (i < stars)
+            {
+                starImages[i].sprite = fullStarSprite;
+            }
+            else
+            {
+                starImages[i].sprite = emptyStarSprite;
+            }
+            // Delay before updating the next star.
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
+    // Updates the star UI images based on the star rating.
+    private void UpdateStarUI(int stars)
+    {
+        if (starImages == null || starImages.Length == 0)
+        {
+            Debug.LogWarning("Star UI elements are not assigned.");
+            return;
+        }
+        for (int i = 0; i < starImages.Length; i++)
+        {
+            if (i < stars)
+            {
+                starImages[i].sprite = fullStarSprite;
+            }
+            else
+            {
+                starImages[i].sprite = emptyStarSprite;
+            }
+        }
     }
 }
