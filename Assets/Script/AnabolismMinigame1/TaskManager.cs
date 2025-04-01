@@ -30,7 +30,6 @@ public class TaskManager : MonoBehaviour
         moleculeSpawner.isGameFinished = false;
         moleculeSpawner.RestartSpawning();
 
-        collectionScript.ResetCollection();
     }
 
     public void gameOver()

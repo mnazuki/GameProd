@@ -20,13 +20,14 @@ public class MoleculeSpawner : MonoBehaviour
     {
         taskManager = FindAnyObjectByType<TaskManager>();
         StartCoroutine(SpawnMolecules());
+        Debug.Log("Starting game. Current gameRound: " + collectionScript.gameRound);
+        collectionScript.gameRound = 0;
     }
 
     public void UpdateSpawnDelay(int gameRound)
     {
         if (gameRound == 0) spawnDelay = 1.5f;
-        else if (gameRound == 1) spawnDelay = 1.0f;
-        else if (gameRound == 2) spawnDelay = 0.75f;
+        else if (gameRound == 1) spawnDelay = 1.25f;
         Debug.Log("Spawn delay updated: " + spawnDelay);
     }
 

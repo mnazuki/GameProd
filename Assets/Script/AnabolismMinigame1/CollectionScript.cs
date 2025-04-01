@@ -27,6 +27,15 @@ public class CollectionScript : MonoBehaviour
         }
 
         ResetCollection();
+
+        moleculeSpawner.UpdateSpawnDelay(gameRound);
+
+        gameRound = 0;
+
+        Debug.Log($"Starting game with: Sucrose {sucroseCollected}/{sucroseGoal}, " +
+          $"Lactose {lactoseCollected}/{lactoseGoal}, " +
+          $"Maltose {maltoseCollected}/{maltoseGoal}, " +
+          $"DNA {dnaCollected}/{dnaGoal}");
     }
     private void OnValidate()
     {
@@ -43,6 +52,12 @@ public class CollectionScript : MonoBehaviour
 
     void CheckForRoundCompletion()
     {
+        if (sucroseGoal == 0 || lactoseGoal == 0 || maltoseGoal == 0 || dnaGoal == 0)
+        {
+            Debug.LogWarning("Skipping round completion check due to zero goals.");
+            return;
+        }
+
         Debug.Log($"Checking completion: Sucrose {sucroseCollected}/{sucroseGoal}, " +
                   $"Lactose {lactoseCollected}/{lactoseGoal}, " +
                   $"Maltose {maltoseCollected}/{maltoseGoal}, " +
@@ -67,6 +82,7 @@ public class CollectionScript : MonoBehaviour
 
     public void ResetCollection()
     {
+
         sucroseCollected = 0;
         lactoseCollected = 0;
         maltoseCollected = 0;
