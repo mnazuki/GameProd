@@ -20,6 +20,7 @@ public class Spawn : MonoBehaviour
 
     void Start()
     {
+
         needleMove = FindFirstObjectByType<NeedleMove>();
         moleculeConveyor = FindFirstObjectByType<MoleculeConveyor>();
         randomBarPosX = Random.Range(340f, 1545f);
