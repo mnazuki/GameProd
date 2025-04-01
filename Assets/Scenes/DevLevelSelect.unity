@@ -996,7 +996,7 @@ MonoBehaviour:
   Glycolysis: Glycolysis
   ETC: ElectronTransportChain
   Anabolism: AnabolismMinigame1
-  Catabolism: CatabolismMinigame1
+  Catabolism: GameScene
   Amphibolism: 
 --- !u!1 &1458367422
 GameObject:
