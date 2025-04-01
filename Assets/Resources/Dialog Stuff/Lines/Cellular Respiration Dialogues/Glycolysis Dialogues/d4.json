@@ -3,13 +3,15 @@
       {
         "id": 1,
         "character": "",
-        "sprite": "Clear",
+        "sprite": "MCSP",
+        "sID": "4",
         "text": "*The ground rumbles*"
       },
       {
         "id": 2,
         "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
+        "sprite": "Glorie",
+        "sID": "0",
         "text": "Oh no.... everyone run!!"
       },
       {

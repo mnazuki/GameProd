@@ -3,31 +3,36 @@
       {
         "id": 1,
         "character": "Melanie",
-        "sprite": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
         "text": "Oh my God it's Glycolisis!"
       },
       {
         "id": 2,
         "character": "Melanie",
-        "sprite": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
         "text": "I believe this is where the glucose gets processed."
       },
       {
         "id": 3,
         "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
+        "sprite": "Glorie",
+        "sID": "0",
         "text": "Hullo! Why are you talking to yourself? Also yes, this is where pyruvate is made & the start of the process begins."
       },
       {
         "id": 4,
         "character": "Melanie",
-        "sprite": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
         "text": "Sweeeet. Can I tag along?"
       },
       {
         "id": 5,
         "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
+        "sprite": "Glorie",
+        "sID": "0",
         "text": "Make yourself at home~"
       }
     ]

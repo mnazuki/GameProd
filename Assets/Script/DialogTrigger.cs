@@ -6,6 +6,7 @@ public class DialogueCharacter
 {
     public string name;
     public Sprite icon;
+    public string sID; //Sprite ID
 }
 
 [System.Serializable]

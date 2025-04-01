@@ -3,13 +3,15 @@
       {
         "id": 1,
         "character": "Melanie",
-        "sprite": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
         "text": "Hm? It's not working."
       },
       {
         "id": 2,
         "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
+        "sprite": "Glorie",
+        "sID": "0",
         "text": "Ouf, our reserves have dried out. We're gonna have to recuperate.... Sorry, but place is closed for now!"
       }
     ]

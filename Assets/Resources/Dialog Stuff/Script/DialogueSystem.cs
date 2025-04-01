@@ -78,7 +78,7 @@ public class DialogueSystem : MonoBehaviour
 
             //For each entry in json, load it into their respective spots in each line of the list.
             foreach (var entry in data.dialogues){
-                DialogueCharacter character = new DialogueCharacter { name = entry.character, icon = LoadSprite(entry.sprite)};
+                DialogueCharacter character = new DialogueCharacter { name = entry.character, icon = LoadSprite(entry.sprite, entry.sID)};
                 DialogueLine line = new DialogueLine { character = character, line = entry.text};
                 dialogueLines.Add(line);
             }}
@@ -87,10 +87,13 @@ public class DialogueSystem : MonoBehaviour
 
 
     //////// [Sprite Manager]
-     Sprite LoadSprite(string spriteName)
+     Sprite LoadSprite(string spriteName, string spriteID)
     {
         // Load from Assets/Resources/Dialogue Stuff/Characters/ [Important that the assets are in the main "Resources" folder]
-        Sprite loadedSprite = Resources.Load<Sprite>($"Dialog Stuff/Character/{spriteName}");
+        Sprite[] allSprites = Resources.LoadAll<Sprite>($"Dialog Stuff/Character/{spriteName}");
+        Sprite loadedSprite = Array.Find(allSprites, sprite => sprite.name == $"{spriteName}_{spriteID}");
+
+        Debug.Log($"Sprite: {spriteName + spriteID}"); 
 
         if (loadedSprite == null)
         { Debug.LogError($"Sprite not found: {spriteName}"); }

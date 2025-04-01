@@ -2830,7 +2830,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 1577964702, guid: 14f10d07521aa8c40b18ef51233c7e73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5860,14 +5860,14 @@ RectTransform:
   m_GameObject: {fileID: 1220317507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.1945, y: 1.1945, z: 1.1945}
+  m_LocalScale: {x: 1.1628218, y: 1.1628218, z: 1.1628218}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1717047942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -510, y: -114}
+  m_AnchoredPosition: {x: -510, y: -200}
   m_SizeDelta: {x: 552, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1220317509
@@ -5890,7 +5890,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 61674971776ce4243ad8989a8dac0595, type: 3}
+  m_Sprite: {fileID: -1227186526048773633, guid: 80590d9546bc13d4b9f053abef2977d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

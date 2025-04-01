@@ -3,25 +3,29 @@
       {
         "id": 1,
         "character": "",
-        "sprite": "Clear",
+        "sprite": "MCSP",
+        "sID": "4",
         "text": "*[WARNING: System error]: The chain will shutting down for maintenance in a few minutes.*"
       },
       {
         "id": 2,
         "character": "Proton Pete",
-        "sprite": "Proton Pete",
+        "sprite": "MCSP",
+        "sID": "3",
         "text": "Aw shucks. We got too many of them duds again."
       },
       {
         "id": 3,
         "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
+        "sprite": "Glorie",
+        "sID": "0",
         "text": "Seriously!? Don't these things pass quality control anymore?"
       },
       {
         "id": 4,
         "character": "Proton Pete",
-        "sprite": "Proton Pete",
+        "sprite": "MCSP",
+        "sID": "3",
         "text": "The results speak for themselves. Sorry kid, station's shutting down for the day. Gonna have to learn another day."
       }
     ]

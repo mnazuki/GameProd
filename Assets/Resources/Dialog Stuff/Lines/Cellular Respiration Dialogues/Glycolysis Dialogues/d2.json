@@ -3,43 +3,50 @@
       {
         "id": 1,
         "character": "Melanie",
-        "sprite": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
         "text": "Yow we have enough ATP!!!!"
       },
       {
         "id": 2,
         "character": "Melanie",
-        "sprite": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
         "text": "Lesgowwww!!!!"
       },
       {
         "id": 4,
         "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
+        "sprite": "Glorie",
+        "sID": "0",
         "text": "Great job! We can now move on to The Krebs Cycle~!"
       },
       {
         "id": 5,
         "character": "Melanie",
-        "sprite": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
         "text": "That we are. Oh! Can I lead the mini pyruvates? They're so cuuuute"
       },
       {
         "id": 6,
         "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
+        "sprite": "Glorie",
+        "sID": "0",
         "text": "Of course. Mini pyruvates, to us!"
       },
       {
         "id": 7,
         "character": "Melanie",
-        "sprite": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
         "text": "Yippee ^W^"
       },
       {
         "id": 8,
         "character": "....",
-        "sprite": "Clear",
+        "sprite": "MCSP",
+        "sID": "4",
         "text": "*footsteps*"
       }
     ]
