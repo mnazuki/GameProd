@@ -4,18 +4,23 @@ using UnityEngine.SceneManagement;
 
 public class WinScreen : MonoBehaviour
 {
-     //[NEW] Activates WinScreen Canvas
+     
+    [Header("Scene Settings")]
+    [SerializeField] private string nextLevelScene;
+    [SerializeField] private string restartScene;
+    [SerializeField] private string mainMenu;
+
     public void win(){
         gameObject.SetActive(true);
     }
 
     //Button for next level
     public void Proceed(){
-       SceneManager.LoadScene("ElectronTransportChain");
+       SceneManager.LoadScene(nextLevelScene);
     }
 
     public void Restart(){
-         SceneManager.LoadScene("Glycolysis");
+         SceneManager.LoadScene(restartScene);
     }
 
     public void Quit(){

@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 public class Gameover : MonoBehaviour
 {
     //Activates GameOver Canvas
+
+    [Header("Scene Settings")]
+    [SerializeField] private string restartScene;
+    [SerializeField] private string mainMenu;
     public void gmOver(){
         gameObject.SetActive(true);
     }
 
     public void Restart(){
-        SceneManager.LoadScene("Glycolysis");
+        SceneManager.LoadScene(restartScene);
     }
 
     public void Quit(){
