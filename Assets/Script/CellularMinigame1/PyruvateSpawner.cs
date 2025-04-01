@@ -54,8 +54,8 @@ public class PyruvateSpawner : MonoBehaviour
         //[NEW] If mini pyruvates have spawned, it means the cycle is a success, therefore displaying the Net Yield.
         else{ 
             NADHcounter.fontSize = 18f;
-            ATPcounter.text = "NET YIELD";
-            NADHcounter.text = "2 ATP\n2 NADH\n2 Pyruvate";
+            ATPcounter.text = "";
+            NADHcounter.text = "NET YIELD\n2 ATP\n2 NADH\n2 Pyruvate";
             
         }
 
