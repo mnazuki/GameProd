@@ -46,10 +46,10 @@ public class WinLose : MonoBehaviour
     {
             //// [[WIN CONDITION]] : Player has successfully collected enough Mini Pyru
             cycles = pyru.showCollectedMP() / 2; //2 Pyru = 1 Successful Cycle
-            cyclesText.text = "Glucose Processed: " + cycles + "/" + requiredCycles; //Shows player's progress to Win
+            cyclesText.text = cycles + "/" + requiredCycles; //Shows player's progress to Win
 
             if (cycles > previousCycles){
-                ATPtext.text = "Total ATP: " + pyru.showCollectedMP();
+                ATPtext.text = "" + pyru.showCollectedMP();
                 previousCycles = cycles;
             }
 
