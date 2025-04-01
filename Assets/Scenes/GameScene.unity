@@ -1954,6 +1954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 901733952}
+  needle: {fileID: 1676241930}
   d1: {fileID: 1871552558}
 --- !u!1 &792850478
 GameObject:
@@ -3772,7 +3773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1676241931
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4841,6 +4842,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 311588037410552196, guid: abda6608ea26ddf4f9216a9743964c84, type: 3}
+      propertyPath: json
+      value: 
+      objectReference: {fileID: 4900000, guid: 08e4cc12b5bf56340ad7c41aef895861, type: 3}
     - target: {fileID: 1946047337482422066, guid: abda6608ea26ddf4f9216a9743964c84, type: 3}
       propertyPath: m_IsActive
       value: 0

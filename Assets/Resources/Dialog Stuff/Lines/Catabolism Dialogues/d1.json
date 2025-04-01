@@ -1,0 +1,62 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Manager Cata",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "Welcome to the catabolic lab! whats your assignment you say?"
+      },
+      {
+        "id": 2,
+        "character": "Manager Cata",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "Well you'll be needing to break down these complex molecules for ATP materials! Sounds easy, right? Well... let’s see if your reflexes are up to the challenge."
+      },
+      {
+        "id": 3,
+        "character": "Manager Cata",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "A line will zip back and forth inside it. Hit the perfect moment to break down the molecule! But be careful—with too many misses, mayhem might break loose."
+      },
+      {
+        "id": 4,
+        "character": "Manager Cata",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "Oh, and I hope you like surprises! Some molecules have a few... quirks."
+      },
+      {
+        "id": 5,
+        "character": "Manager Cata",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "Crazy Molecule: The bar AND the line both move. Double the motion, double the madness!"
+      },
+      {
+        "id": 6,
+        "character": "Manager Cata",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "Hyper Molecule: This one’s fast—blink and you might miss it."
+      },
+      {
+        "id": 7,
+        "character": "Manager Cata",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "Mischievous Molecule: The bar moves unpredictably, so stay sharp!"
+      },
+      {
+        "id": 8,
+        "character": "Manager Cata",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "You’ve got limited lives, and each molecule has a time limit. Think fast, react faster, and show me you’ve got what it takes. Ready?"
+      }
+
+      
+    ]
+  }

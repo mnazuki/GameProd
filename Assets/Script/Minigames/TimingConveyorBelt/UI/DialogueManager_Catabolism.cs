@@ -4,7 +4,7 @@ public class DIalogueManagerCatabolism : MonoBehaviour
 {
 
 // DIALOGUE MANAGER for [Electron Transport Chain]. This is not a constant among minigames, each game has different setup.
-    public GameObject  gameManager, d1;
+    public GameObject  gameManager, needle, d1;
 
     
     void Start()
@@ -18,6 +18,7 @@ public class DIalogueManagerCatabolism : MonoBehaviour
     {
        if (d1 == null){
         gameManager.SetActive(true);
+        needle.SetActive(true);
        } 
     }
 }
