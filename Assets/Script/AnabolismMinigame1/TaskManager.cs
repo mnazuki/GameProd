@@ -17,11 +17,20 @@ public class TaskManager : MonoBehaviour
     private void Start()
     {
         moleculeSpawner = FindObjectOfType<MoleculeSpawner>();
+        collectionScript = FindObjectOfType<CollectionScript>();
+        if (collectionScript == null)
+        {
+            Debug.LogError("collectionScript is NULL in TaskManager!");
+            return;
+        }
+
         nextRoundScreen.SetActive(false);
         continueButton.onClick.AddListener(ContinueToNextRound); 
 
         moleculeSpawner.isGameFinished = false;
         moleculeSpawner.RestartSpawning();
+
+        collectionScript.ResetCollection();
     }
 
     public void gameOver()

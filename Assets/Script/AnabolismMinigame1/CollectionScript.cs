@@ -25,6 +25,8 @@ public class CollectionScript : MonoBehaviour
             taskManager = FindObjectOfType<TaskManager>();
             Debug.Log("taskManager was null, assigned via FindObjectOfType.");
         }
+
+        ResetCollection();
     }
     private void OnValidate()
     {
@@ -39,29 +41,29 @@ public class CollectionScript : MonoBehaviour
     }
 
 
-void CheckForRoundCompletion()
-{
-    Debug.Log($"Checking completion: Sucrose {sucroseCollected}/{sucroseGoal}, " +
-              $"Lactose {lactoseCollected}/{lactoseGoal}, " +
-              $"Maltose {maltoseCollected}/{maltoseGoal}, " +
-              $"DNA {dnaCollected}/{dnaGoal}");
-
-    if (!gameEnded &&
-        sucroseCollected >= sucroseGoal &&
-        lactoseCollected >= lactoseGoal &&
-        maltoseCollected >= maltoseGoal &&
-        dnaCollected >= dnaGoal)
+    void CheckForRoundCompletion()
     {
-        gameEnded = true;
-        gameRound++;
-        Debug.Log("Round " + gameRound + " completed!");
+        Debug.Log($"Checking completion: Sucrose {sucroseCollected}/{sucroseGoal}, " +
+                  $"Lactose {lactoseCollected}/{lactoseGoal}, " +
+                  $"Maltose {maltoseCollected}/{maltoseGoal}, " +
+                  $"DNA {dnaCollected}/{dnaGoal}");
 
-        moleculeSpawner.isGameFinished = true;
-        StopCoroutine(moleculeSpawner.SpawnMolecules());
+        if (!gameEnded &&
+            sucroseCollected >= sucroseGoal &&
+            lactoseCollected >= lactoseGoal &&
+            maltoseCollected >= maltoseGoal &&
+            dnaCollected >= dnaGoal)
+        {
+            gameEnded = true;
+            gameRound++;
+            Debug.Log("Round " + gameRound + " completed!");
 
-        taskManager.nextRound();
+            moleculeSpawner.isGameFinished = true;
+            StopCoroutine(moleculeSpawner.SpawnMolecules());
+
+            taskManager.nextRound();
+        }
     }
-}
 
     public void ResetCollection()
     {
@@ -87,6 +89,15 @@ void CheckForRoundCompletion()
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        string moleculeName = collision.gameObject.name;
+
+        if (moleculeName.Contains("Adenine+Thymine") || moleculeName.Contains("Guanine+Cytosine"))
+        {
+            Debug.Log($"Cannot collect: {moleculeName}");
+            Destroy(collision.gameObject);
+            return; // Stop further execution
+        }
+
         if (CombinationScript.moleculeInstances.Contains(collision.gameObject))
         {
             Debug.Log("Collected: " + collision.gameObject.name);
