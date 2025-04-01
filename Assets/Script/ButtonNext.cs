@@ -32,4 +32,8 @@ public class SceneLoader : MonoBehaviour
 
         SceneManager.LoadScene(previousSceneIndex);
     }
+
+    public void LoadDevLevelSelect(){
+        SceneManager.LoadScene("DevLevelSelect");
+    }
 }
