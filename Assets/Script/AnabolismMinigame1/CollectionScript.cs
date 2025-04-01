@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CollectionScript : MonoBehaviour
 {
@@ -13,13 +14,19 @@ public class CollectionScript : MonoBehaviour
 
     public TaskManager taskManager;
     public MoleculeSpawner moleculeSpawner;
+    private PlayerHealth playerHealth;
 
     [SerializeField] private bool gameEnded = false;
     public int gameRound = 0;
+    public GameObject gameOverPanel;
 
 
     private void Start()
     {
+        playerHealth = FindObjectOfType<PlayerHealth>();
+        gameOverPanel.SetActive(false);
+        Time.timeScale = 1f;
+
         if (taskManager == null)
         {
             taskManager = FindObjectOfType<TaskManager>();
@@ -110,6 +117,8 @@ public class CollectionScript : MonoBehaviour
         if (moleculeName.Contains("Adenine+Thymine") || moleculeName.Contains("Guanine+Cytosine"))
         {
             Debug.Log($"Cannot collect: {moleculeName}");
+            playerHealth.health--;
+            playerHealth.UpdateHeartsUI();
             Destroy(collision.gameObject);
             return; // Stop further execution
         }
@@ -138,6 +147,15 @@ public class CollectionScript : MonoBehaviour
         }
         else
         {
+            playerHealth.health--;
+            playerHealth.UpdateHeartsUI();
+
+            if (playerHealth.health == 0)
+            {
+                gameOverPanel.SetActive(true);
+                Time.timeScale = 0f;
+            }
+
             Destroy(collision.gameObject);
             Debug.Log("Not a valid object to collect.");
         }

@@ -7,6 +7,7 @@ public class TaskManager : MonoBehaviour
     public Text taskText;
     public Text scoreText;
     public int playerScore = 0;
+    public GameObject winScreen;
     public GameObject gameOverScreen;
     public GameObject nextRoundScreen;
     public Button continueButton;
@@ -16,6 +17,7 @@ public class TaskManager : MonoBehaviour
 
     private void Start()
     {
+
         moleculeSpawner = FindObjectOfType<MoleculeSpawner>();
         collectionScript = FindObjectOfType<CollectionScript>();
         if (collectionScript == null)
@@ -50,10 +52,20 @@ public class TaskManager : MonoBehaviour
             Debug.LogError("collectionScript is NULL in nextRound!");
         }
 
-        nextRoundScreen.SetActive(true); // Show UI for the next round
-        ResetScore(); // Reset score
-
         int currentRound = collectionScript.gameRound;
+
+        if (currentRound > 1)
+        {
+            Debug.Log("Game Won! Showing Win Screen.");
+            winScreen.SetActive(true); // Show the win screen
+            Time.timeScale = 0f; // Pause the game
+            return; // Stop further execution
+        }
+
+        nextRoundScreen.SetActive(true); // Show UI for the next round
+        Time.timeScale = 0f;
+        ResetScore();
+
         Debug.Log("Next round started: " + currentRound);
 
         moleculeSpawner.UpdateSpawnDelay(currentRound);
@@ -62,6 +74,7 @@ public class TaskManager : MonoBehaviour
 
     private void ContinueToNextRound()
     {
+        Time.timeScale = 1f;
         nextRoundScreen.SetActive(false); // Hide the screen
 
         // Destroy all currently spawned molecules
@@ -86,22 +99,23 @@ public class TaskManager : MonoBehaviour
     public void UpdateTaskText(int sucroseGoal, int lactoseGoal, int maltoseGoal, int dnaGoal,
                            int sucroseCollected, int lactoseCollected, int maltoseCollected, int dnaCollected)
     {
-        taskText.text = $"Collect: Sucrose {sucroseCollected}/{sucroseGoal}, " +
-                        $"Lactose {lactoseCollected}/{lactoseGoal}, " +
-                        $"Maltose {maltoseCollected}/{maltoseGoal}, " +
-                        $"DNA {dnaCollected}/{dnaGoal}";
+        taskText.text = $"Collect:\n" +
+                        $"Sucrose: {sucroseCollected}/{sucroseGoal}\n" +
+                        $"Lactose: {lactoseCollected}/{lactoseGoal}\n" +
+                        $"Maltose: {maltoseCollected}/{maltoseGoal}\n" +
+                        $"DNA: {dnaCollected}/{dnaGoal}";
     }
 
     public void AddScore()
     {
         playerScore++;
-        scoreText.text = playerScore.ToString();
+        scoreText.text = $"Points: {playerScore}";
     }
 
     public void ResetScore()
     {
         playerScore = 0;
-        scoreText.text = playerScore.ToString();
+        scoreText.text = $"Points: {playerScore}";
     }
 
     public void RestartGame()

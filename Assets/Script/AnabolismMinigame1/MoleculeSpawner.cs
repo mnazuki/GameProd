@@ -9,8 +9,8 @@ public class MoleculeSpawner : MonoBehaviour
     public float spawnRangeX;
     public float spawnRangeY; 
 
-    private TaskManager taskManager;
-    private CollectionScript collectionScript;
+    [SerializeField] private TaskManager taskManager;
+    [SerializeField] private CollectionScript collectionScript;
     public AnabolismGameManager gameManager;
 
     public bool isGameFinished = false;
@@ -19,8 +19,8 @@ public class MoleculeSpawner : MonoBehaviour
     private void Start()
     {
         taskManager = FindAnyObjectByType<TaskManager>();
+        collectionScript = FindAnyObjectByType<CollectionScript>();
         StartCoroutine(SpawnMolecules());
-        Debug.Log("Starting game. Current gameRound: " + collectionScript.gameRound);
         collectionScript.gameRound = 0;
     }
 
