@@ -69,7 +69,7 @@ public class MinigameManager : MonoBehaviour
         gameOverScreen.SetActive(false);
         winningScreen.SetActive(false);
         minigamePanel.SetActive(false);
-        protonCounterText.text = $"Protons: {totalProtonsCollected}/24";
+        protonCounterText.text = $"{totalProtonsCollected}/24";
         resetButton.onClick.AddListener(ResetGame);
         UpdateHeartsUI();
 
@@ -327,7 +327,7 @@ public class MinigameManager : MonoBehaviour
         {
             Debug.Log("Connect button clicked. Protons clicked: " + protonsClicked);
             totalProtonsCollected += 4;
-            protonCounterText.text = $"Protons: {totalProtonsCollected}/24";
+            protonCounterText.text = $"{totalProtonsCollected}/24";
             if (currentRound < maxRounds)
                 StartRound();
             else
@@ -404,9 +404,41 @@ public class MinigameManager : MonoBehaviour
         return exitProtons.Count;
     }
 
-    void ResetGame()
+    public void ResetGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ResetMinigame()
+    {
+        // Hide any active lose or win panels (or dialogue triggers)
+        if (gameOverScreen != null)
+            gameOverScreen.SetActive(false);
+        if (winningScreen != null)
+            winningScreen.SetActive(false);
+        if (d2 != null)
+            d2.SetActive(false);
+        if (d3 != null)
+            d3.SetActive(false);
+
+        // Stop all coroutines and reset minigame state.
+        StopAllCoroutines();
+        moveProtonsCoroutine = null;
+        isTimerRunning = false;
+
+        // Reset timer and update UI.
+        timeLeft = maxTime;
+        timerText.text = "Time: " + timeLeft;
+        protonsClicked = 0;
+        connectButton.interactable = true;
+
+        // Re-spawn protons and restart timer and movement coroutines.
+        SpawnProtons(currentBoothNumber);
+        StartCoroutine(CountdownTimer());
+        if (difficultyLevel == 3)
+            moveProtonsCoroutine = StartCoroutine(MoveProtonsRandomly());
+
+        isMinigameActive = true;
     }
 
     bool IsOverlapping(Vector2 newPos, List<Vector2> existingPositions, float minDist)
