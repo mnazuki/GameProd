@@ -18,7 +18,6 @@ public class UIConveyor : MonoBehaviour
         playerHealthSC = FindFirstObjectByType<PlayerHealth>();
         moleculeConveyor = FindFirstObjectByType<MoleculeConveyor>();
 
-
     }
 
     private void Update()

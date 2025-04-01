@@ -11,6 +11,7 @@ public class DIalogueManagerCatabolism : MonoBehaviour
     {
         if (d1.activeInHierarchy == false){
             d1.SetActive(true);
+            Time.timeScale = 1f;
         }   
     }
 
