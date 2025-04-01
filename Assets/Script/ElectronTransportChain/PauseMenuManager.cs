@@ -32,16 +32,16 @@ public class PauseMenuManager : MonoBehaviour
             pauseMenuPanel.SetActive(true);
         }
 
+        // Ensure settings panel is not active when pausing.
         if (settingsPanel != null)
         {
-            settingsPanel.SetActive(true);
+            settingsPanel.SetActive(false);
         }
 
         Time.timeScale = 0f;
         Debug.Log("Game paused, timeScale = " + Time.timeScale);
         isPaused = true;
     }
-
 
     // Call this method to resume the game.
     public void ResumeGame()

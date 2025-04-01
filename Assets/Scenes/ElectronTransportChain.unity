@@ -600,9 +600,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 983970790}
-        m_TargetAssemblyTypeName: MinigameManager, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 195205821}
+        m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
+        m_MethodName: ReturnToMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -923,7 +923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 1244827478}
   settingsPanel: {fileID: 0}
-  mapSceneName: MapScene
+  mapSceneName: DevLevelSelect
 --- !u!1 &206535759
 GameObject:
   m_ObjectHideFlags: 0
