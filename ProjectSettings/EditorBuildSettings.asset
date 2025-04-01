@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 1ece1fb88b8ada54f9a758e02aaee8ab
+  - enabled: 1
     path: Assets/Scenes/Glycolysis.unity
     guid: e1853a1e59d7e0e4fb52b3cd34fc6bfa
+  - enabled: 1
+    path: Assets/Scenes/GameScene.unity
+    guid: 311562b79fe094d4e8ef9922c8c63c16
+  - enabled: 1
+    path: Assets/Scenes/AnabolismMinigame1.unity
+    guid: 36e4e1fa290d6c2498016b95566f4c5d
   - enabled: 1
     path: Assets/Scenes/ElectronTransportChain.unity
     guid: bdbdcac06651ea9408d8625ade12b06d

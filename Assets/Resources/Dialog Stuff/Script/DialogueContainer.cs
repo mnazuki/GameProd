@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Microsoft.Unity.VisualStudio.Editor;
 
 // Used in DialogueSystem.cs. Then it is assigned the "root container" game object in the Dialogue Box group in the hierarchy. 
 // This is used to display the text.
