@@ -17,6 +17,8 @@ public class VolumeSettings : MonoBehaviour
         {
             SetMusicVolume();
             SetSFXVolume();
+            SetElectronMusicVolume();
+            SetSFXElectronVolume();
         }
     }
 
@@ -34,12 +36,30 @@ public class VolumeSettings : MonoBehaviour
         PlayerPrefs.SetFloat("SFX", volume);
     }
 
+    public void SetElectronMusicVolume()
+    {
+        float volume = musicSlider.value;
+        myMixer.SetFloat("ElectronMusic", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("ElectronMusic", volume);
+    }
+
+    public void SetSFXElectronVolume()
+    {
+        float volume = SFXSlider.value;
+        myMixer.SetFloat("SFXElectron", Mathf.Log10(volume) * 20);
+        PlayerPrefs.SetFloat("SFXElectron", volume);
+    }
+
     private void LoadVolume()
     {
         musicSlider.value = PlayerPrefs.GetFloat("MainMusic");
         SFXSlider.value = PlayerPrefs.GetFloat("SFX");
+        musicSlider.value = PlayerPrefs.GetFloat("ElectronMusic");
+        SFXSlider.value = PlayerPrefs.GetFloat("SFXElectron");
 
         SetSFXVolume();
         SetMusicVolume();
+        SetElectronMusicVolume();
+        SetSFXElectronVolume();
     }
 }
