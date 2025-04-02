@@ -4,11 +4,12 @@ using Unity.VisualScripting;
 
 public class NeedleMove : MonoBehaviour
 {
-    [SerializeField] GameObject leftPosTar, rigthPosTar;
-    public float Speed;
+    [SerializeField] Transform leftPosTar, rigthPosTar;
+    public float needleSpeed;
     private float leftPosX, leftPosY, rightPos;
     private bool isInsideBar;
     public bool isScoreOnce, tookDamage, scoredOrMissed;
+
 
     private PlayerHealth playerHealthSC;
     private MoleculeConveyor moleculeConveyor;
@@ -19,20 +20,21 @@ public class NeedleMove : MonoBehaviour
         moleculeConveyor = FindFirstObjectByType<MoleculeConveyor>();
 
         //initialize pin positioning // maybe no need to use tweening para nasa update nalang sya,, aka making it scalable
-        leftPosY = leftPosTar.transform.position.y;
-        leftPosX = leftPosTar.transform.position.x;
-        rightPos = rigthPosTar.transform.position.x;
+        leftPosY = leftPosTar.position.y;
+        leftPosX = leftPosTar.position.x;
+        rightPos = rigthPosTar.position.x;
 
         scoredOrMissed = false;
         isScoreOnce = false;
         tookDamage = false;
 
-        this.transform.position = new Vector2 (leftPosX, leftPosY);
-        this.transform.DOMoveX(rightPos, Speed).SetEase(Ease.Linear).SetLoops(-1, LoopType.Yoyo);
     }
 
     private void Update()
     {
+        float pingPongValue = Mathf.PingPong(Time.time * needleSpeed * 100, rightPos - leftPosX);
+        this.transform.position = new Vector2(leftPosX + pingPongValue, transform.position.y);
+
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             if (isInsideBar && playerHealthSC.health >= 1 && !scoredOrMissed && moleculeConveyor.isCenter)

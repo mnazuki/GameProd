@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     /*[SerializeField] GameObject molecule, bar;//add molecule types depending on hardmode*/
-    [SerializeField] Transform initialTarget;
+    [SerializeField] Transform initialTarget, rightPos, leftPos;
     [SerializeField] Transform Canvas;
     [SerializeField] GameObject[] molecule;
     [SerializeField] GameObject bar;
@@ -14,15 +14,21 @@ public class Spawn : MonoBehaviour
     private NeedleMove needleMove;
 
     private GameObject newMolecule, newBar;
-    private float timerSpawn, randomBarPosX;
+    private float timerSpawn, randomBarPosX, rightPosX, barY, leftPosX;
     private int randomSpawn;
 
 
     void Start()
     {
+        rightPosX = rightPos.position.x;
+        leftPosX = leftPos.position.x;
+        barY = rightPos.position.y;
 
         needleMove = FindFirstObjectByType<NeedleMove>();
         moleculeConveyor = FindFirstObjectByType<MoleculeConveyor>();
+
+
+
         randomBarPosX = Random.Range(340f, 1545f);
         newMolecule = Instantiate(molecule[0], initialTarget);
         newBar = Instantiate(bar, initialTarget);
@@ -44,7 +50,7 @@ public class Spawn : MonoBehaviour
         if (moleculeConveyor.toDestroy && timerSpawn >= 1)
         {
             randomSpawn = Random.Range(0, molecule.Length);
-            randomBarPosX = Random.Range(320f, 1545f);
+            randomBarPosX = Random.Range(leftPosX, rightPosX);
 
             newMolecule = Instantiate(molecule[randomSpawn], initialTarget);
             newBar = Instantiate(bar, initialTarget);
@@ -62,7 +68,8 @@ public class Spawn : MonoBehaviour
     {
         if (randomSpawn == 0 && newBar != null) 
         {
-            newBar.transform.position = new Vector2(randomBarPosX,219f);
+            newBar.transform.position = new Vector2(randomBarPosX,barY);
+            needleMove.needleSpeed = 12f;
         }
     }
 
@@ -70,8 +77,9 @@ public class Spawn : MonoBehaviour
     {
         if (randomSpawn == 1 && newBar != null)
         {
-            newBar.transform.position = new Vector2(randomBarPosX, 219f);
-            newBar.transform.localScale = new Vector2(.9f,1f);
+            newBar.transform.position = new Vector2(randomBarPosX, barY);
+            newBar.transform.localScale = new Vector2(1f,1f);
+            needleMove.needleSpeed = 20f;
         }
     }
 
@@ -79,9 +87,12 @@ public class Spawn : MonoBehaviour
     {
         if (randomSpawn == 2 && newBar != null)
         {
-            newBar.transform.position = new Vector2(randomBarPosX, 219f);
-            newBar.transform.localScale = new Vector2(.7f, 1f);
-            
+            newBar.transform.position = new Vector2(randomBarPosX, barY);
+            newBar.transform.localScale = new Vector2(1f, 1f);
+            needleMove.needleSpeed = 12f;
+
+            float pingPongValue = Mathf.PingPong(Time.time * 10 * 100, rightPosX - leftPosX);
+            newBar.transform.position = new Vector2(rightPosX - pingPongValue, barY);
 
         }
     }
