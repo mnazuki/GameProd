@@ -11,6 +11,7 @@ public class DevLevelSelect : MonoBehaviour
     [SerializeField] private string Anabolism;
     [SerializeField] private string Catabolism;
     [SerializeField] private string Amphibolism;
+    [SerializeField] private string FinalTest;
     
 
     public void win(){
@@ -28,7 +29,10 @@ public class DevLevelSelect : MonoBehaviour
        SceneManager.LoadScene(Catabolism);
     } public void LoadAmphibolism(){
        SceneManager.LoadScene(Amphibolism);
+    } public void LoadFinalTest(){
+       SceneManager.LoadScene(FinalTest);
     }
+    
 
     public void Quit(){
         #if UNITY_EDITOR
