@@ -17,7 +17,9 @@ public class PyruvateSpawner : MonoBehaviour
     private bool hasSpawnedMiniPyruvates = false;
     private int collectedATP = 0;
     private int collectedNADH = 0;
-    private int collectedMP = 0; //[NEW] Keeps track of mini pyruvate 
+    private int collectedMP = 0;
+    private int totalCollectedATP = 0;
+    private int totalCollectedNADH = 0; //[NEW] Keeps track of mini pyruvate 
     private const int requiredCollections = 2; // must collect 2 ATP and 2 NADH
 
     public static PyruvateSpawner Instance { get; private set; } // singleton instance to access the method
@@ -55,7 +57,7 @@ public class PyruvateSpawner : MonoBehaviour
         else{ 
             NADHcounter.fontSize = 18f;
             ATPcounter.text = "";
-            NADHcounter.text = "NET YIELD\n2 ATP\n2 NADH\n2 Pyruvate";
+            NADHcounter.text = $"NET YIELD\n{totalCollectedATP} ATP\n{totalCollectedNADH} NADH\n{collectedMP} Pyruvate";
             
         }
 
@@ -67,11 +69,13 @@ public class PyruvateSpawner : MonoBehaviour
         if (moleculeType == "ATP"){
             // increase the collected ATP count
             collectedATP++;
+            totalCollectedATP++;
            
         } 
         else if (moleculeType == "NADH"){
             // incerease the collected NADH count
             collectedNADH++;
+            totalCollectedNADH++;
         } 
 
         // Debug.Log($"ATP Collected: {collectedATP}/2, NADH Collected: {collectedNADH}/2");
