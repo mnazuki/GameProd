@@ -1,0 +1,39 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Great job, dear! You learn fast!"
+      },
+      {
+        "id": 2,
+        "character": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
+        "text": "Thank you Professor. But really, I wouldn't have done it without your teachings."
+      },
+      {
+        "id": 3,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Oh we aren't done yet dear! There's still one more batch to do before the end of the demo!"
+      },
+      {
+        "id": 4,
+        "character": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
+        "text": "Aw seriously? That was a lot of work already..."
+      },
+      {
+        "id": 5,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Such is the work of Anabolism Melanie dear. These molecules are vital for survival! Better to have too many than too little."
+      }
+    ]
+  }

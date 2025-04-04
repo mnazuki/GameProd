@@ -26,35 +26,14 @@
         "character": "Prof Synthetica",
         "sprite": "MCSP",
         "sID": "2",
-        "text": "That said, I'm gonna need some"
+        "text": "That said, I'm gonna need some time to clean all this up. Demo is dismissed for now! I hope do you come better prepared next time dear. Looks like we're gonna need more lessons."
       },
       {
         "id": 5,
-        "character": "Prof Synthetica",
+        "character": "Melanie",
         "sprite": "MCSP",
-        "sID": "2",
-        "text": "Here’s how it works: You’ll have access to smaller molecules, and your goal is to assemble them correctly using energy."
-      },
-      {
-        "id": 6,
-        "character": "Prof Synthetica",
-        "sprite": "MCSP",
-        "sID": "2",
-        "text": "But be extra careful, molecular synthesis isn’t just about throwing things together. You need to follow the correct sequence!"
-      },
-      {
-        "id": 7,
-        "character": "Prof Synthetica",
-        "sprite": "MCSP",
-        "sID": "2",
-        "text": "Think fast, plan ahead, and let’s get building. The human body depends on you!"
-      },
-      {
-        "id": 8,
-        "character": "Prof Synthetica",
-        "sprite": "MCSP",
-        "sID": "2",
-        "text": "Oh I almost forgot my notes are there to guide you. Goodluck!"
+        "sID": "0",
+        "text": "I promise!"
       }
     ]
   }
