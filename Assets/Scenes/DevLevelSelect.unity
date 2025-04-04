@@ -463,7 +463,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 935342577}
         m_TargetAssemblyTypeName: DevLevelSelect, Assembly-CSharp
-        m_MethodName: LoadGlycolysis
+        m_MethodName: LoadFinalTest
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1116,7 +1116,8 @@ MonoBehaviour:
   ETC: ElectronTransportChain
   Anabolism: AnabolismMinigame1
   Catabolism: CatabolismMinigame1
-  Amphibolism: 
+  Amphibolism: Final Test
+  FinalTest: Final Test
 --- !u!1 &1458367422
 GameObject:
   m_ObjectHideFlags: 0
