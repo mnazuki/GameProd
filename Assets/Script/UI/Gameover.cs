@@ -18,10 +18,11 @@ public class Gameover : MonoBehaviour
     }
 
     public void Quit(){
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        SceneManager.LoadScene(mainMenu);
+//         #if UNITY_EDITOR
+//         UnityEditor.EditorApplication.isPlaying = false;
+// #else
+//         Application.Quit();
+// #endif
     }
 }

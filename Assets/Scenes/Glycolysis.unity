@@ -8909,6 +8909,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1713576326183456602, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
+      propertyPath: mainMenu
+      value: DevLevelSelect
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713576326183456602, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
       propertyPath: restartScene
       value: Glycolysis
       objectReference: {fileID: 0}
@@ -8919,6 +8923,14 @@ PrefabInstance:
     - target: {fileID: 8454458387058083372, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8840455511507154353, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1151315704}
+    - target: {fileID: 8840455511507154353, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
