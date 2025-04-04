@@ -924,7 +924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 1244827478}
   settingsPanel: {fileID: 1743732890}
-  mapSceneName: DevLevelSelect
+  mapSceneName: Loading Scene
 --- !u!1 &206535759
 GameObject:
   m_ObjectHideFlags: 0
