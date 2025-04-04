@@ -17,7 +17,8 @@
       {
         "id": 3,
         "character": "",
-        "sprite": "Clear",
+        "sprite": "MCSP",
+        "sID": "4",
         "text": "*footsteps....* As everyone vacates the venue, white blood cells can be seen rushing in. But it may be too late...."
       }
     ]
