@@ -1,0 +1,60 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Ah, there you are, tired from breaking down molecules for the Cat Lab? Well for your next assignment you will be building some essential molecules!"
+      },
+      {
+        "id": 2,
+        "character": "Melanie",
+        "sprite": "MCSP",
+        "sID": "1",
+        "text": "What!? didn't I just come back from breaking molecules?? now I have to build them back up again?? how does that make any sense??"
+      },
+      {
+        "id": 3,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Well you see the body needs to break down materials in order to have both fuel and materials to repair cells and the body, materials don't just appear out of nowhere you know. "
+      },
+      {
+        "id": 4,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Anyway, Your task is simple... in theory. Follow the molecular recipes, combine the right components, and create the perfect macromolecules. No pressure!"
+      },
+      {
+        "id": 5,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Here’s how it works: You’ll have access to smaller molecules, and your goal is to assemble them correctly using energy."
+      },
+      {
+        "id": 6,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "But be extra careful, molecular synthesis isn’t just about throwing things together. You need to follow the correct sequence!"
+      },
+      {
+        "id": 7,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Think fast, plan ahead, and let’s get building. The human body depends on you!"
+      },
+      {
+        "id": 8,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Oh I almost forgot my notes are there to guide you. Goodluck!"
+      }
+    ]
+  }
