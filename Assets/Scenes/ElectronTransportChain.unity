@@ -727,7 +727,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -1457200382652511572, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1203,6 +1203,10 @@ PrefabInstance:
     - target: {fileID: 1713576326183456602, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
       propertyPath: restartScene
       value: ElectronTransportChain
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075355535464513825, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8454458387058083372, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
       propertyPath: m_Name
@@ -1962,7 +1966,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8679508188929373306, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2064,7 +2068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.218}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 114.215, y: -7.3415956}
+  m_AnchoredPosition: {x: 130, y: -4}
   m_SizeDelta: {x: 89.6677, y: 73.865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374424682
@@ -2139,7 +2143,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.7727, y: -0.6742}
+  m_AnchoredPosition: {x: -75, y: -0.6742}
   m_SizeDelta: {x: 110.2708, y: 87.5576}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &425835317
@@ -2197,7 +2201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &427625913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2213,11 +2217,11 @@ RectTransform:
   - {fileID: 550924669}
   - {fileID: 485744866}
   - {fileID: 122207674}
-  m_Father: {fileID: 983970789}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000019073, y: -4.35}
+  m_AnchoredPosition: {x: 960, y: 535.65}
   m_SizeDelta: {x: 1531.3518, y: 782.3311}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &427625914
@@ -2824,7 +2828,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -4236667289988749387, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3428,7 +3432,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8679508188929373306, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4061,6 +4065,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Audio
       objectReference: {fileID: 0}
+    - target: {fileID: 5333224378067201416, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8465892466849151363, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4506,7 +4514,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8679508188929373306, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4944,7 +4952,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 2455862217968223, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5031,7 +5039,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8679508188929373306, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5289,7 +5297,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -57.73697}
+  m_AnchoredPosition: {x: -13, y: -58}
   m_SizeDelta: {x: 268.7775, y: 54.3408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &972169736
@@ -5312,16 +5320,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time: 0:10'
+  m_text: Time 0:10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 303550ae0e499304b9a0209a2b82ca06, type: 2}
+  m_sharedMaterial: {fileID: 9185740477343146978, guid: 303550ae0e499304b9a0209a2b82ca06, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294962094
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -5346,8 +5354,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -5486,7 +5494,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 427625913}
   - {fileID: 692812986}
   - {fileID: 633310633}
   m_Father: {fileID: 0}
@@ -5614,7 +5621,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -5741534982305195666, guid: 7acaf066371b2034fb2ca4cf4429d91d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5950,7 +5957,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -1567255900369049521, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7557,7 +7564,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8679508188929373306, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7762,7 +7769,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8679508188929373306, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -8261,7 +8268,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -1424811897114581067, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9034,7 +9041,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 8679508188929373306, guid: 8d9d0fa426388824e91a0de4585b3fe9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9080,7 +9087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -9, y: -71.9}
+  m_AnchoredPosition: {x: -39, y: -69}
   m_SizeDelta: {x: 319.6569, y: 64.3617}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2115313478
@@ -9105,15 +9112,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0/24
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f7d44f73a90d8874dbd4aca4b042d733, type: 2}
-  m_sharedMaterial: {fileID: 2868754583743661231, guid: f7d44f73a90d8874dbd4aca4b042d733, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 303550ae0e499304b9a0209a2b82ca06, type: 2}
+  m_sharedMaterial: {fileID: 9185740477343146978, guid: 303550ae0e499304b9a0209a2b82ca06, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4283564164
+  m_fontColor: {r: 0.5176471, g: 0, b: 0.32156864, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9137,8 +9144,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -9823,6 +9830,7 @@ SceneRoots:
   - {fileID: 362693474}
   - {fileID: 732420376}
   - {fileID: 1349866564}
+  - {fileID: 427625913}
   - {fileID: 215236945}
   - {fileID: 983970789}
   - {fileID: 2090170885}
