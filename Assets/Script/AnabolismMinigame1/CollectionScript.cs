@@ -19,6 +19,7 @@ public class CollectionScript : MonoBehaviour
     [SerializeField] private bool gameEnded = false;
     public int gameRound = 0;
     public GameObject gameOverPanel;
+    public AudioSource bgm;
 
 
     private void Start()
@@ -152,6 +153,7 @@ public class CollectionScript : MonoBehaviour
 
             if (playerHealth.health == 0)
             {
+                bgm.Stop();
                 gameOverPanel.SetActive(true);
                 Time.timeScale = 0f;
             }

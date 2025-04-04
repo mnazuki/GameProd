@@ -14,9 +14,14 @@ public class TaskManager : MonoBehaviour
 
     public CollectionScript collectionScript;
     public MoleculeSpawner moleculeSpawner;
+    public AudioSource bgmsrc;
+    public AudioClip bgm;
 
     private void Start()
     {
+        bgmsrc.clip = bgm;
+        bgmsrc.loop = true;
+        bgmsrc.Play();
 
         moleculeSpawner = FindObjectOfType<MoleculeSpawner>();
         collectionScript = FindObjectOfType<CollectionScript>();
@@ -37,6 +42,7 @@ public class TaskManager : MonoBehaviour
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
+        
     }
 
     public void nextRound()
@@ -70,9 +76,10 @@ public class TaskManager : MonoBehaviour
 
         moleculeSpawner.UpdateSpawnDelay(currentRound);
         moleculeSpawner.RestartSpawning();
+        
     }
 
-    private void ContinueToNextRound()
+    public void ContinueToNextRound()
     {
         Time.timeScale = 1f;
         nextRoundScreen.SetActive(false); // Hide the screen

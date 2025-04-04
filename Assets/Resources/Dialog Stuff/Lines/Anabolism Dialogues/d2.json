@@ -5,28 +5,28 @@
         "character": "Prof Synthetica",
         "sprite": "MCSP",
         "sID": "2",
-        "text": "Ah, there you are, tired from breaking down molecules for the Cat Lab? Well for your next assignment you will be building some essential molecules!"
+        "text": "Oh dear. The molecules are all over the floor!"
       },
       {
         "id": 2,
         "character": "Melanie",
         "sprite": "MCSP",
         "sID": "0",
-        "text": "What!? didn't I just come back from breaking molecules?? now I have to build them back up again?? how does that make any sense??"
+        "text": "Oh no! I'm sorry Professor! They slipped out of my hands...."
       },
       {
         "id": 3,
         "character": "Prof Synthetica",
         "sprite": "MCSP",
         "sID": "2",
-        "text": "Well you see the body needs to break down materials in order to have both fuel and materials to repair cells and the body, materials don't just appear out of nowhere you know. "
+        "text": "*sigh* It's fine.. you're just starting dear. We all make mistakes."
       },
       {
         "id": 4,
         "character": "Prof Synthetica",
         "sprite": "MCSP",
         "sID": "2",
-        "text": "Anyway, Your task is simple... in theory. Follow the molecular recipes, combine the right components, and create the perfect macromolecules. No pressure!"
+        "text": "That said, I'm gonna need some"
       },
       {
         "id": 5,
