@@ -8,6 +8,7 @@ public class LoadingScene : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         // Start the coroutine to load the scene after a delay
         StartCoroutine(LoadNextSceneAfterDelay());
     }

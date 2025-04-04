@@ -18,7 +18,7 @@ public class Gameover : MonoBehaviour
     }
 
     public void Quit(){
-        SceneManager.LoadScene(mainMenu);
+        SceneManager.LoadScene(mainMenu);        
 //         #if UNITY_EDITOR
 //         UnityEditor.EditorApplication.isPlaying = false;
 // #else

@@ -39,9 +39,9 @@ public class UIConveyor : MonoBehaviour
             Time.timeScale = 0.01f;
         }
 
-        gameOverRetryButton.onClick.AddListener(ResetButton);
-        resetButton.onClick.AddListener(ResetButton);
-        nextSceneButton.onClick.AddListener(NextMinigameButton);
+//gameOverRetryButton.onClick.AddListener(ResetButton);
+//        resetButton.onClick.AddListener(ResetButton);
+  //      nextSceneButton.onClick.AddListener(NextMinigameButton);
     }
 
     public void ResetButton()
