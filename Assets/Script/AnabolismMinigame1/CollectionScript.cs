@@ -20,6 +20,8 @@ public class CollectionScript : MonoBehaviour
     public int gameRound = 0;
     public GameObject gameOverPanel;
     public AudioSource bgm;
+    [Header("Dialogue")]
+    public GameObject d2;
 
 
     private void Start()
@@ -44,6 +46,14 @@ public class CollectionScript : MonoBehaviour
           $"Lactose {lactoseCollected}/{lactoseGoal}, " +
           $"Maltose {maltoseCollected}/{maltoseGoal}, " +
           $"DNA {dnaCollected}/{dnaGoal}");
+    }
+
+    private void Update(){
+            if (d2 == null){
+                bgm.Stop();
+                gameOverPanel.SetActive(true);
+                Time.timeScale = 0f;
+            }
     }
     private void OnValidate()
     {
@@ -153,9 +163,9 @@ public class CollectionScript : MonoBehaviour
 
             if (playerHealth.health == 0)
             {
-                bgm.Stop();
-                gameOverPanel.SetActive(true);
-                Time.timeScale = 0f;
+                if (!d2.activeInHierarchy){
+                    d2.SetActive(true);
+                }
             }
 
             Destroy(collision.gameObject);

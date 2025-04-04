@@ -6574,7 +6574,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2630499502280507495, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
       propertyPath: mainMenu
-      value: LoadingScene
+      value: Loading Scene
       objectReference: {fileID: 0}
     - target: {fileID: 2630499502280507495, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
       propertyPath: restartScene
@@ -6673,7 +6673,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8903249606190495689, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
