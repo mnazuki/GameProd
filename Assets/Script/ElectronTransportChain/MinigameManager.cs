@@ -57,7 +57,9 @@ public class MinigameManager : MonoBehaviour
     public GameObject d2;   // Lose dialogue trigger (when null, lose UI appears)
     public GameObject d3;   // Win dialogue trigger (when null, win UI appears)
     public AudioSource bgmsrc;
+    public AudioSource src; // For SFX
     public AudioClip bgm;
+    public AudioClip connect_success, connect_fail, proton_click, false_proton_click, mgopen;
 
     [Header("Star UI Elements")]
     public Image[] starImages;           // Assign star image UI elements in inspector
@@ -127,6 +129,7 @@ public class MinigameManager : MonoBehaviour
 
         protonsInBooth = protons;
         minigamePanel.SetActive(true);
+        src.PlayOneShot(mgopen);
         timeLeft = maxTime;
         protonsClicked = 0;
         timerText.text = "Time: " + timeLeft;
@@ -316,6 +319,7 @@ public class MinigameManager : MonoBehaviour
     {
         button.interactable = false;
         proton.GetComponent<Image>().color = Color.green;
+        src.PlayOneShot(proton_click);
         protonsClicked++;
     }
 
@@ -323,6 +327,7 @@ public class MinigameManager : MonoBehaviour
     {
         if (protonsClicked == 4)
         {
+            src.PlayOneShot(connect_success);
             Debug.Log("Connect button clicked. Protons clicked: " + protonsClicked);
             totalProtonsCollected += 4;
             protonCounterText.text = $"{totalProtonsCollected}/24";
@@ -330,6 +335,8 @@ public class MinigameManager : MonoBehaviour
                 StartRound();
             else
                 EndMinigame();
+        }else{
+            src.PlayOneShot(connect_fail);
         }
     }
 
@@ -426,7 +433,6 @@ public class MinigameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // Now stop background music and show the win screen.
-        bgmsrc.Stop();
         winningScreen.SetActive(true);
         Debug.Log("Win UI is now active.");
 

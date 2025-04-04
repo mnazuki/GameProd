@@ -309,6 +309,7 @@ MonoBehaviour:
   protonsOnBoard: []
   src: {fileID: 1176703129}
   horn: {fileID: 8300000, guid: 98ddd0944d7ef9447b885a454411067f, type: 3}
+  steam: {fileID: 8300000, guid: a47264ce7fb87854e864a887b1b81657, type: 3}
 --- !u!70 &72336792
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4060,6 +4061,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+      propertyPath: m_Volume
+      value: 0.583
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 1526275033057396860, guid: fec6b21ca1896454c90beeee112dbd50, type: 2}
@@ -4110,6 +4115,10 @@ PrefabInstance:
     - target: {fileID: 8465892466849151363, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052094462485574333, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+      propertyPath: m_Volume
+      value: 0.307
       objectReference: {fileID: 0}
     - target: {fileID: 9052094462485574333, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -5540,7 +5549,13 @@ MonoBehaviour:
   d2: {fileID: 297204228}
   d3: {fileID: 621745919}
   bgmsrc: {fileID: 483231096}
+  src: {fileID: 1176703129}
   bgm: {fileID: 8300000, guid: d4fc5563aee20a54b9ae1376ea6105e7, type: 3}
+  connect_success: {fileID: 8300000, guid: e8319d69e68cdb34e9dbb030b63a457b, type: 3}
+  connect_fail: {fileID: 8300000, guid: 64ba6d94cafa5274b9813eb093a06608, type: 3}
+  proton_click: {fileID: 8300000, guid: d5e3f095b19df9a4d92d7bd1ce78c716, type: 3}
+  false_proton_click: {fileID: 8300000, guid: 1a27039066d1d0b45827e38f03b788bb, type: 3}
+  mgopen: {fileID: 8300000, guid: fbf9828c09ac6c240ae69e7a47a4ea18, type: 3}
   starImages:
   - {fileID: 1366947482}
   - {fileID: 560903051}
@@ -6699,6 +6714,7 @@ MonoBehaviour:
   protonsOnBoard: []
   src: {fileID: 1176703129}
   horn: {fileID: 8300000, guid: 98ddd0944d7ef9447b885a454411067f, type: 3}
+  steam: {fileID: 8300000, guid: a47264ce7fb87854e864a887b1b81657, type: 3}
 --- !u!70 &1297591987
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

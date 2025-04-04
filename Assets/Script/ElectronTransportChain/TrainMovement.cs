@@ -28,7 +28,7 @@ public class TrainMovement : MonoBehaviour
 
     [Header("Audio")]
     public AudioSource src; 
-    public AudioClip horn;
+    public AudioClip horn, steam;
 
     void Start()
     {
@@ -143,6 +143,7 @@ public class TrainMovement : MonoBehaviour
         trainState = TrainState.Moving;
         Debug.Log($"{gameObject.name} started moving.");
         src.PlayOneShot(horn);
+        src.PlayOneShot(steam);
     }
 
     void ReleaseProtons()
@@ -157,6 +158,7 @@ public class TrainMovement : MonoBehaviour
             }
         }
         protonsOnBoard.Clear();
+         src.PlayOneShot(steam);
     }
 
     void OnTriggerEnter2D(Collider2D other)
