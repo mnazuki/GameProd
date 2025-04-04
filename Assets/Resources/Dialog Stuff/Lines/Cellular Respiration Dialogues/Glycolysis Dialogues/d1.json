@@ -2,38 +2,31 @@
     "dialogues": [
       {
         "id": 1,
-        "character": "Melanie",
-        "sprite": "MCSP",
+        "character": "Glucose Glorie",
+        "sprite": "Glorie",
         "sID": "0",
-        "text": "Oh my God it's Glycolisis!"
+        "text": "Welcome to the Glycolysis Lab! If it isn't the new intern? Come, help me Break down glucose into pyruvate while generating that sweet, sweet ATP. Let’s see if you can keep up."
       },
       {
         "id": 2,
-        "character": "Melanie",
-        "sprite": "MCSP",
+        "character": "Glucose Glorie",
+        "sprite": "Glorie",
         "sID": "0",
-        "text": "I believe this is where the glucose gets processed."
+        "text": "You’ll be operating the Glycolysis Machine, processing glucose step by step. But be warned—you need ATP to power the process, and supplies are limited. Use them wisely!"
       },
       {
         "id": 3,
         "character": "Glucose Glorie",
         "sprite": "Glorie",
         "sID": "0",
-        "text": "Hullo! Why are you talking to yourself? Also yes, this is where pyruvate is made & the start of the process begins."
+        "text": "Follow the correct sequence, balance your energy, and ensure every reaction happens in the right order. Mistakes? Well… let’s just say the cell won’t be too happy."
       },
       {
         "id": 4,
-        "character": "Melanie",
-        "sprite": "MCSP",
-        "sID": "0",
-        "text": "Sweeeet. Can I tag along?"
-      },
-      {
-        "id": 5,
         "character": "Glucose Glorie",
         "sprite": "Glorie",
         "sID": "0",
-        "text": "Make yourself at home~"
+        "text": "Ready to fuel life itself? Then let’s get that glucose flowing!"
       }
     ]
   }
