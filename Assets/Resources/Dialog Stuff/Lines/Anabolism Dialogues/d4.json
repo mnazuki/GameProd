@@ -1,0 +1,39 @@
+{
+    "dialogues": [
+      {
+        "id": 1,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "And.... that's it! Impressive, dear!"
+      },
+      {
+        "id": 2,
+        "character": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
+        "text": "Hoo! My brains beat, so much to keep track off and so many things all at once!"
+      },
+      {
+        "id": 3,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Mhm! And you made it through. Great job! I'm glad to have a tough trainee."
+      },
+      {
+        "id": 4,
+        "character": "Melanie",
+        "sprite": "MCSP",
+        "sID": "0",
+        "text": "Well once again, I couldn’t have done it without your guidance teach. Thanks."
+      },
+      {
+        "id": 5,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "Nonsense! The knowledge was always within you. I merely lit the spark. Now go on—bask in your biochemical brilliance."
+      }
+    ]
+  }

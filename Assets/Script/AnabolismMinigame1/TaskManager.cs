@@ -16,6 +16,8 @@ public class TaskManager : MonoBehaviour
     public MoleculeSpawner moleculeSpawner;
     public AudioSource bgmsrc;
     public AudioClip bgm;
+    public GameObject d3;
+    public GameObject d4;
 
     private void Start()
     {
@@ -37,6 +39,15 @@ public class TaskManager : MonoBehaviour
         moleculeSpawner.isGameFinished = false;
         moleculeSpawner.RestartSpawning();
 
+    }
+
+    void Update()
+    {
+        if (d4 == null){
+        Debug.Log("Game Won! Showing Win Screen.");
+            winScreen.SetActive(true); // Show the win screen
+            Time.timeScale = 0f;
+        }
     }
 
     public void gameOver()
@@ -62,14 +73,18 @@ public class TaskManager : MonoBehaviour
 
         if (currentRound > 1)
         {
-            Debug.Log("Game Won! Showing Win Screen.");
-            winScreen.SetActive(true); // Show the win screen
-            Time.timeScale = 0f; // Pause the game
-            return; // Stop further execution
+            if (!d4.activeInHierarchy)
+            {
+                d4.SetActive(true);
+            // Stop further execution
+            }
         }
 
+        if (!d3.activeInHierarchy){
+            d3.SetActive(true);
+        }
         nextRoundScreen.SetActive(true); // Show UI for the next round
-        Time.timeScale = 0f;
+
         ResetScore();
 
         Debug.Log("Next round started: " + currentRound);

@@ -33,7 +33,14 @@
         "character": "Prof Synthetica",
         "sprite": "MCSP",
         "sID": "2",
-        "text": "Such is the work of Anabolism Melanie dear. These molecules are vital for survival! Better to have too many than too little."
+        "text": "Such is the work of Anabolism, Melanie dear! These molecules are vital for survival! Better to have too many than too little."
+      },
+      {
+        "id": 6,
+        "character": "Prof Synthetica",
+        "sprite": "MCSP",
+        "sID": "2",
+        "text": "And now, show me what you've learned!"
       }
     ]
   }
