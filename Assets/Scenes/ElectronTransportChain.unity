@@ -307,6 +307,8 @@ MonoBehaviour:
   stopDelay: 1
   waypointThreshold: 0.15
   protonsOnBoard: []
+  src: {fileID: 1176703129}
+  horn: {fileID: 8300000, guid: 98ddd0944d7ef9447b885a454411067f, type: 3}
 --- !u!70 &72336792
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2201,7 +2203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &427625913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5969,6 +5971,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1176703129 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+  m_PrefabInstance: {fileID: 781012111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1193308145
 GameObject:
   m_ObjectHideFlags: 0
@@ -6690,6 +6697,8 @@ MonoBehaviour:
   stopDelay: 1
   waypointThreshold: 0.15
   protonsOnBoard: []
+  src: {fileID: 1176703129}
+  horn: {fileID: 8300000, guid: 98ddd0944d7ef9447b885a454411067f, type: 3}
 --- !u!70 &1297591987
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -9829,8 +9838,8 @@ SceneRoots:
   - {fileID: 195205820}
   - {fileID: 362693474}
   - {fileID: 732420376}
-  - {fileID: 1349866564}
   - {fileID: 427625913}
+  - {fileID: 1349866564}
   - {fileID: 215236945}
   - {fileID: 983970789}
   - {fileID: 2090170885}

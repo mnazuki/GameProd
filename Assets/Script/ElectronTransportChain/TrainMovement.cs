@@ -26,6 +26,10 @@ public class TrainMovement : MonoBehaviour
     public bool IsMoving { get { return trainState == TrainState.Moving; } }
     public TrainState CurrentState { get { return trainState; } }
 
+    [Header("Audio")]
+    public AudioSource src; 
+    public AudioClip horn;
+
     void Start()
     {
         if (waitForProtonsBeforeStart)
@@ -37,6 +41,7 @@ public class TrainMovement : MonoBehaviour
         {
             trainState = TrainState.Moving;
             isMoving = true;
+            src.PlayOneShot(horn);
         }
     }
 
@@ -137,6 +142,7 @@ public class TrainMovement : MonoBehaviour
         isMoving = true;
         trainState = TrainState.Moving;
         Debug.Log($"{gameObject.name} started moving.");
+        src.PlayOneShot(horn);
     }
 
     void ReleaseProtons()
