@@ -12,21 +12,21 @@
         "character": "Proton Pete",
         "sprite": "MCSP",
         "sID": "3",
-        "text": "Aw shucks. We got too many of them duds again."
+        "text": "Aw shucks. We ran outta juice."
       },
       {
         "id": 3,
         "character": "Glucose Glorie",
         "sprite": "Glorie",
         "sID": "0",
-        "text": "Seriously!? Don't these things pass quality control anymore?"
+        "text": "Seriously!? We've dried out of ATP already?"
       },
       {
         "id": 4,
         "character": "Proton Pete",
         "sprite": "MCSP",
         "sID": "3",
-        "text": "The results speak for themselves. Sorry kid, station's shutting down for the day. Gonna have to learn another day."
+        "text": "The results speak for themselves. I'm sorry guys, station's shutting down for the day. Gonna have to learn another day."
       }
     ]
   }
