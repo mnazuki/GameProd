@@ -49,7 +49,7 @@ public class WinLose : MonoBehaviour
             cyclesText.text = cycles + "/" + requiredCycles; //Shows player's progress to Win
 
             if (cycles > previousCycles){
-                ATPtext.text = "" + pyru.showCollectedMP();
+                ATPtext.text = "" + pyru.showCollectedMP() + "/" + (requiredCycles * 2);
                 previousCycles = cycles;
             }
 
