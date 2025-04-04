@@ -2032,8 +2032,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'NADH:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -9108266835481307970, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2339,7 +2339,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &563872995
 RectTransform:
@@ -2680,6 +2680,7 @@ MonoBehaviour:
   miniPyruvate2SpawnPoint: {fileID: 71829356}
   ATPcounter: {fileID: 844028425}
   NADHcounter: {fileID: 528967237}
+  forRequiredCycles: {fileID: 823211519}
   src: {fileID: 764237420}
   sfxOxidize: {fileID: 8300000, guid: dda7bde6999cc4f409b84b1adc305f97, type: 3}
 --- !u!1 &711964300
@@ -3241,6 +3242,7 @@ MonoBehaviour:
   hp: {fileID: 1515347850}
   energy: {fileID: 1059872601}
   energyReq: {fileID: 651530923}
+  cycles: 0
   d2: {fileID: 954526313}
   d3: {fileID: 2047970705}
   d4: {fileID: 1363409789}
@@ -3427,8 +3429,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'ATP:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -9108266835481307970, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4046,7 +4048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.522}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -504.4, y: -160}
+  m_AnchoredPosition: {x: -504.4, y: -160.7}
   m_SizeDelta: {x: -113.4252, y: 8.1362}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070402381
@@ -4071,8 +4073,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0/0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -9108266835481307970, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4182,7 +4184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.342, y: 0.022000002}
   m_AnchorMax: {x: 1, y: 0.45600003}
-  m_AnchoredPosition: {x: 79.70005, y: 19.3}
+  m_AnchoredPosition: {x: 79.70005, y: 13.6}
   m_SizeDelta: {x: -27.235275, y: 12.559748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1107035876
@@ -4207,8 +4209,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0/50
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -9108266835481307970, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5336,8 +5338,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Musta Gar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -9108266835481307970, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7390,7 +7392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2088625684
 Transform:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class WinLose : MonoBehaviour
 
      [Header("CONDITIONS")]
     public Spawning energyReq; //Required Energy to Win. Changable in Inspector.
-    private int cycles = 0;
+    public int cycles = 0;
     private int previousCycles;
 
     [Header("DIALOGUE TRIGGERS")]

@@ -1256,8 +1256,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Musta Gar
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 303550ae0e499304b9a0209a2b82ca06, type: 2}
-  m_sharedMaterial: {fileID: 9185740477343146978, guid: 303550ae0e499304b9a0209a2b82ca06, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -9108266835481307970, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

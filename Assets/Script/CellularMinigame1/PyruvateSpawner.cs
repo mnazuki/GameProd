@@ -25,6 +25,7 @@ public class PyruvateSpawner : MonoBehaviour
     public static PyruvateSpawner Instance { get; private set; } // singleton instance to access the method
     public TextMeshProUGUI ATPcounter;
     public TextMeshProUGUI NADHcounter;
+    public WinLose forRequiredCycles;
 
     
     [Header("Audio")]
@@ -57,7 +58,7 @@ public class PyruvateSpawner : MonoBehaviour
         else{ 
             NADHcounter.fontSize = 18f;
             ATPcounter.text = "";
-            NADHcounter.text = $"NET YIELD\n{totalCollectedATP} ATP\n{totalCollectedNADH} NADH\n{collectedMP} Pyruvate";
+            NADHcounter.text = $"NET YIELD\n{forRequiredCycles.cycles * 2} ATP\n{forRequiredCycles.cycles * 2} NADH\n{collectedMP} Pyruvate";
             
         }
 
