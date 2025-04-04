@@ -12,63 +12,35 @@
         "character": "Proton Pete",
         "sprite": "MCSP",
         "sID": "3",
-        "text": "Heyyy Glorie, wassup! Who's you're friend?"
+        "text": "Welcome to the Electron Transport Station! Your job? Guide electrons through the chain, pump protons, and generate ATP—the energy currency of life! No pressure, right?"
       },
       {
         "id": 3,
-        "character": "Melanie",
+        "character": "Proton Pete",
         "sprite": "MCSP",
-        "sID": "0",
-        "text": "Oh me?"
+        "sID": "3",
+        "text": "Here’s how it works: Electrons need to be assigned to the correct stations—Complex I through IV—to keep the transport moving. "
       },
       {
         "id": 4,
-        "character": "Glucose Glorie",
-        "sprite": "Glorie",
-        "sID": "0",
-        "text": "Hellooo! This is Melanie, she came by for a tour & to learn about our systems and quirks."
+        "character": "Proton Pete",
+        "sprite": "MCSP",
+        "sID": "3",
+        "text": "Each station helps pump protons across the membrane, setting the stage for ATP production."
       },
       {
         "id": 5,
         "character": "Proton Pete",
         "sprite": "MCSP",
         "sID": "3",
-        "text": "Ohh...wait is she?"
+        "text": "But be careful! If you mess up the sequence, energy production slows, and we don’t want a power outage in the cell, do we?"
       },
       {
         "id": 6,
-        "character": "Melanie",
-        "sprite": "MCSP",
-        "sID": "0",
-        "text": "Yes! I'm human. Weird I know, but let's not get too shambled on the specifics ^W^"
-      },
-      {
-        "id": 7,
         "character": "Proton Pete",
         "sprite": "MCSP",
         "sID": "3",
-        "text": "Well, now I've seen everything. Anyways, your here to learn right? I could use some extra hands right now, I can already feel my calouses waking."
-      },
-      {
-        "id": 8,
-        "character": "Proton Pete",
-        "sprite": "MCSP",
-        "sID": "3",
-        "text": "As Glorie has probably told you, this is the Electron Transport Chain, the main powerplant of the cell. Here's where we produce most of the ATP."
-      },
-      {
-        "id": 9,
-        "character": "Glucose Glorie",
-        "sprite": "Glorie",
-        "sID": "0",
-        "text": "And the final step of Cellular Respiration!"
-      },
-      {
-        "id": 10,
-        "character": "Proton Pete",
-        "sprite": "MCSP",
-        "sID": "3",
-        "text": "Mhm. Anyways kid, why don't you start with that booth right there? Just collect enough the protons from the passengers then let them pass. Simple enough right?"
+        "text": "Keep the electrons flowing, collect enough protons, and let ATP Synthase do its magic. Let’s get this energy factory running at full speed!"
       }
     ]
   }
