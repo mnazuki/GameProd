@@ -86,16 +86,15 @@ public class CollectionScript : MonoBehaviour
             lactoseCollected >= lactoseGoal &&
             maltoseCollected >= maltoseGoal &&
             dnaCollected >= dnaGoal)
-        {
-            gameEnded = true;
-            gameRound++;
-            Debug.Log("Round " + gameRound + " completed!");
+            {
+                gameEnded = true;
+                Debug.Log("Game " + gameRound + " completed!");
 
-            moleculeSpawner.isGameFinished = true;
-            StopCoroutine(moleculeSpawner.SpawnMolecules());
-
-            taskManager.nextRound();
-        }
+                moleculeSpawner.isGameFinished = true;
+                taskManager.winScreen.SetActive(true); // Show the win screen
+                Time.timeScale = 0f;
+                StopCoroutine(moleculeSpawner.SpawnMolecules());
+            }
     }
 
     public void ResetCollection()

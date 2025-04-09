@@ -34,10 +34,7 @@ public class TaskManager : MonoBehaviour
         }
 
         nextRoundScreen.SetActive(false);
-        continueButton.onClick.AddListener(ContinueToNextRound); 
-
-        moleculeSpawner.isGameFinished = false;
-        moleculeSpawner.RestartSpawning();
+        //continueButton.onClick.AddListener(ContinueToNextRound); 
 
     }
 
@@ -56,58 +53,58 @@ public class TaskManager : MonoBehaviour
         
     }
 
-    public void nextRound()
-    {
-        Debug.Log("nextRound() called!");
+    //public void nextRound()
+    //{
+    //    Debug.Log("nextRound() called!");
 
-        if (collectionScript != null)
-        {
-            collectionScript.ResetCollection(); // Reset molecule collection
-        }
-        else
-        {
-            Debug.LogError("collectionScript is NULL in nextRound!");
-        }
+    //    if (collectionScript != null)
+    //    {
+    //        collectionScript.ResetCollection(); // Reset molecule collection
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("collectionScript is NULL in nextRound!");
+    //    }
 
-        int currentRound = collectionScript.gameRound;
+    //    int currentRound = collectionScript.gameRound;
 
-        if (currentRound > 1)
-        {
-            if (!d4.activeInHierarchy)
-            {
-                d4.SetActive(true);
-            // Stop further execution
-            }
-        }
+    //    if (currentRound > 1)
+    //    {
+    //        if (!d4.activeInHierarchy)
+    //        {
+    //            d4.SetActive(true);
+    //        // Stop further execution
+    //        }
+    //    }
 
-        if (!d3.activeInHierarchy){
-            d3.SetActive(true);
-        }
-        nextRoundScreen.SetActive(true); // Show UI for the next round
+    //    if (!d3.activeInHierarchy){
+    //        d3.SetActive(true);
+    //    }
+    //    nextRoundScreen.SetActive(true); // Show UI for the next round
 
-        ResetScore();
+    //    ResetScore();
 
-        Debug.Log("Next round started: " + currentRound);
+    //    Debug.Log("Next round started: " + currentRound);
 
-        moleculeSpawner.UpdateSpawnDelay(currentRound);
-        moleculeSpawner.RestartSpawning();
+    //    moleculeSpawner.UpdateSpawnDelay(currentRound);
+    //    moleculeSpawner.RestartSpawning();
         
-    }
+    //}
 
-    public void ContinueToNextRound()
-    {
-        Time.timeScale = 1f;
-        nextRoundScreen.SetActive(false); // Hide the screen
+    //public void ContinueToNextRound()
+    //{
+    //    Time.timeScale = 1f;
+    //    nextRoundScreen.SetActive(false); // Hide the screen
 
-        // Destroy all currently spawned molecules
-        ClearExistingMolecules();
+    //    // Destroy all currently spawned molecules
+    //    ClearExistingMolecules();
 
-        int currentRound = collectionScript.gameRound;
-        Debug.Log("Next round started: " + currentRound);
+    //    int currentRound = collectionScript.gameRound;
+    //    Debug.Log("Next round started: " + currentRound);
 
-        moleculeSpawner.UpdateSpawnDelay(currentRound); // Adjust spawn delay
-        moleculeSpawner.RestartSpawning(); // Resume spawning
-    }
+    //    moleculeSpawner.UpdateSpawnDelay(currentRound); // Adjust spawn delay
+    //    moleculeSpawner.RestartSpawning(); // Resume spawning
+    //}
 
     public void ClearExistingMolecules()
     {
