@@ -832,6 +832,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210193352}
   m_CullTransparentMesh: 1
+--- !u!114 &222325008 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8567556805865242372, guid: e510d27bd024d4943970442b642cf548, type: 3}
+  m_PrefabInstance: {fileID: 2092054537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &229487420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1442,7 @@ GameObject:
   - component: {fileID: 345229811}
   - component: {fileID: 345229810}
   - component: {fileID: 345229814}
+  - component: {fileID: 345229815}
   m_Layer: 5
   m_Name: Pause Canvas
   m_TagString: Untagged
@@ -1536,6 +1548,22 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 149040204}
   settingsPanel: {fileID: 1336655207}
   mapSceneName: Map
+--- !u!114 &345229815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345229809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7628051726149ed4dbf5fbbfe576a0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myMixer: {fileID: 24100000, guid: 35e5d0c9cba12f543b56903cf45956e9, type: 2}
+  musicSlider: {fileID: 222325008}
+  SFXSlider: {fileID: 1143071014}
+  mixerIdentifier: Anabolism
 --- !u!1 &365047334
 GameObject:
   m_ObjectHideFlags: 0
@@ -3526,6 +3554,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1137163855}
   m_CullTransparentMesh: 1
+--- !u!114 &1143071014 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2538238325492296522, guid: e510d27bd024d4943970442b642cf548, type: 3}
+  m_PrefabInstance: {fileID: 2092054537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1160120273
 GameObject:
   m_ObjectHideFlags: 0
@@ -6867,6 +6906,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9226ca5da1f19f3409c350cfaf566515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glucosePrefab: {fileID: 0}
+  glucose6PhosphatePrefab: {fileID: 0}
+  atpPrefab: {fileID: 0}
+  isGlucoseIn: 0
+  isATPIn: 0
+  glucose6Made: 0
 --- !u!1001 &1813933900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7977,6 +8022,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -4132182667742451195, guid: 35e5d0c9cba12f543b56903cf45956e9, type: 2}
     - target: {fileID: 5333224378067201416, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_Name
       value: Audio
@@ -8037,6 +8086,10 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9052094462485574333, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4801685246897087157, guid: 35e5d0c9cba12f543b56903cf45956e9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8416,13 +8469,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1714056392}
     m_Modifications:
+    - target: {fileID: 2538238325492296522, guid: e510d27bd024d4943970442b642cf548, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 345229815}
+    - target: {fileID: 2538238325492296522, guid: e510d27bd024d4943970442b642cf548, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 5552476283336815957, guid: e510d27bd024d4943970442b642cf548, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 345229814}
-    - target: {fileID: 5552476283336815957, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseSettings
+    - target: {fileID: 8567556805865242372, guid: e510d27bd024d4943970442b642cf548, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 345229815}
+    - target: {fileID: 8567556805865242372, guid: e510d27bd024d4943970442b642cf548, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
       objectReference: {fileID: 0}
     - target: {fileID: 8753101207442065180, guid: e510d27bd024d4943970442b642cf548, type: 3}
       propertyPath: m_Pivot.x

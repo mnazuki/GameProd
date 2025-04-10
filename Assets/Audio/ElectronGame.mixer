@@ -36,9 +36,9 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: a09257046284f3e409d3ae9504298450
-    name: ElectronMusic
+    name: Music
   - guid: d1c2c06eb43b3464cabc3c0b6e00921f
-    name: SFXElectron
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - e7b14809d8e4c9842b7c8ec0a4b4aaf3
