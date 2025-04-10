@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuPanel: {fileID: 149040204}
   settingsPanel: {fileID: 1336655207}
-  mapSceneName: DevLevelSelect
+  mapSceneName: Map
 --- !u!1 &365047334
 GameObject:
   m_ObjectHideFlags: 0
@@ -6867,12 +6867,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9226ca5da1f19f3409c350cfaf566515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glucosePrefab: {fileID: 0}
-  glucose6PhosphatePrefab: {fileID: 0}
-  atpPrefab: {fileID: 0}
-  isGlucoseIn: 0
-  isATPIn: 0
-  glucose6Made: 0
 --- !u!1001 &1813933900
 PrefabInstance:
   m_ObjectHideFlags: 0
