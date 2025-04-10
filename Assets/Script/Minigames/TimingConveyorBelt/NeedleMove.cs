@@ -30,26 +30,31 @@ public class NeedleMove : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float pingPongValue = Mathf.PingPong(Time.time * needleSpeed * 100, rightPos - leftPosX);
         this.transform.position = new Vector2(leftPosX + pingPongValue, transform.position.y);
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
+    private void Update()
+    {
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isInsideBar && playerHealthSC.health >= 1 && !scoredOrMissed && moleculeConveyor.isCenter)
             {
-                    playerHealthSC.score++;
-                    isScoreOnce = true;
+                playerHealthSC.score++;
+                isScoreOnce = true;
                 Debug.Log("Timed");
             }
 
             if (isInsideBar == false && playerHealthSC.health > 0 && !scoredOrMissed && moleculeConveyor.isCenter)
             {
-                    tookDamage = true;
-                    playerHealthSC.health--;
-                    playerHealthSC.UpdateHeartsUI();
-                    Debug.Log("Missed");
+                tookDamage = true;
+                playerHealthSC.health--;
+                playerHealthSC.UpdateHeartsUI();
+                Debug.Log("Missed");
             }
 
             if (isInsideBar == false && playerHealthSC.health == 0)
