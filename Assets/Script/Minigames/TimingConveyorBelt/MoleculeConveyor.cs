@@ -1,15 +1,17 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MoleculeConveyor : MonoBehaviour
 {
     [SerializeField] Transform initialTarget, middleTarget, finalTarget;
-    public float barSpeed/*To be Used*/, maxTimer, conveyorSpeed; //change this depending on difficulty
+    [SerializeField] Slider timerSlider;
+    [SerializeField] GameObject spacebarUI;
+    public float barSpeed/*To be Used*/, maxTimer, conveyorSpeed, timer; //change this depending on difficulty
     public Vector3 middlePos, finalPos;
     public Vector3 initialPos;
     public bool isCenter, toDestroy;
-    public float timer;
     private GameObject moleculeToMove;
 
 
@@ -18,6 +20,7 @@ public class MoleculeConveyor : MonoBehaviour
 
     private void Start()
     {
+        timerSlider.maxValue = maxTimer;
         playerHealthSC = FindFirstObjectByType<PlayerHealth>();
         needleMove = FindFirstObjectByType<NeedleMove>();
 
@@ -39,55 +42,63 @@ public class MoleculeConveyor : MonoBehaviour
 
     private void Update()
     {
+
+        timerSlider.value = maxTimer - timer;
+
         moleculeToMove = GameObject.FindGameObjectWithTag("Molecule");
     }
 
     public void MoleculeMove()
     {
 
- 
-        if (!isCenter && !needleMove.scoredOrMissed)
+        if (moleculeToMove != null)
         {
-            MoveToCenter();
+            if (!isCenter && !needleMove.scoredOrMissed)
+            {
+                MoveToCenter();
+            }
+
+            if (moleculeToMove.transform.position == middlePos)
+            {
+                isCenter = true;
+            }
+
+            if (isCenter)
+            {
+                spacebarUI.SetActive(true);
+                timer += Time.deltaTime;
+                timer = Mathf.Clamp(timer, 0, maxTimer);
+            }
+
+            if (needleMove.scoredOrMissed && timer < maxTimer)
+            {
+                spacebarUI.SetActive(false);
+                Debug.Log("Hit or Missed");
+                MoveToFinal();
+                isCenter = false;
+            }
+
+            if (timer >= maxTimer)
+            {
+                Debug.Log("TooSlow");
+                TakeDamageOnce();
+                MoveToFinal();
+                isCenter = false;
+
+            }
+
+            if (!isCenter && moleculeToMove.transform.position == finalPos)
+            {
+                timer = 0;
+                needleMove.tookDamage = false;
+                needleMove.isScoreOnce = false;
+                needleMove.scoredOrMissed = false;
+                toDestroy = true;
+
+                Debug.Log("Final Pos Done, should spawn");
+            }
         }
-
-        if (moleculeToMove.transform.position == middlePos)
-        {
-            isCenter = true;
-        }
-
-        if (isCenter)
-        {
-            timer += Time.deltaTime;
-            timer = Mathf.Clamp(timer, 0, maxTimer);
-        }
-
-        if (needleMove.scoredOrMissed && timer < maxTimer)
-        {
-            Debug.Log("Hit or Missed");
-            MoveToFinal();
-            isCenter = false;
-        }
-
-        if (timer >= 3)
-        {
-            Debug.Log("TooSlow");
-            TakeDamageOnce();
-            MoveToFinal();
-            isCenter = false;
-
-        }
-
-        if (!isCenter && moleculeToMove.transform.position == finalPos)
-        {
-            timer = 0;
-            needleMove.tookDamage = false;
-            needleMove.isScoreOnce = false;
-            needleMove.scoredOrMissed = false;
-            toDestroy = true;
-
-            Debug.Log("Final Pos Done, should spawn");
-        }
+       
     }
 
     public void MoveToCenter()

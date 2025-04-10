@@ -30,10 +30,15 @@ public class NeedleMove : MonoBehaviour
 
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         float pingPongValue = Mathf.PingPong(Time.time * needleSpeed * 100, rightPos - leftPosX);
         this.transform.position = new Vector2(leftPosX + pingPongValue, transform.position.y);
+    }
+
+    private void Update()
+    {
+
 
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
