@@ -9,7 +9,6 @@ public class Spawn : MonoBehaviour
     [SerializeField] Transform Canvas;
     [SerializeField] GameObject[] molecule;
     [SerializeField] GameObject bar;
-    public float NandHSpd, MedSpd, hrdMoleculeSpd;
 
     private MoleculeConveyor moleculeConveyor;
     private NeedleMove needleMove;
@@ -30,9 +29,12 @@ public class Spawn : MonoBehaviour
 
 
 
-        randomBarPosX = Random.Range(leftPosX, rightPosX);
-        newMolecule = Instantiate(molecule[randomSpawn], initialTarget);
+        randomBarPosX = Random.Range(340f, 1545f);
+        newMolecule = Instantiate(molecule[0], initialTarget);
         newBar = Instantiate(bar, initialTarget);
+        NormalMolecule();
+
+
     }
     // Update is called once per frame
     void Update()
@@ -67,7 +69,7 @@ public class Spawn : MonoBehaviour
         if (randomSpawn == 0 && newBar != null) 
         {
             newBar.transform.position = new Vector2(randomBarPosX,barY);
-            needleMove.needleSpeed = NandHSpd;
+            needleMove.needleSpeed = 12f;
         }
     }
 
@@ -77,7 +79,7 @@ public class Spawn : MonoBehaviour
         {
             newBar.transform.position = new Vector2(randomBarPosX, barY);
             newBar.transform.localScale = new Vector2(1f,1f);
-            needleMove.needleSpeed = MedSpd;
+            needleMove.needleSpeed = 20f;
         }
     }
 
@@ -87,9 +89,9 @@ public class Spawn : MonoBehaviour
         {
             newBar.transform.position = new Vector2(randomBarPosX, barY);
             newBar.transform.localScale = new Vector2(1f, 1f);
-            needleMove.needleSpeed = NandHSpd;
+            needleMove.needleSpeed = 12f;
 
-            float pingPongValue = Mathf.PingPong(Time.time * hrdMoleculeSpd * 100, rightPosX - leftPosX);
+            float pingPongValue = Mathf.PingPong(Time.time * 10 * 100, rightPosX - leftPosX);
             newBar.transform.position = new Vector2(rightPosX - pingPongValue, barY);
 
         }

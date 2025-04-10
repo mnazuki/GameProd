@@ -116,6 +116,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce4bfe6b7743454ba1d6ee473a391b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  successMolecule: {fileID: 21300000, guid: 563d001c41461dc438411270b04b7675, type: 3}
-  missedMolecule: {fileID: 21300000, guid: 90377d5e6dff2134e9338765f1cf4d1e, type: 3}
   moleculeObj: {fileID: 4625407517314778006}

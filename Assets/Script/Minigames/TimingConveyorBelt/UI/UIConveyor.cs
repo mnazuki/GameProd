@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIConveyor : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI scoreTxt;
+    [SerializeField] TextMeshProUGUI scoreTxt, TimerTxt;
     [SerializeField] GameObject gameOverPlane, winPlane;
     [SerializeField] Button resetButton, nextSceneButton, gameOverRetryButton;
     private PlayerHealth playerHealthSC;
@@ -23,6 +23,7 @@ public class UIConveyor : MonoBehaviour
     private void Update()
     {
         scoreTxt.text = "Score: " + playerHealthSC.score + "/5";
+        TimerTxt.text = "Timer: " + Mathf.Round(moleculeConveyor.timer) + "/3";
 
         if (playerHealthSC.isGameOver)
         {
