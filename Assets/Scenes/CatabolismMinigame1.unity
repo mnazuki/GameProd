@@ -1475,9 +1475,6 @@ MonoBehaviour:
   - {fileID: 4625407517314778006, guid: db42de80bf199e94b883a83439897d56, type: 3}
   - {fileID: 4625407517314778006, guid: f1d1fa97d496e4b4d80d07cc92c46ad3, type: 3}
   bar: {fileID: 8352589177290300395, guid: fe81e2e69f22a3641a176d940b1ef238, type: 3}
-  NandHSpd: 3
-  MedSpd: 5
-  hrdMoleculeSpd: 3
 --- !u!114 &901733955
 MonoBehaviour:
   m_ObjectHideFlags: 0
