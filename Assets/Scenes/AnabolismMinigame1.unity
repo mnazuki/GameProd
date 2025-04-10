@@ -2374,6 +2374,8 @@ MonoBehaviour:
   gameManager: {fileID: 1214924943}
   isGameFinished: 0
   spawnDelay: 1
+  maxMolecules: 20
+  currentMoleculeCount: 0
 --- !u!4 &625930032
 Transform:
   m_ObjectHideFlags: 0

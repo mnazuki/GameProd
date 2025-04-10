@@ -64,4 +64,12 @@ public class Draggable : MonoBehaviour
         mousePoint.z = mainCamera.WorldToScreenPoint(transform.position).z;
         return mainCamera.ScreenToWorldPoint(mousePoint);
     }
+
+    private void OnDestroy()
+    {
+        if (MoleculeSpawner.Instance != null)
+        {
+            MoleculeSpawner.Instance.DecreaseMoleculeCount();
+        }
+    }
 }
