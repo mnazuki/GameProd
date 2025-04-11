@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,16 +34,16 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -108,12 +108,144 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 881
+        width: 858
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d8c5aea5de421d43b31a1369ea88118
+      internalID: 327015139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 507
+        width: 131
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff97d201c083a6344bbb66a2beeb392d
+      internalID: -325179408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 499
+        width: 132
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1234abc9b26e3934593845641b1464b3
+      internalID: 829419566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 121
+        width: 238
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ad8a6132c6866b4995326a9836cb329
+      internalID: -166368029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 1016
+        y: 125
+        width: 238
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9b03a83062223141bc897e0f6d1eb72
+      internalID: -2142869365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 31
+        width: 331
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ca3a907452b85448724100652e0f75
+      internalID: -1323434717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 27e702ce9ff8515449aa1e421f7293b2
     internalID: 0
     vertices: []
     indices: 
@@ -122,7 +254,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_0: 327015139
+      FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_1: -325179408
+      FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_2: 829419566
+      FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_3: -166368029
+      FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_4: -2142869365
+      FinalExam(BookMark_&_NextButton_&_ButtonFinalExam)_Sprites_5: -1323434717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

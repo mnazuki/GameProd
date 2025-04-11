@@ -1537,6 +1537,8 @@ MonoBehaviour:
   resetButton: {fileID: 0}
   nextSceneButton: {fileID: 0}
   gameOverRetryButton: {fileID: 0}
+  minigameIndex: 2
+  atpReward: 100
 --- !u!1 &908597231
 GameObject:
   m_ObjectHideFlags: 0

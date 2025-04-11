@@ -17,7 +17,7 @@ public class MinigameManager : MonoBehaviour
     public GameObject winningScreen;     // Win panel (e.g. d3)
     public Button connectButton;
     public Button resetButton;
-    public GameObject timesUpText; //When timer reaches 0
+    public GameObject timesUpText; // When timer reaches 0
 
     [Header("Dialogue")]
     public GameObject dialoguePanel;     // The dialogue panel that must finish before the game starts
@@ -66,6 +66,12 @@ public class MinigameManager : MonoBehaviour
     public Image[] starImages;           // Assign star image UI elements in inspector
     public Sprite fullStarSprite;        // Full star sprite
     public Sprite emptyStarSprite;       // Empty star sprite
+
+    [Header("Win Reporting Settings")]
+    [Tooltip("Unique index for this minigame; must be unique across your minigames.")]
+    public int minigameIndex = 1;  // For example: 1, 2, 3, etc.
+    [Tooltip("ATP reward for completing the minigame (e.g., 50).")]
+    public int atpReward = 50;
 
     void Start()
     {
@@ -336,7 +342,9 @@ public class MinigameManager : MonoBehaviour
                 StartRound();
             else
                 EndMinigame();
-        }else{
+        }
+        else
+        {
             src.PlayOneShot(connect_fail);
         }
     }
@@ -375,7 +383,7 @@ public class MinigameManager : MonoBehaviour
             connectButton.interactable = true;
             SpawnProtons(currentBoothNumber);
             timeLeft = maxTime;
-            timesUpText.SetActive(true); //Time Out Text when timer is out
+            timesUpText.SetActive(true); // Time Out Text when timer is out
             StartCoroutine(HideTimeUpTextAfterDelay(2f));
             StartCoroutine(CountdownTimer());
             if (difficultyLevel == 3)
@@ -390,7 +398,7 @@ public class MinigameManager : MonoBehaviour
 
     private IEnumerator WaitForLoseDialogueAndShowGameOverScreen()
     {
-        // Activate the lose dialogue if it's not active
+        // Activate the lose dialogue if it's not active.
         if (d2 != null && !d2.activeSelf)
         {
             d2.SetActive(true);
@@ -435,12 +443,25 @@ public class MinigameManager : MonoBehaviour
         // Optional: wait a moment after dialogue ends.
         yield return new WaitForSeconds(0.5f);
 
+        // ===== WIN REPORTING CODE START =====
+        // Mark the minigame as completed by saving a flag using the unique minigame index.
+        PlayerPrefs.SetInt("MinigameCompleted_" + minigameIndex, 1);
+        // Award ATP points.
+        int currentATP = PlayerPrefs.GetInt("ATP", 0);
+        PlayerPrefs.SetInt("ATP", currentATP + atpReward);
+        // Save changes immediately.
+        PlayerPrefs.Save();
+        // ===== WIN REPORTING CODE END =====
+
         // Now stop background music and show the win screen.
         winningScreen.SetActive(true);
         Debug.Log("Win UI is now active.");
 
         // Animate the stars.
         Star();
+
+        // Optionally, transition back to the map scene after a delay.
+        // SceneManager.LoadScene("MapSceneName"); // Uncomment and replace with your map scene name if needed.
     }
 
     public void ProtonReachedExit(ProtonMovement proton)
@@ -581,11 +602,11 @@ public class MinigameManager : MonoBehaviour
         }
     }
 
-    //Resets TimeUp Text
+    // Resets TimeUp Text
     private IEnumerator HideTimeUpTextAfterDelay(float delay)
     {
-    yield return new WaitForSeconds(delay);
-    timesUpText.SetActive(false);
+        yield return new WaitForSeconds(delay);
+        timesUpText.SetActive(false);
     }
 
     // Updates the star UI images based on the star rating.

@@ -12,12 +12,17 @@ public class UIConveyor : MonoBehaviour
     private PlayerHealth playerHealthSC;
     private MoleculeConveyor moleculeConveyor;
 
+    [Header("Win Reporting Settings")]
+    [Tooltip("Unique index for this minigame (for saving completion state, e.g., 1, 2, etc.)")]
+    public int minigameIndex = 1;
+    [Tooltip("ATP reward for completing the minigame (e.g., 50)")]
+    public int atpReward = 50;
+    private bool winReported = false;
 
     private void Start()
     {
         playerHealthSC = FindFirstObjectByType<PlayerHealth>();
         moleculeConveyor = FindFirstObjectByType<MoleculeConveyor>();
-
     }
 
     private void Update()
@@ -26,29 +31,44 @@ public class UIConveyor : MonoBehaviour
 
         if (playerHealthSC.isGameOver)
         {
-            
-                gameOverPlane.SetActive(true);
-                Time.timeScale = 0.01f;
-
+            gameOverPlane.SetActive(true);
+            Time.timeScale = 0.01f;
         }
 
         if (playerHealthSC.score == playerHealthSC.scoreMax)
         {
+            // Only perform win reporting once.
+            if (!winReported)
+            {
+                // Mark the minigame as completed using a unique key.
+                PlayerPrefs.SetInt("MinigameCompleted_" + minigameIndex, 1);
+
+                // Award ATP points.
+                int currentATP = PlayerPrefs.GetInt("ATP", 0);
+                PlayerPrefs.SetInt("ATP", currentATP + atpReward);
+
+                // Save the changes.
+                PlayerPrefs.Save();
+
+                winReported = true;
+            }
+
             winPlane.SetActive(true);
             Time.timeScale = 0.01f;
         }
 
-//gameOverRetryButton.onClick.AddListener(ResetButton);
-//        resetButton.onClick.AddListener(ResetButton);
-  //      nextSceneButton.onClick.AddListener(NextMinigameButton);
+        // If needed, you can uncomment these to add button listeners.
+        // gameOverRetryButton.onClick.AddListener(ResetButton);
+        // resetButton.onClick.AddListener(ResetButton);
+        // nextSceneButton.onClick.AddListener(NextMinigameButton);
     }
 
     public void ResetButton()
     {
         Debug.Log("is Reset");
 
+        // Reset score and health for a fresh start.
         playerHealthSC.score = 0;
-
         playerHealthSC.health = playerHealthSC.numberOfHearts;
         playerHealthSC.UpdateHeartsUI();
         playerHealthSC.isGameOver = false;
@@ -56,13 +76,16 @@ public class UIConveyor : MonoBehaviour
         gameOverPlane.SetActive(false);
         winPlane.SetActive(false);
 
+        // Restore normal time scale.
         Time.timeScale = 1;
 
+        // Reset win reporting so that if the player plays again, win reporting will happen anew.
+        winReported = false;
     }
-    
+
     public void NextMinigameButton()
     {
-        //SceneManager.LoadScene("Scene Name/Index Num")
-        //Put the next scene here ^^^
+        // Example: load the next scene.
+        // SceneManager.LoadScene("NextMinigameSceneName");
     }
 }
