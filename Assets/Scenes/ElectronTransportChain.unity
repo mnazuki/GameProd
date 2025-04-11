@@ -2219,7 +2219,7 @@ PrefabInstance:
     - target: {fileID: 6943211647208944777, guid: e58eb3c65fe833f46ab930cf61be0237, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 359c5bd93e9a5164b99dd34cc5e92230, type: 3}
+      objectReference: {fileID: 21300000, guid: 543e1b1f9449347419e47a892c196b40, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5540,8 +5540,13 @@ MonoBehaviour:
   - {fileID: 926764631}
   fullStarSprite: {fileID: 1011056242421925816, guid: 38f2220ee1eb8354e85750ec1dc88d00, type: 3}
   emptyStarSprite: {fileID: 1578940426574507809, guid: 29913734220c4a543ac97da856530b4e, type: 3}
+<<<<<<< Updated upstream
   minigameIndex: 2
   atpReward: 200
+=======
+  minigameIndex: 1
+  atpReward: 50
+>>>>>>> Stashed changes
 --- !u!1 &1081804905
 GameObject:
   m_ObjectHideFlags: 0
