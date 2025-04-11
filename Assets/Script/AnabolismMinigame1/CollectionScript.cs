@@ -23,6 +23,12 @@ public class CollectionScript : MonoBehaviour
     [Header("Dialogue")]
     public GameObject d2;
 
+    [Header("Win Reporting Settings")]
+    [Tooltip("Unique index for this minigame (for saving completion state, e.g., 1, 2, etc.)")]
+    public int minigameIndex = 1;
+    [Tooltip("ATP reward for completing the minigame (e.g., 50)")]
+    public int atpReward = 50;
+    private bool winReported = false;
 
     private void Start()
     {
@@ -48,12 +54,14 @@ public class CollectionScript : MonoBehaviour
           $"DNA {dnaCollected}/{dnaGoal}");
     }
 
-    private void Update(){
-            if (d2 == null){
-                bgm.Stop();
-                gameOverPanel.SetActive(true);
-                Time.timeScale = 0f;
-            }
+    private void Update()
+    {
+        if (d2 == null)
+        {
+            bgm.Stop();
+            gameOverPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
     private void OnValidate()
     {
@@ -66,7 +74,6 @@ public class CollectionScript : MonoBehaviour
             CheckForRoundCompletion();
         }
     }
-
 
     void CheckForRoundCompletion()
     {
@@ -86,20 +93,33 @@ public class CollectionScript : MonoBehaviour
             lactoseCollected >= lactoseGoal &&
             maltoseCollected >= maltoseGoal &&
             dnaCollected >= dnaGoal)
-            {
-                gameEnded = true;
-                Debug.Log("Game " + gameRound + " completed!");
+        {
+            gameEnded = true;
+            Debug.Log("Game " + gameRound + " completed!");
 
-                moleculeSpawner.isGameFinished = true;
-                taskManager.winScreen.SetActive(true); // Show the win screen
-                Time.timeScale = 0f;
-                StopCoroutine(moleculeSpawner.SpawnMolecules());
+            // ----- WIN REPORTING CODE START -----
+            if (!winReported)
+            {
+                // Mark the minigame as completed using a unique key.
+                PlayerPrefs.SetInt("MinigameCompleted_" + minigameIndex, 1);
+                // Award ATP points.
+                int currentATP = PlayerPrefs.GetInt("ATP", 0);
+                PlayerPrefs.SetInt("ATP", currentATP + atpReward);
+                // Save changes.
+                PlayerPrefs.Save();
+                winReported = true;
             }
+            // ----- WIN REPORTING CODE END -----
+
+            moleculeSpawner.isGameFinished = true;
+            taskManager.winScreen.SetActive(true); // Show the win screen
+            Time.timeScale = 0f;
+            StopCoroutine(moleculeSpawner.SpawnMolecules());
+        }
     }
 
     public void ResetCollection()
     {
-
         sucroseCollected = 0;
         lactoseCollected = 0;
         maltoseCollected = 0;
@@ -130,7 +150,7 @@ public class CollectionScript : MonoBehaviour
             playerHealth.health--;
             playerHealth.UpdateHeartsUI();
             Destroy(collision.gameObject);
-            return; // Stop further execution
+            return;
         }
 
         if (CombinationScript.moleculeInstances.Contains(collision.gameObject))
@@ -162,7 +182,8 @@ public class CollectionScript : MonoBehaviour
 
             if (playerHealth.health == 0)
             {
-                if (!d2.activeInHierarchy){
+                if (!d2.activeInHierarchy)
+                {
                     d2.SetActive(true);
                 }
             }

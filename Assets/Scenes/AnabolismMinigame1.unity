@@ -3250,7 +3250,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2630499502280507495, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
       propertyPath: mainMenu
-      value: MainMenu
+      value: Loading Scene
       objectReference: {fileID: 0}
     - target: {fileID: 2630499502280507495, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
       propertyPath: restartScene
@@ -3258,7 +3258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2630499502280507495, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
       propertyPath: nextLevelScene
-      value: DevLevelSelect
+      value: Loading Scene
       objectReference: {fileID: 0}
     - target: {fileID: 2777901915060562441, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
       propertyPath: m_Pivot.x
@@ -3819,6 +3819,8 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1737890594}
   bgm: {fileID: 552143772}
   d2: {fileID: 1883016049}
+  minigameIndex: 3
+  atpReward: 300
 --- !u!61 &1191709989
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6457,7 +6459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1713576326183456602, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
       propertyPath: mainMenu
-      value: DevLevelSelect
+      value: Loading Scene
       objectReference: {fileID: 0}
     - target: {fileID: 1713576326183456602, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
       propertyPath: restartScene

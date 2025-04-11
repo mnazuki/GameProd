@@ -1878,40 +1878,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minigameButtons:
-  - button: {fileID: 796158969}
-    buttonImage: {fileID: 796158970}
-    defaultSprite: {fileID: 21300000, guid: 282c077bd2d831b4c82bf0d4a0f76918, type: 3}
-    completedSprite: {fileID: 21300000, guid: a523d4475b92a7848b0c0f4103cfe05f, type: 3}
+  - button: {fileID: 2088635492}
+    buttonImage: {fileID: 2088635493}
+    defaultSprite: {fileID: 21300000, guid: 4c6a26111bf1ee142a3993a53de06a25, type: 3}
+    completedSprite: {fileID: 21300000, guid: 6a025f7b139720d4bbc08aa89a71c44f, type: 3}
+    sceneToLoad: Glycolysis
+    ATPRequirement: 0
+    minigameIndex: 1
+  - button: {fileID: 1991018457}
+    buttonImage: {fileID: 1991018458}
+    defaultSprite: {fileID: 21300000, guid: 4c6a26111bf1ee142a3993a53de06a25, type: 3}
+    completedSprite: {fileID: 21300000, guid: 6a025f7b139720d4bbc08aa89a71c44f, type: 3}
     sceneToLoad: AnabolismMinigame1
     ATPRequirement: 100
+    minigameIndex: 2
+  - button: {fileID: 796158969}
+    buttonImage: {fileID: 796158970}
+    defaultSprite: {fileID: 21300000, guid: 4c6a26111bf1ee142a3993a53de06a25, type: 3}
+    completedSprite: {fileID: 21300000, guid: 6a025f7b139720d4bbc08aa89a71c44f, type: 3}
+    sceneToLoad: AnabolismMinigame1
+    ATPRequirement: 300
     minigameIndex: 3
   - button: {fileID: 1908646200}
     buttonImage: {fileID: 1908646201}
-    defaultSprite: {fileID: 21300000, guid: 282c077bd2d831b4c82bf0d4a0f76918, type: 3}
-    completedSprite: {fileID: 21300000, guid: a523d4475b92a7848b0c0f4103cfe05f, type: 3}
-    sceneToLoad: CatabolismMinigame1
-    ATPRequirement: 50
-    minigameIndex: 2
-  - button: {fileID: 2088635492}
-    buttonImage: {fileID: 2088635493}
-    defaultSprite: {fileID: 21300000, guid: 282c077bd2d831b4c82bf0d4a0f76918, type: 3}
-    completedSprite: {fileID: 21300000, guid: a523d4475b92a7848b0c0f4103cfe05f, type: 3}
-    sceneToLoad: Glycolysis
-    ATPRequirement: 150
+    defaultSprite: {fileID: 21300000, guid: 4c6a26111bf1ee142a3993a53de06a25, type: 3}
+    completedSprite: {fileID: 21300000, guid: 6a025f7b139720d4bbc08aa89a71c44f, type: 3}
+    sceneToLoad: CatabolismMiniggame1
+    ATPRequirement: 600
     minigameIndex: 4
-  - button: {fileID: 1991018457}
-    buttonImage: {fileID: 1991018458}
-    defaultSprite: {fileID: 21300000, guid: 282c077bd2d831b4c82bf0d4a0f76918, type: 3}
-    completedSprite: {fileID: 21300000, guid: a523d4475b92a7848b0c0f4103cfe05f, type: 3}
-    sceneToLoad: ElectronTransportChain
-    ATPRequirement: 0
-    minigameIndex: 1
   - button: {fileID: 829899827}
     buttonImage: {fileID: 829899826}
-    defaultSprite: {fileID: -1323434717, guid: 2d2f03835760596488c7aacb6e2d8b25, type: 3}
-    completedSprite: {fileID: -1323434717, guid: 2d2f03835760596488c7aacb6e2d8b25, type: 3}
+    defaultSprite: {fileID: 0}
+    completedSprite: {fileID: 0}
     sceneToLoad: Final Test
-    ATPRequirement: 200
+    ATPRequirement: 400
     minigameIndex: 5
   atpCounterText: {fileID: 907200729}
 --- !u!4 &1917791409

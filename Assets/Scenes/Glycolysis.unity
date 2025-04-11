@@ -3318,6 +3318,8 @@ MonoBehaviour:
   rumbling: {fileID: 8300000, guid: 332221fd03f828543aa785161a769959, type: 3}
   machinefail: {fileID: 8300000, guid: 4f40ae33ca0a94247b18742e52c92f78, type: 3}
   sfxTrigger: {fileID: 1423879452}
+  minigameIndex: 1
+  atpReward: 100
 --- !u!4 &823211520
 Transform:
   m_ObjectHideFlags: 0
