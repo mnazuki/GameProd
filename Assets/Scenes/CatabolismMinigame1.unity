@@ -2956,6 +2956,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7938858427039273332, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -7114882300603285996, guid: 357479c684db0b044bb83b877fc8c668, type: 2}
     - target: {fileID: 8788914680887504734, guid: f86026034e9f9bd49ac622a81f26b3a4, type: 3}
       propertyPath: m_Name
       value: 'Win Screen '
@@ -2994,7 +2998,7 @@ PrefabInstance:
     - target: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
-      objectReference: {fileID: -4132182667742451195, guid: 35e5d0c9cba12f543b56903cf45956e9, type: 2}
+      objectReference: {fileID: -7114882300603285996, guid: 357479c684db0b044bb83b877fc8c668, type: 2}
     - target: {fileID: 5333224378067201416, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_Name
       value: Audio
