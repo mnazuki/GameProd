@@ -5540,8 +5540,8 @@ MonoBehaviour:
   - {fileID: 926764631}
   fullStarSprite: {fileID: 1011056242421925816, guid: 38f2220ee1eb8354e85750ec1dc88d00, type: 3}
   emptyStarSprite: {fileID: 1578940426574507809, guid: 29913734220c4a543ac97da856530b4e, type: 3}
-  minigameIndex: 2
-  atpReward: 200
+  minigameIndex: 1
+  atpReward: 100
 --- !u!1 &1081804905
 GameObject:
   m_ObjectHideFlags: 0

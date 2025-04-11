@@ -128,4 +128,15 @@ public class MapSelectionManager : MonoBehaviour
         UpdateATPCounterUI();
         SetupMinigameButtons();
     }
+
+    /// <summary>
+    /// When exiting the game or stopping play mode in the Editor, clear saved data for testing.
+    /// </summary>
+    private void OnApplicationQuit()
+    {
+#if UNITY_EDITOR
+        Debug.Log("Exiting play mode or game — resetting PlayerPrefs for testing.");
+        PlayerPrefs.DeleteAll();
+#endif
+    }
 }
