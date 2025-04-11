@@ -17,6 +17,7 @@ public class MinigameManager : MonoBehaviour
     public GameObject winningScreen;     // Win panel (e.g. d3)
     public Button connectButton;
     public Button resetButton;
+    public GameObject timesUpText; //When timer reaches 0
 
     [Header("Dialogue")]
     public GameObject dialoguePanel;     // The dialogue panel that must finish before the game starts
@@ -374,6 +375,8 @@ public class MinigameManager : MonoBehaviour
             connectButton.interactable = true;
             SpawnProtons(currentBoothNumber);
             timeLeft = maxTime;
+            timesUpText.SetActive(true); //Time Out Text when timer is out
+            StartCoroutine(HideTimeUpTextAfterDelay(2f));
             StartCoroutine(CountdownTimer());
             if (difficultyLevel == 3)
                 StartCoroutine(MoveProtonsRandomly());
@@ -576,6 +579,13 @@ public class MinigameManager : MonoBehaviour
             // Delay before updating the next star.
             yield return new WaitForSeconds(0.3f);
         }
+    }
+
+    //Resets TimeUp Text
+    private IEnumerator HideTimeUpTextAfterDelay(float delay)
+    {
+    yield return new WaitForSeconds(delay);
+    timesUpText.SetActive(false);
     }
 
     // Updates the star UI images based on the star rating.
