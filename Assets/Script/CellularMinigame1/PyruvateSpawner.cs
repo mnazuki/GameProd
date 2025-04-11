@@ -29,8 +29,12 @@ public class PyruvateSpawner : MonoBehaviour
 
     
     [Header("Audio")]
-    [SerializeField] private AudioSource src;
-    [SerializeField] private AudioClip sfxOxidize;
+    [SerializeField] private GameObject audioSpeaker;
+    [SerializeField] private AudioSource[] src;
+
+    void Start (){
+        src = audioSpeaker.GetComponents<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -119,7 +123,7 @@ public class PyruvateSpawner : MonoBehaviour
 
             //Keeps track of the # of successful cycles. 2 Mini Pyru [MP] = 1 Cycle. Win condition is here too.
             collectedMP++;
-            src.PlayOneShot(sfxOxidize);
+            src[3].Play();
         }        
     }
 

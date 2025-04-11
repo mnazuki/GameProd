@@ -9,8 +9,7 @@ public class DestructibleObject : MonoBehaviour
     Animator animator;
 
     [Header("Audio")]
-    [SerializeField] private AudioSource src;
-    [SerializeField] private AudioClip molClick, hurt;
+    [SerializeField] private AudioSource[] src;
     
 
 
@@ -18,7 +17,7 @@ public class DestructibleObject : MonoBehaviour
     {
         healthManager = Object.FindFirstObjectByType<HealthManager>(); // finds the HealthManager in the scene
         animator = GetComponent<Animator>();
-        src = GameObject.Find("SFX")?.GetComponent<AudioSource>();
+        src = GameObject.Find("SFX")?.GetComponents<AudioSource>();
     }
 
     private void OnMouseDown()
@@ -26,7 +25,7 @@ public class DestructibleObject : MonoBehaviour
 
         if (CompareTag("Bacteria")) // check if the clicked object is tagged as "Bacteria"
         {
-            src.clip = hurt; src.PlayOneShot(hurt);
+            src[5].Play();
             if (healthManager != null)
             {
                 
@@ -43,11 +42,12 @@ public class DestructibleObject : MonoBehaviour
             if (PyruvateSpawner.Instance != null)
             {
                 PyruvateSpawner.Instance.CollectMolecule(gameObject.tag);
+                src[4].Play();
             }
         }
 
         // destroy the object (prefabs where this script is added) when clicked         
-            src.clip = molClick; src.PlayOneShot(molClick);
+            
             Destroy(gameObject);
     }
 
