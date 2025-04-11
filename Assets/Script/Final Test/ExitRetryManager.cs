@@ -13,6 +13,13 @@ public class ExitRetryManager : MonoBehaviour
     [Tooltip("Name of the alternate scene to load when the player exits without resetting PlayerPrefs (alternate)")]
     public string exitSceneNameNoResetAlt = "AlternateMenu";
 
+    [Header("Main Menu Options")]
+    [Tooltip("Name of the scene to load when the player clicks Continue on the main menu (progress is preserved)")]
+    public string continueSceneName = "MainMenu_Continue";
+
+    [Tooltip("Name of the scene to load when the player clicks New Game on the main menu (progress is reset)")]
+    public string newGameSceneName = "MainMenu_NewGame";
+
     /// <summary>
     /// Called when the player clicks the Exit button that resets PlayerPrefs.
     /// This method clears all saved PlayerPrefs and loads the designated exit scene.
@@ -56,5 +63,39 @@ public class ExitRetryManager : MonoBehaviour
     {
         Debug.Log("Reloading current scene without resetting PlayerPrefs.");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    /// <summary>
+    /// Called when the player clicks the Continue button on the main menu.
+    /// This method preserves all saved progress and loads the specified continue scene.
+    /// </summary>
+    public void ContinueGame()
+    {
+        Debug.Log("Continuing game with saved progress. Loading scene: " + continueSceneName);
+        SceneManager.LoadScene(continueSceneName);
+    }
+
+    /// <summary>
+    /// Called when the player clicks the New Game button on the main menu.
+    /// This method resets all saved progress (PlayerPrefs) and loads the specified new game scene.
+    /// </summary>
+    public void NewGame()
+    {
+        Debug.Log("Starting a new game – resetting PlayerPrefs and loading scene: " + newGameSceneName);
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(newGameSceneName);
+    }
+
+    /// <summary>
+    /// (For testing in the Editor) When exiting Play Mode, clear PlayerPrefs.
+    /// This code runs only in the Unity Editor.
+    /// </summary>
+    private void OnApplicationQuit()
+    {
+#if UNITY_EDITOR
+        Debug.Log("Exiting play mode or game — resetting PlayerPrefs for testing.");
+        PlayerPrefs.DeleteAll();
+#endif
     }
 }

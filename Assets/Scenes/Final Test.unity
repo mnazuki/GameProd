@@ -1153,8 +1153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitSceneNameReset: MainMenu
-  exitSceneNameNoReset: Loading Scene
-  exitSceneNameNoResetAlt: AlternateMenu
+  exitSceneNameNoReset: MainMenu
+  exitSceneNameNoResetAlt: Loading Scene
+  continueSceneName: MainMenu_Continue
+  newGameSceneName: MainMenu_NewGame
 --- !u!1 &729195574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,7 +1744,7 @@ MonoBehaviour:
       - Protein
       - ATP
       correctAnswerIndex: 2
-  winPanel: {fileID: 0}
+  winPanel: {fileID: 8692739499799836807}
   losePanel: {fileID: 8454458387335545600}
   selectedColor: {r: 0, g: 1, b: 0, a: 1}
 --- !u!4 &1219907973
@@ -3626,7 +3628,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 659495370}
         m_TargetAssemblyTypeName: ExitRetryManager, Assembly-CSharp
-        m_MethodName: ExitGameAndReset
+        m_MethodName: ExitGameNoReset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3674,7 +3676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8784507135677233192
 GameObject:
   m_ObjectHideFlags: 0
@@ -3739,7 +3741,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 659495370}
         m_TargetAssemblyTypeName: ExitRetryManager, Assembly-CSharp
-        m_MethodName: ExitGameNoReset
+        m_MethodName: ExitGameNoResetAlt
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
