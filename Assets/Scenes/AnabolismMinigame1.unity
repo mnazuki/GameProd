@@ -7933,8 +7933,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press TAB for hints!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
-  m_sharedMaterial: {fileID: -9108266835481307970, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9001,7 +9001,7 @@ MonoBehaviour:
   gameOverScreen: {fileID: 1737890594}
   nextRoundScreen: {fileID: 759525331}
   continueButton: {fileID: 1902104083}
-  timerMinutes: 1
+  timerMinutes: 2
   collectionScript: {fileID: 1191709988}
   moleculeSpawner: {fileID: 625930031}
   bgmsrc: {fileID: 552143772}
