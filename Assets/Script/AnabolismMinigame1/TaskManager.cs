@@ -6,16 +6,23 @@ public class TaskManager : MonoBehaviour
 {
     public Text taskText;
     public Text scoreText;
+    public Text timerText;
     public int playerScore = 0;
     public GameObject winScreen;
     public GameObject gameOverScreen;
     public GameObject nextRoundScreen;
     public Button continueButton;
 
+    public float timerMinutes = 2f;
+    private float timeRemaining;
+    private bool timerRunning = true;
+
     public CollectionScript collectionScript;
     public MoleculeSpawner moleculeSpawner;
     public AudioSource bgmsrc;
     public AudioClip bgm;
+    public GameObject d1;
+    public GameObject d2;
     public GameObject d3;
     public GameObject d4;
 
@@ -33,6 +40,8 @@ public class TaskManager : MonoBehaviour
             return;
         }
 
+        timeRemaining = timerMinutes * 60f; // Convert minutes to seconds
+
         nextRoundScreen.SetActive(false);
         //continueButton.onClick.AddListener(ContinueToNextRound); 
 
@@ -45,12 +54,43 @@ public class TaskManager : MonoBehaviour
             winScreen.SetActive(true); // Show the win screen
             Time.timeScale = 0f;
         }
+
+        HandleTimer();
+    }
+
+    void HandleTimer()
+    {
+        // Pause timer if d1 or d2 is open
+        if ((d1 != null && d1.activeInHierarchy) || (d2 != null && d2.activeInHierarchy))
+        {
+            return; // Skip timer update
+        }
+
+        if (timerRunning)
+        {
+            timeRemaining -= Time.deltaTime;
+            if (timeRemaining <= 0)
+            {
+                timeRemaining = 0;
+                timerRunning = false;
+                gameOver();
+            }
+
+            UpdateTimerUI();
+        }
+    }
+
+    void UpdateTimerUI()
+    {
+        int minutes = Mathf.FloorToInt(timeRemaining / 60f);
+        int seconds = Mathf.FloorToInt(timeRemaining % 60f);
+        timerText.text = $"Time: {minutes:00}:{seconds:00}";
     }
 
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
-        
+        d2.SetActive(true);
     }
 
     //public void nextRound()
@@ -88,7 +128,7 @@ public class TaskManager : MonoBehaviour
 
     //    moleculeSpawner.UpdateSpawnDelay(currentRound);
     //    moleculeSpawner.RestartSpawning();
-        
+
     //}
 
     //public void ContinueToNextRound()

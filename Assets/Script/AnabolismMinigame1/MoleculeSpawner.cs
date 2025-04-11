@@ -76,11 +76,16 @@ public class MoleculeSpawner : MonoBehaviour
     {
         while (!isGameFinished)
         {
-            while (gameManager.hintScreenOpen)
+            // Check if d1 or d2 is active or if the game is over
+            if ((taskManager.d1 != null && taskManager.d1.activeInHierarchy) ||
+                (taskManager.d2 != null && taskManager.d2.activeInHierarchy) ||
+                taskManager.gameOverScreen.activeInHierarchy)
             {
-                yield return null;
+                yield return null; // Wait until the condition is false again
+                continue; // Skip the current iteration if the condition is true
             }
 
+            // Proceed with molecule spawning if not paused
             if (currentMoleculeCount < maxMolecules)
             {
                 GameObject randomMolecule = moleculePrefabs[Random.Range(0, moleculePrefabs.Length)];
