@@ -2,10 +2,10 @@
     "dialogues": [
       {
         "id": 1,
-        "character": "Prof Synthetica",
+        "character": "Melanie",
         "sprite": "MCSP",
-        "sID": "2",
-        "text": "And.... that's it! Impressive, dear!"
+        "sID": "0",
+        "text": "Aw seriously? That was a lot of work already..."
       },
       {
         "id": 2,
