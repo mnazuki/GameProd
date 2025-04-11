@@ -20,7 +20,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Sprite autoOff;
 
     [Header("AUDIO & TEXT")]
-    [SerializeField] private AudioSource audioSource; // 🎵 Typing sound source
+    [SerializeField] private AudioSource[] audioSource; // 🎵 Typing sound source
     [SerializeField] private AudioClip typingSound; // 🎵 Sound clip
     [SerializeField] private TextAsset json; //Set dialogue json per trigger. Drag & Drop in inspector
 
@@ -33,6 +33,8 @@ public class DialogueSystem : MonoBehaviour
 
     void Start()
     {
+
+        audioSource = GameObject.Find("SFX")?.GetComponents<AudioSource>();
 
         //FInds & Assigns The NEXT Button.
         if (nextButton == null){ nextButton = GameObject.Find("Next")?.GetComponent<Button>(); }
@@ -140,10 +142,10 @@ public class DialogueSystem : MonoBehaviour
             _dialogueContainer.dialogueText.text += letter;
 
             //Text Beeps. If you want variations in the sound pitch per letter, play around with the Random values.
-            if (audioSource != null && typingSound != null){
-                audioSource.pitch = Random.Range(1f, 1f); 
-                audioSource.PlayOneShot(typingSound);
-            }
+            
+                
+                audioSource[0].Play();
+            
 
             // Seconds to wait before next letter appears. [Sidenote: Using a variable doesn't seem to work properly here. Just adjust it here directly for now]
             yield return new WaitForSeconds(0.028f); 

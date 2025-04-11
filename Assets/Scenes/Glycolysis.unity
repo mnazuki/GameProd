@@ -1609,7 +1609,7 @@ MonoBehaviour:
   autoButton: {fileID: 293259096}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 384830967}
+  audioSource: []
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: 7d310ba70ff9ab84190f7ef26fb5811a, type: 3}
 --- !u!1 &390450069
@@ -2985,6 +2985,7 @@ GameObject:
   - component: {fileID: 764237424}
   - component: {fileID: 764237427}
   - component: {fileID: 764237426}
+  - component: {fileID: 764237428}
   m_Layer: 0
   m_Name: SFX
   m_TagString: Untagged
@@ -3114,8 +3115,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5075556776826874483, guid: 4906c8b109b48b14d97f634228062788, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 481e60b993532b047860dd711c3d541c, type: 3}
-  m_Resource: {fileID: 8300000, guid: 481e60b993532b047860dd711c3d541c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 586767a1be4b42a42b9ac425fec9520b, type: 3}
+  m_Resource: {fileID: 8300000, guid: 586767a1be4b42a42b9ac425fec9520b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3702,6 +3703,103 @@ AudioSource:
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &764237428
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764237418}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 481e60b993532b047860dd711c3d541c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 481e60b993532b047860dd711c3d541c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4500,7 +4598,7 @@ MonoBehaviour:
   autoButton: {fileID: 293259096}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 954526315}
+  audioSource: []
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: 38758c5cb605ff94f8338b421d1d4cc9, type: 3}
 --- !u!224 &967158765 stripped
@@ -6014,7 +6112,7 @@ MonoBehaviour:
   autoButton: {fileID: 293259096}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 1260950210}
+  audioSource: []
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: e6d70e767ff0a9643881b0e2855c0b48, type: 3}
 --- !u!82 &1260950210
@@ -6483,7 +6581,7 @@ MonoBehaviour:
   autoButton: {fileID: 293259096}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 1363409791}
+  audioSource: []
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: 31d68e57ae738904c8d85176e3c46547, type: 3}
 --- !u!1 &1396263718
@@ -8066,7 +8164,7 @@ MonoBehaviour:
   autoButton: {fileID: 293259096}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 2047970707}
+  audioSource: []
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: a9f34b5b652b6084cb6793031dd98895, type: 3}
 --- !u!1 &2082641605
