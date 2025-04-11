@@ -1889,7 +1889,7 @@ MonoBehaviour:
     buttonImage: {fileID: 1991018458}
     defaultSprite: {fileID: 21300000, guid: 4c6a26111bf1ee142a3993a53de06a25, type: 3}
     completedSprite: {fileID: 21300000, guid: 6a025f7b139720d4bbc08aa89a71c44f, type: 3}
-    sceneToLoad: AnabolismMinigame1
+    sceneToLoad: ElectronTransportChain
     ATPRequirement: 100
     minigameIndex: 2
   - button: {fileID: 796158969}
