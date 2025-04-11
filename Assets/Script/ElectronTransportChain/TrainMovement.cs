@@ -27,7 +27,7 @@ public class TrainMovement : MonoBehaviour
     public TrainState CurrentState { get { return trainState; } }
 
     [Header("Audio")]
-    public AudioSource src; 
+    public AudioSource[] src; 
     public AudioClip horn, steam;
 
     void Start()
@@ -41,8 +41,9 @@ public class TrainMovement : MonoBehaviour
         {
             trainState = TrainState.Moving;
             isMoving = true;
-            src.PlayOneShot(horn);
+            src[7].Play();
         }
+        src = GameObject.Find("SFX")?.GetComponents<AudioSource>();
     }
 
     void Update()
@@ -142,8 +143,8 @@ public class TrainMovement : MonoBehaviour
         isMoving = true;
         trainState = TrainState.Moving;
         Debug.Log($"{gameObject.name} started moving.");
-        src.PlayOneShot(horn);
-        src.PlayOneShot(steam);
+        src[6].Play();
+        src[7].Play();
     }
 
     void ReleaseProtons()
@@ -158,7 +159,7 @@ public class TrainMovement : MonoBehaviour
             }
         }
         protonsOnBoard.Clear();
-         src.PlayOneShot(steam);
+         src[6].Play();
     }
 
     void OnTriggerEnter2D(Collider2D other)

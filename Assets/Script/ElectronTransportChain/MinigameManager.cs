@@ -58,7 +58,7 @@ public class MinigameManager : MonoBehaviour
     public GameObject d2;   // Lose dialogue trigger (when null, lose UI appears)
     public GameObject d3;   // Win dialogue trigger (when null, win UI appears)
     public AudioSource bgmsrc;
-    public AudioSource src; // For SFX
+    public AudioSource[] src; // For SFX
     public AudioClip bgm;
     public AudioClip connect_success, connect_fail, proton_click, false_proton_click, mgopen;
 
@@ -75,6 +75,8 @@ public class MinigameManager : MonoBehaviour
 
     void Start()
     {
+
+        src = GameObject.Find("SFX")?.GetComponents<AudioSource>();
         // Start background music.
         bgmsrc.loop = true;
         bgmsrc.clip = bgm;
@@ -136,7 +138,7 @@ public class MinigameManager : MonoBehaviour
 
         protonsInBooth = protons;
         minigamePanel.SetActive(true);
-        src.PlayOneShot(mgopen);
+        src[5].Play();
         timeLeft = maxTime;
         protonsClicked = 0;
         timerText.text = "Time: " + timeLeft;
@@ -326,7 +328,7 @@ public class MinigameManager : MonoBehaviour
     {
         button.interactable = false;
         proton.GetComponent<Image>().color = Color.green;
-        src.PlayOneShot(proton_click);
+        src[4].Play();
         protonsClicked++;
     }
 
@@ -334,7 +336,7 @@ public class MinigameManager : MonoBehaviour
     {
         if (protonsClicked == 4)
         {
-            src.PlayOneShot(connect_success);
+            src[3].Play();
             Debug.Log("Connect button clicked. Protons clicked: " + protonsClicked);
             totalProtonsCollected += 4;
             protonCounterText.text = $"{totalProtonsCollected}/24";
@@ -345,7 +347,7 @@ public class MinigameManager : MonoBehaviour
         }
         else
         {
-            src.PlayOneShot(connect_fail);
+            src[2].Play();
         }
     }
 
