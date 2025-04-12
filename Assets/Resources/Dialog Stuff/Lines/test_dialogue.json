@@ -1,28 +1,67 @@
 {
-    "dialogues": [
-      {
-        "id": 1,
-        "character": "Melanie",
-        "sprite": "Melanie",
-        "text": "Welcome, traveler! What brings you here?"
-      },
-      {
-        "id": 2,
-        "character": "You",
-        "sprite": "Clear",
-        "text": "I'm looking for the lost treasure."
-      },
-      {
-        "id": 3,
-        "character": "Glucose Glorie",
-        "sprite": "Glucose Glorie",
-        "text": "Ah, the treasure... many have sought it, few have returned."
-      },
-      {
-        "id": 4,
-        "character": "You",
-        "sprite": "Melanie",
-        "text": "Yep Yep HomeSlice"
-      }
-    ]
-  }
+  "dialogues": [
+    {
+      "id": 1,
+      "character": "",
+      "sprite": "MCSP",
+      "sID": "4",
+      "text": "*footsteps*"
+    },
+    {
+      "id": 2,
+      "character": "",
+      "sprite": "MCSP",
+      "sID": "0",
+      "text": "You arrive at a futuristic looking city. Oddly shaped buildings sprawling the roads, workers moving calculatedly from one place to another, cool infrastructure blanketing the skyline."
+    },
+    {
+      "id": 3,
+      "character": "Melanie",
+      "sprite": "MCSP",
+      "sID": "0",
+      "text": "Woah.....  What is this place?"
+    },
+    {
+      "id": 4,
+      "character": "",
+      "sprite": "MCSP",
+      "sID": "0",
+      "text": "As you roam around, the movements of the environment gradually gain a sense of familiarity. You soon realize that..."
+    },
+    {
+      "id": 5,
+      "character": "Melanie",
+      "sprite": "MCSP",
+      "sID": "0",
+      "text": "Wait... am I inside my notes!? This is a human cell!"
+    },
+    {
+      "id": 6,
+      "character": "",
+      "sprite": "MCSP",
+      "sID": "4",
+      "text": "A couple of workers momentarily stop by and nod their head toward you, uttering a heartfelt 'Welcome!' before resuming to their duties"
+    },
+    {
+      "id": 7,
+      "character": "Melanie",
+      "sprite": "MCSP",
+      "sID": "0",
+      "text": "Well... I certainly did not expect this. But maybe... this is the opportunity of a life time. Oh for that exam! ....Right!"
+    },
+    {
+      "id": 8,
+      "character": "",
+      "sprite": "MCSP",
+      "sID": "4",
+      "text": "Realizing the potential for study of this odd experience has shed any aspect of confusion, fear or bewildermeant from you."
+    },
+    {
+      "id": 9,
+      "character": "",
+      "sprite": "MCSP",
+      "sID": "4",
+      "text": "Remembering your notes, you march toward a friendly looking building, conveniently labelled as the first metabolic pathway.... 'Cellular Respiration'"
+    }
+  ]
+}
