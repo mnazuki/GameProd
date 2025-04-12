@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Test Title
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -6297172060270951162, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -297,8 +297,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3852141953862592199, guid: bca9a7e5738f54a48ac362f7fdc18e5b, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4340bd3af1e26ac4cad69ef867371890, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4340bd3af1e26ac4cad69ef867371890, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -683,8 +683,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -6297172060270951162, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1319,6 +1319,8 @@ MonoBehaviour:
   exitSceneNameNoResetAlt: Loading Scene
   continueSceneName: MainMenu_Continue
   newGameSceneName: MainMenu_NewGame
+  buttonAudioSource: {fileID: 735303928}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!1 &729195574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,8 +1380,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -6297172060270951162, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1889,8 +1891,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 830278001680859519, guid: bca9a7e5738f54a48ac362f7fdc18e5b, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
+  m_Resource: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2430,6 +2432,9 @@ MonoBehaviour:
   winPanel: {fileID: 8692739499799836807}
   losePanel: {fileID: 8454458387335545600}
   selectedColor: {r: 0, g: 1, b: 0, a: 1}
+  buttonAudioSource: {fileID: 735303928}
+  choiceSelectSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
+  nextButtonSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!4 &1219907973
 Transform:
   m_ObjectHideFlags: 0
@@ -2504,8 +2509,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Question 1:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -6297172060270951162, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2881,8 +2886,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -6297172060270951162, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

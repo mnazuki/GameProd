@@ -553,8 +553,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -8421401017283819948, guid: 5bedcf7e568ae54449eedb1f02938139, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
+  m_Resource: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2239,8 +2239,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5087716072353689187, guid: 5bedcf7e568ae54449eedb1f02938139, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4340bd3af1e26ac4cad69ef867371890, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4340bd3af1e26ac4cad69ef867371890, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2597,6 +2597,8 @@ MonoBehaviour:
     ATPRequirement: 400
     minigameIndex: 5
   atpCounterText: {fileID: 907200729}
+  buttonAudioSource: {fileID: 120069464}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!4 &1917791409
 Transform:
   m_ObjectHideFlags: 0

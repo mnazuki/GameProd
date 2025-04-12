@@ -2732,6 +2732,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24cc532543359d24a854aa66eccbd254, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonAudioSource: {fileID: 0}
+  playButtonClickSound: {fileID: 0}
+  quitButtonClickSound: {fileID: 0}
 --- !u!114 &1816372909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2749,6 +2752,8 @@ MonoBehaviour:
   exitSceneNameNoResetAlt: AlternateMenu
   continueSceneName: Loading Scene
   newGameSceneName: Loading Scene
+  buttonAudioSource: {fileID: 1840259688}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!1 &1840259683
 GameObject:
   m_ObjectHideFlags: 0

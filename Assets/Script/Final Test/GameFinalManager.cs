@@ -53,6 +53,14 @@ public class GameFinalManager : MonoBehaviour
     // Flag to prevent double-clicks during question transitions
     private bool isProcessing = false;
 
+    [Header("Audio Settings")]
+    [Tooltip("AudioSource to play button sounds")]
+    public AudioSource buttonAudioSource;
+    [Tooltip("AudioClip to play when a choice is selected")]
+    public AudioClip choiceSelectSound;
+    [Tooltip("AudioClip to play when the Next button is clicked")]
+    public AudioClip nextButtonSound;
+
     void Start()
     {
         // Save each button's default color so we can reset it later.
@@ -194,6 +202,12 @@ public class GameFinalManager : MonoBehaviour
         if (currentImg != null)
             currentImg.color = selectedColor;
 
+        // Play the choice selection sound.
+        if (buttonAudioSource != null && choiceSelectSound != null)
+        {
+            buttonAudioSource.PlayOneShot(choiceSelectSound);
+        }
+
         Debug.Log("Choice selected: index " + index);
     }
 
@@ -207,6 +221,12 @@ public class GameFinalManager : MonoBehaviour
         if (selectedAnswerIndex == -1)
         {
             return;
+        }
+
+        // Play the next button sound.
+        if (buttonAudioSource != null && nextButtonSound != null)
+        {
+            buttonAudioSource.PlayOneShot(nextButtonSound);
         }
 
         isProcessing = true;
@@ -259,12 +279,12 @@ public class GameFinalManager : MonoBehaviour
                 btn.gameObject.SetActive(false);
             }
 
-            Invoke("MoveToNextExam", 2f);
+            Invoke("LoadNextStepAfterExam", 2f);
         }
     }
 
-    // Moves to the next exam or shows overall final results.
-    void MoveToNextExam()
+    // Moves on to the next exam or shows overall final results.
+    void LoadNextStepAfterExam()
     {
         currentExamIndex++;
         if (currentExamIndex < exams.Count)
