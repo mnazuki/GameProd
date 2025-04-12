@@ -1,24 +1,48 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LoadingScene : MonoBehaviour
 {
-    [SerializeField] private float loadDelay = 4f; // Time to wait before loading the next scene
-    [SerializeField] private string nextSceneName; // The name of the next scene to load
+    [Header("Scene Settings")]
+    [Tooltip("Delay before loading the one-time scene")]
+    [SerializeField] private float loadDelay = 4f;
+
+    [Tooltip("The name of the one-time scene that should run only once (until PlayerPrefs are reset)")]
+    [SerializeField] private string oneTimeSceneName;
+
+    [Tooltip("The name of the fallback scene to load if the one-time scene has already been shown")]
+    [SerializeField] private string fallbackSceneName;
+
+    [Header("PlayerPrefs Settings")]
+    [Tooltip("The key used in PlayerPrefs to mark if the one-time scene has been shown")]
+    [SerializeField] private string playerPrefKey = "LoadingSceneShown";
 
     private void Start()
     {
         Time.timeScale = 1f;
-        // Start the coroutine to load the scene after a delay
-        StartCoroutine(LoadNextSceneAfterDelay());
+
+        // Check if the one-time scene has been shown.
+        if (PlayerPrefs.GetInt(playerPrefKey, 0) == 0)
+        {
+            // Not shown yet: wait for the delay and then load the one-time scene.
+            StartCoroutine(LoadOneTimeScene());
+
+            // Set the flag so that on future loads the one-time scene is skipped.
+            PlayerPrefs.SetInt(playerPrefKey, 1);
+            PlayerPrefs.Save();
+        }
+        else
+        {
+            // Already shown: immediately load the fallback scene.
+            SceneManager.LoadScene(fallbackSceneName);
+        }
     }
 
-    private System.Collections.IEnumerator LoadNextSceneAfterDelay()
+    private IEnumerator LoadOneTimeScene()
     {
-        // Wait for the specified amount of time
+        // Wait for the specified delay before loading the scene.
         yield return new WaitForSeconds(loadDelay);
-
-        // Load the next scene
-        SceneManager.LoadScene(nextSceneName);
+        SceneManager.LoadScene(oneTimeSceneName);
     }
 }

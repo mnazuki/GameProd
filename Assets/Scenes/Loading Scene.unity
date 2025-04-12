@@ -960,7 +960,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadDelay: 1
-  nextSceneName: Map
+  oneTimeSceneName: Cutscene
+  fallbackSceneName: Map
+  playerPrefKey: Cutscene
 --- !u!4 &1682185719
 Transform:
   m_ObjectHideFlags: 0
