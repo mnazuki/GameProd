@@ -2749,6 +2749,8 @@ MonoBehaviour:
   exitSceneNameNoResetAlt: AlternateMenu
   continueSceneName: Loading Scene
   newGameSceneName: Loading Scene
+  buttonAudioSource: {fileID: 1840259688}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!1 &1840259683
 GameObject:
   m_ObjectHideFlags: 0

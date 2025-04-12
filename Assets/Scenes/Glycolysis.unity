@@ -2327,6 +2327,11 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 33945643}
   settingsPanel: {fileID: 1893139849}
   mapSceneName: Loading Scene
+  buttonAudioSource: {fileID: 0}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
+  audioMixer: {fileID: 0}
+  mixerParameterName: ButtonVolume
+  buttonVolume: 0
 --- !u!114 &563872992
 MonoBehaviour:
   m_ObjectHideFlags: 0
