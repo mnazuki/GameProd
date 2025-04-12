@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
-using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -32,12 +31,6 @@ public class MapSelectionManager : MonoBehaviour
 
     [Header("ATP UI")]
     public TextMeshProUGUI atpCounterText;      // A UI Text element that displays the current ATP points.
-
-    [Header("Audio Settings")]
-    [Tooltip("AudioSource to play the button click sound")]
-    public AudioSource buttonAudioSource;
-    [Tooltip("AudioClip to play when a minigame button is clicked")]
-    public AudioClip buttonClickSound;
 
     private int currentATP;
 
@@ -96,8 +89,7 @@ public class MapSelectionManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Called when a minigame button is clicked.
-    /// Checks ATP, plays the click sound, then loads the respective scene after waiting the clip duration.
+    /// Called when a minigame button is clicked. Checks ATP and then loads the respective scene.
     /// </summary>
     /// <param name="gameButton">The minigame button data that was clicked.</param>
     private void OnMinigameButtonClicked(MinigameButtonInfo gameButton)
@@ -105,8 +97,8 @@ public class MapSelectionManager : MonoBehaviour
         // Safety check: make sure the player has enough ATP.
         if (currentATP >= gameButton.ATPRequirement)
         {
-            // Play click sound then load scene.
-            StartCoroutine(LoadSceneAfterSound(gameButton.sceneToLoad));
+            // Here you could optionally store the minigame index somewhere if needed.
+            SceneManager.LoadScene(gameButton.sceneToLoad);
         }
         else
         {
@@ -146,20 +138,5 @@ public class MapSelectionManager : MonoBehaviour
         Debug.Log("Exiting play mode or game — resetting PlayerPrefs for testing.");
         PlayerPrefs.DeleteAll();
 #endif
-    }
-
-    /// <summary>
-    /// Coroutine that plays the button click sound (if available) and then loads the scene after the sound finishes.
-    /// </summary>
-    /// <param name="sceneName">The name of the scene to load.</param>
-    /// <returns></returns>
-    private IEnumerator LoadSceneAfterSound(string sceneName)
-    {
-        if (buttonAudioSource != null && buttonClickSound != null)
-        {
-            buttonAudioSource.PlayOneShot(buttonClickSound);
-            yield return new WaitForSeconds(buttonClickSound.length);
-        }
-        SceneManager.LoadScene(sceneName);
     }
 }
