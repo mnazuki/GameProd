@@ -4082,7 +4082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cf92017312b22041a509a572d87d531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredCycles: 2
+  requiredCycles: 25
   cyclesText: {fileID: 1070402381}
   ATPtext: {fileID: 1107035876}
   gameOverText: {fileID: 1493162192}
