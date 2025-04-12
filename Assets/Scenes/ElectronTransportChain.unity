@@ -926,6 +926,8 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 1244827478}
   settingsPanel: {fileID: 1743732890}
   mapSceneName: Loading Scene
+  buttonAudioSource: {fileID: 1176703139}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!1 &206535759
 GameObject:
   m_ObjectHideFlags: 0
@@ -6535,6 +6537,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!82 &1176703139 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+  m_PrefabInstance: {fileID: 781012111}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1193308145
 GameObject:
   m_ObjectHideFlags: 0

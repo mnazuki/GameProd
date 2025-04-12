@@ -8,13 +8,19 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] private GameObject settingsPanel;
 
     [Header("Scene Settings")]
-    [SerializeField] private string mapSceneName = "MapScene"; // Set the scene name for Return to Map
+    [SerializeField] private string mapSceneName = "MapScene"; // Scene name for Return to Map
+
+    [Header("Audio Settings")]
+    [Tooltip("AudioSource used to play the button click sound")]
+    [SerializeField] private AudioSource buttonAudioSource;
+    [Tooltip("AudioClip to play when a button is clicked")]
+    [SerializeField] private AudioClip buttonClickSound;
 
     private bool isPaused = false;
 
     void Update()
     {
-        // Toggle pause when the Escape key is pressed.
+        // Toggle pause with the Escape key.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (!isPaused)
@@ -24,7 +30,7 @@ public class PauseMenuManager : MonoBehaviour
         }
     }
 
-    // Call this method to pause the game.
+    // Pauses the game by showing the pause menu.
     public void PauseGame()
     {
         if (pauseMenuPanel != null)
@@ -32,7 +38,7 @@ public class PauseMenuManager : MonoBehaviour
             pauseMenuPanel.SetActive(true);
         }
 
-        // Ensure settings panel is not active when pausing.
+        // Ensure the settings panel is closed when pausing.
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(false);
@@ -43,7 +49,7 @@ public class PauseMenuManager : MonoBehaviour
         isPaused = true;
     }
 
-    // Call this method to resume the game.
+    // Resumes the game by hiding the pause menu.
     public void ResumeGame()
     {
         if (pauseMenuPanel != null)
@@ -54,30 +60,55 @@ public class PauseMenuManager : MonoBehaviour
         {
             settingsPanel.SetActive(false);
         }
-        Time.timeScale = 1f;  // Resume normal time.
+        Time.timeScale = 1f;
         isPaused = false;
     }
 
-    // Button callback: Return to map scene.
+    // Called when the Return to Map button is clicked.
     public void ReturnToMap()
     {
-        // Resume time before changing scenes.
-        Time.timeScale = 1f;
+        // Play click sound then load the map scene after the sound finishes.
+        if (buttonAudioSource != null && buttonClickSound != null)
+        {
+            buttonAudioSource.PlayOneShot(buttonClickSound);
+            StartCoroutine(LoadMapSceneAfterSound());
+        }
+        else
+        {
+            // Fallback immediately if sound settings are missing.
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(mapSceneName);
+        }
+    }
+
+    // Coroutine to wait for the button click sound before loading the map scene.
+    private System.Collections.IEnumerator LoadMapSceneAfterSound()
+    {
+        yield return new WaitForSeconds(buttonClickSound.length);
+        Time.timeScale = 1f; // Resume normal time before loading.
         SceneManager.LoadScene(mapSceneName);
     }
 
-    // Button callback: Open the settings panel.
+    // Opens the settings panel and plays a click sound.
     public void OpenSettings()
     {
+        if (buttonAudioSource != null && buttonClickSound != null)
+        {
+            buttonAudioSource.PlayOneShot(buttonClickSound);
+        }
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(true);
         }
     }
 
-    // Button callback: Close the settings panel.
+    // Closes the settings panel and plays a click sound.
     public void CloseSettings()
     {
+        if (buttonAudioSource != null && buttonClickSound != null)
+        {
+            buttonAudioSource.PlayOneShot(buttonClickSound);
+        }
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(false);

@@ -684,6 +684,18 @@ PrefabInstance:
       propertyPath: json
       value: 
       objectReference: {fileID: 4900000, guid: 5032bb894b55b0547ae952919692dde5, type: 3}
+    - target: {fileID: 3172056443390247731, guid: abda6608ea26ddf4f9216a9743964c84, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+    - target: {fileID: 3172056443390247731, guid: abda6608ea26ddf4f9216a9743964c84, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5922822288481246488, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+    - target: {fileID: 3172056443390247731, guid: abda6608ea26ddf4f9216a9743964c84, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3527464933224967853, guid: abda6608ea26ddf4f9216a9743964c84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 729.48114
@@ -1548,6 +1560,8 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 149040204}
   settingsPanel: {fileID: 1336655207}
   mapSceneName: Map
+  buttonAudioSource: {fileID: 1745286353}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!114 &345229815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4699,7 +4713,8 @@ MonoBehaviour:
   autoButton: {fileID: 1708970560}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 1422818790}
+  audioSource:
+  - {fileID: 0}
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: 2dfa626430e5add40ae53c93fad86e74, type: 3}
 --- !u!1 &1444251770
@@ -5842,7 +5857,8 @@ MonoBehaviour:
   autoButton: {fileID: 1708970560}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 1518308330}
+  audioSource:
+  - {fileID: 0}
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: 92270e284a9ad9c45a8117506c1175ab, type: 3}
 --- !u!1 &1529612015
@@ -6835,6 +6851,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8454458387058083372, guid: b7f30ab8258a60243a68a08c89355ba2, type: 3}
   m_PrefabInstance: {fileID: 1623888254}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1745286353 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+  m_PrefabInstance: {fileID: 1953147181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1782797113
 GameObject:
   m_ObjectHideFlags: 0
@@ -7589,7 +7610,8 @@ MonoBehaviour:
   autoButton: {fileID: 1708970560}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 1883016051}
+  audioSource:
+  - {fileID: 0}
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: 4cd12719d1b44254a86f0436e1acbb9a, type: 3}
 --- !u!1 &1897287153

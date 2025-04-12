@@ -297,8 +297,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3852141953862592199, guid: bca9a7e5738f54a48ac362f7fdc18e5b, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4340bd3af1e26ac4cad69ef867371890, type: 3}
+  m_Resource: {fileID: 8300000, guid: 4340bd3af1e26ac4cad69ef867371890, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -471,54 +471,14 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 659495369}
-    - target: {fileID: 2538238325492296522, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSFXVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 3642006444785072168, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3642006444785072168, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5552476283336815957, guid: e510d27bd024d4943970442b642cf548, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 659495368}
-    - target: {fileID: 5552476283336815957, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseSettings
-      objectReference: {fileID: 0}
-    - target: {fileID: 7739323240809658842, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7739323240809658842, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7933402163176151505, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7933402163176151505, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7933402163176151505, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8567556805865242372, guid: e510d27bd024d4943970442b642cf548, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 659495369}
-    - target: {fileID: 8567556805865242372, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMusicVolume
-      objectReference: {fileID: 0}
     - target: {fileID: 8753101207442065180, guid: e510d27bd024d4943970442b642cf548, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -602,22 +562,6 @@ PrefabInstance:
     - target: {fileID: 8893349935880015565, guid: e510d27bd024d4943970442b642cf548, type: 3}
       propertyPath: m_Name
       value: Settings
-      objectReference: {fileID: 0}
-    - target: {fileID: 8893349935880015565, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9104338941890323952, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9104338941890323952, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9104338941890323952, guid: e510d27bd024d4943970442b642cf548, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1046,10 +990,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 659495368}
-    - target: {fileID: 188485203794292202, guid: de8dbce86693e1f49aa2129bbcda5b11, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReturnToMap
-      objectReference: {fileID: 0}
     - target: {fileID: 2446472847399218859, guid: de8dbce86693e1f49aa2129bbcda5b11, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1138,18 +1078,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 659495368}
-    - target: {fileID: 8011139325003032822, guid: de8dbce86693e1f49aa2129bbcda5b11, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OpenSettings
-      objectReference: {fileID: 0}
     - target: {fileID: 8440291956829262556, guid: de8dbce86693e1f49aa2129bbcda5b11, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 659495368}
-    - target: {fileID: 8440291956829262556, guid: de8dbce86693e1f49aa2129bbcda5b11, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ResumeGame
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1286,6 +1218,8 @@ MonoBehaviour:
   pauseMenuPanel: {fileID: 2142626203}
   settingsPanel: {fileID: 1997685829}
   mapSceneName: Loading Scene
+  buttonAudioSource: {fileID: 735303928}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!114 &659495369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1319,6 +1253,8 @@ MonoBehaviour:
   exitSceneNameNoResetAlt: Loading Scene
   continueSceneName: MainMenu_Continue
   newGameSceneName: MainMenu_NewGame
+  buttonAudioSource: {fileID: 735303928}
+  buttonClickSound: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
 --- !u!1 &729195574
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,8 +1825,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 830278001680859519, guid: bca9a7e5738f54a48ac362f7fdc18e5b, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
+  m_Resource: {fileID: 8300000, guid: 97bada2c2f72664468a611d970a27cce, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
