@@ -166,8 +166,8 @@ TextureImporter:
       name: MCSP_3
       rect:
         serializedVersion: 2
-        x: 1537
-        y: 9
+        x: 1536
+        y: 10
         width: 317
         height: 1056
       alignment: 0
@@ -180,6 +180,28 @@ TextureImporter:
       bones: []
       spriteID: c13ff37e7bb8d864dbda67bdf247312a
       internalID: -1307336299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCSP_4
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 998
+        width: 42
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2af6c0cd45b734e826adf0c430c09d
+      internalID: -2006804512
       vertices: []
       indices: 
       edges: []
@@ -202,6 +224,7 @@ TextureImporter:
       MCSP_1: -114294063
       MCSP_2: 710267066
       MCSP_3: -1307336299
+      MCSP_4: -2006804512
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

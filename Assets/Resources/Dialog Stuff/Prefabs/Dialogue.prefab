@@ -56,7 +56,8 @@ MonoBehaviour:
   autoButton: {fileID: 8432224855016297005}
   autoOn: {fileID: 7717903109569295847, guid: da2bf0ab5c05d004992b3a91473e2385, type: 3}
   autoOff: {fileID: -6324310268130010240, guid: 37adddbebbfa0d94bb20e1e659383c7f, type: 3}
-  audioSource: {fileID: 600406867212880232}
+  audioSource:
+  - {fileID: 0}
   typingSound: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   json: {fileID: 4900000, guid: e6d70e767ff0a9643881b0e2855c0b48, type: 3}
 --- !u!82 &600406867212880232
@@ -253,7 +254,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1227186526048773633, guid: 80590d9546bc13d4b9f053abef2977d5, type: 3}
+  m_Sprite: {fileID: -1053429944, guid: 80590d9546bc13d4b9f053abef2977d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1257,7 +1258,7 @@ MonoBehaviour:
   m_text: Musta Gar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
-  m_sharedMaterial: {fileID: -9108266835481307970, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
+  m_sharedMaterial: {fileID: -5922822288481246488, guid: 6e78ba302a4392947a80a41ba614cd73, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
