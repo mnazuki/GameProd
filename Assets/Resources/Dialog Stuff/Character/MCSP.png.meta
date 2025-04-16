@@ -1,19 +1,7 @@
 fileFormatVersion: 2
 guid: 80590d9546bc13d4b9f053abef2977d5
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1227186526048773633
-    second: MCSP_0
-  - first:
-      213: 6670536347911941963
-    second: MCSP_1
-  - first:
-      213: -6755506243219813818
-    second: MCSP_2
-  - first:
-      213: -3623347804644611085
-    second: MCSP_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -112,98 +100,10 @@ TextureImporter:
       name: MCSP_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 10
-        width: 461
-        height: 971
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ff997b14b5828fee0800000000000000
-      internalID: -1227186526048773633
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MCSP_1
-      rect:
-        serializedVersion: 2
-        x: 595
-        y: 6
-        width: 320
-        height: 1003
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b4f6f966771829c50800000000000000
-      internalID: 6670536347911941963
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MCSP_2
-      rect:
-        serializedVersion: 2
-        x: 1030
-        y: 9
-        width: 371
-        height: 961
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 64a03fe2dde9f32a0800000000000000
-      internalID: -6755506243219813818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MCSP_3
-      rect:
-        serializedVersion: 2
-        x: 1532
-        y: 0
-        width: 320
-        height: 1058
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3fb67767e5847bdc0800000000000000
-      internalID: -3623347804644611085
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MCSP_4
-      rect:
-        serializedVersion: 2
-        x: 1413
-        y: 275
-        width: 97
-        height: 246
+        x: 51
+        y: 11
+        width: 458
+        height: 967
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,8 +112,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eae3409ec73af7249af3d0063f8b3bd9
-      internalID: -870850052
+      spriteID: e531046262009694bbf0560e7d043e9a
+      internalID: -1053429944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCSP_1
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 9
+        width: 316
+        height: 1001
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956ff3eaaed3d2945b563805fc23f041
+      internalID: -114294063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCSP_2
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 15
+        width: 369
+        height: 959
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8ad574b10993a4e8ec9d2e37c56d06
+      internalID: 710267066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MCSP_3
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 9
+        width: 317
+        height: 1056
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13ff37e7bb8d864dbda67bdf247312a
+      internalID: -1307336299
       vertices: []
       indices: 
       edges: []
@@ -222,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 965aa8f4fa749ef428ece93b77e31d3e
+    spriteID: 33c7c469433f814469ce8c4e0cb0d2db
     internalID: 0
     vertices: []
     indices: 
@@ -232,11 +198,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MCSP_0: -1227186526048773633
-      MCSP_1: 6670536347911941963
-      MCSP_2: -6755506243219813818
-      MCSP_3: -3623347804644611085
-      MCSP_4: -870850052
+      MCSP_0: -1053429944
+      MCSP_1: -114294063
+      MCSP_2: 710267066
+      MCSP_3: -1307336299
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

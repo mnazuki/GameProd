@@ -1,19 +1,7 @@
 fileFormatVersion: 2
 guid: e2d08c30ca22ac749a226870ee916dae
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 7132284586490825587
-    second: Glorie_0
-  - first:
-      213: -8428936291302117795
-    second: Glorie_1
-  - first:
-      213: 6533368774886832109
-    second: Glorie_2
-  - first:
-      213: -1332310667661482589
-    second: Glorie_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -112,20 +100,20 @@ TextureImporter:
       name: Glorie_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 22
-        width: 488
-        height: 1007
+        x: 66
+        y: 33
+        width: 478
+        height: 1005
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 37b87cefa07faf260800000000000000
-      internalID: 7132284586490825587
+      spriteID: a34961eaa69e90c48a2a896fd8afa798
+      internalID: -1142023331
       vertices: []
       indices: 
       edges: []
@@ -134,20 +122,20 @@ TextureImporter:
       name: Glorie_1
       rect:
         serializedVersion: 2
-        x: 611
-        y: 19
-        width: 391
-        height: 802
+        x: 607
+        y: 29
+        width: 389
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d5ee98af917660b80800000000000000
-      internalID: -8428936291302117795
+      spriteID: ab96094b82ee2f645994ea5eee433f3f
+      internalID: -1844943563
       vertices: []
       indices: 
       edges: []
@@ -156,20 +144,20 @@ TextureImporter:
       name: Glorie_2
       rect:
         serializedVersion: 2
-        x: 1051
-        y: 20
-        width: 391
-        height: 802
+        x: 1059
+        y: 33
+        width: 389
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: de732c519403baa50800000000000000
-      internalID: 6533368774886832109
+      spriteID: 03069d2c1103ad842a86d3187477e0f0
+      internalID: 1192670788
       vertices: []
       indices: 
       edges: []
@@ -178,20 +166,20 @@ TextureImporter:
       name: Glorie_3
       rect:
         serializedVersion: 2
-        x: 1494
-        y: 23
-        width: 391
-        height: 802
+        x: 1501
+        y: 31
+        width: 389
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3a5e293b18ea28de0800000000000000
-      internalID: -1332310667661482589
+      spriteID: 566d7ed7a2420ad4b91ddbe34b03f694
+      internalID: -1073034320
       vertices: []
       indices: 
       edges: []
@@ -200,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +198,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Glorie_0: 7132284586490825587
-      Glorie_1: -8428936291302117795
-      Glorie_2: 6533368774886832109
-      Glorie_3: -1332310667661482589
+      Glorie_0: -1142023331
+      Glorie_1: -1844943563
+      Glorie_2: 1192670788
+      Glorie_3: -1073034320
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
