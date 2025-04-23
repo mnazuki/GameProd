@@ -652,8 +652,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.9
-  m_fontSizeBase: 44.9
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1339,8 +1339,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.9
-  m_fontSizeBase: 44.9
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2023,7 +2023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -299.92, y: -7}
+  m_AnchoredPosition: {x: -299.92, y: 34}
   m_SizeDelta: {x: 48.245, y: 46.6161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156082921
@@ -2304,23 +2304,23 @@ MonoBehaviour:
       correctAnswerIndex: 0
     - questionText: Q4. What electron carrier is produced in Glycolysis?
       choices:
-      - "FADH\xB2"
+      - FADH2
       - NADH
-      - "CO\u2082"
+      - CO2
       correctAnswerIndex: 1
   - examTitle: Electron Transport Chain
     questions:
     - questionText: Q1. What is the main purpose of the Electron Transport Chain?
       choices:
-      - "To produce ATP using electrons from NADH and FADH\u2082."
+      - To produce ATP using electrons from NADH and FADH2.
       - To break down glucose.
       - To make proteins.
       correctAnswerIndex: 0
     - questionText: Q2. What molecules donate electrons to the Electron Transport
         Chain?
       choices:
-      - "NADH and FADH\u2082"
-      - "Oxygen (O\u2082) and Water (H2O) "
+      - NADH and FADH2
+      - 'Oxygen (O2) and Water (H2O) '
       - Glucose and Pyruvate
       correctAnswerIndex: 0
     - questionText: Q3. What is the final electron acceptor in the Electron Transport
@@ -2842,8 +2842,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.9
-  m_fontSizeBase: 44.9
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3147,7 +3147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -298.85, y: -134}
+  m_AnchoredPosition: {x: -298.85, y: -113}
   m_SizeDelta: {x: 47.9413, y: 46.3123}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037401188

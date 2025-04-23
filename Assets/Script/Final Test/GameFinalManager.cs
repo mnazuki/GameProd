@@ -288,29 +288,31 @@ public class GameFinalManager : MonoBehaviour
     // and opens the win panel if full score (12/12) or the lose panel if overall score is 6 or below.
     void ShowFinalResults()
     {
+        // 1) Calculate total
         int totalQuestions = 0;
         foreach (Exam exam in exams)
-        {
             totalQuestions += exam.questions.Count;
-        }
 
-        questionTextUI.text = "All exams finished!\nOverall correct: " + overallCorrectCount + " / " + totalQuestions;
+        // 2) Show the summary text immediately
+        questionTextUI.text = $"All exams finished!\nOverall correct: {overallCorrectCount} / {totalQuestions}";
         examTitleText.text = "";
 
+        // 3) Hide the Next button
         nextButton.gameObject.SetActive(false);
-        Debug.Log("All exams finished. Overall correct: " + overallCorrectCount + " / " + totalQuestions);
+        Debug.Log($"All exams finished. Overall correct: {overallCorrectCount} / {totalQuestions}");
 
-        // Check win or lose conditions.
-        // (Assuming a full score is 12/12 and a score of 6 or below is a loss.)
-        if (overallCorrectCount == totalQuestions && totalQuestions == 12)
-        {
-            if (winPanel != null)
-                winPanel.SetActive(true);
-        }
-        else if (overallCorrectCount <= 6)
-        {
-            if (losePanel != null)
-                losePanel.SetActive(true);
-        }
+        // 4) Delay the panel so the player actually sees the result text
+        Invoke(nameof(ActivateFinalPanel), 2f);
     }
+
+    // Called by Invoke() after 2 seconds
+    void ActivateFinalPanel()
+    {
+        if (overallCorrectCount > 6)
+            winPanel.SetActive(true);
+        else
+            losePanel.SetActive(true);
+    }
+
+
 }
