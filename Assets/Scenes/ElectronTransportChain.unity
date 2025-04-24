@@ -5566,7 +5566,7 @@ MonoBehaviour:
   d3: {fileID: 621745919}
   bgmsrc: {fileID: 483231096}
   src: []
-  bgm: {fileID: 8300000, guid: d4fc5563aee20a54b9ae1376ea6105e7, type: 3}
+  bgm: {fileID: 8300000, guid: f2ab2ce288b9a9d4393e0f452511c86a, type: 3}
   connect_success: {fileID: 8300000, guid: e8319d69e68cdb34e9dbb030b63a457b, type: 3}
   connect_fail: {fileID: 8300000, guid: 64ba6d94cafa5274b9813eb093a06608, type: 3}
   proton_click: {fileID: 8300000, guid: d5e3f095b19df9a4d92d7bd1ce78c716, type: 3}

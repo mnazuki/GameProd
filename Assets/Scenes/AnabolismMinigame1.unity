@@ -8352,6 +8352,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
+    - target: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
+    - target: {fileID: 4222915210846117965, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -4132182667742451195, guid: 35e5d0c9cba12f543b56903cf45956e9, type: 2}
@@ -8402,6 +8410,10 @@ PrefabInstance:
     - target: {fileID: 8699351523046684396, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9052094462485574333, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
+      propertyPath: m_Volume
+      value: 0.402
       objectReference: {fileID: 0}
     - target: {fileID: 9052094462485574333, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_Resource
@@ -8842,8 +8854,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -4132182667742451195, guid: 35e5d0c9cba12f543b56903cf45956e9, type: 2}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
+  m_Resource: {fileID: 8300000, guid: 68e8678130532224e9a8544b042e0b10, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9532,7 +9544,7 @@ MonoBehaviour:
   collectionScript: {fileID: 1191709988}
   moleculeSpawner: {fileID: 625930031}
   bgmsrc: {fileID: 552143772}
-  bgm: {fileID: 8300000, guid: 49b17cbd4fca0b9498af0293cbedb673, type: 3}
+  bgm: {fileID: 8300000, guid: 92e03ea06a251cb4b88d5fe1254021ee, type: 3}
   d1: {fileID: 1682107103}
   d2: {fileID: 1883016049}
   d3: {fileID: 1518308328}

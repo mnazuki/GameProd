@@ -4101,7 +4101,7 @@ MonoBehaviour:
   d5: {fileID: 384830965}
   bgmsrc: {fileID: 1658118275}
   sfx: {fileID: 764237420}
-  bgm: {fileID: 8300000, guid: a258ee5b9da7abe46940476addc628cb, type: 3}
+  bgm: {fileID: 8300000, guid: f6ec8e34c1a7a5a408f016f529e44f0b, type: 3}
   rumbling: {fileID: 8300000, guid: 332221fd03f828543aa785161a769959, type: 3}
   machinefail: {fileID: 8300000, guid: 4f40ae33ca0a94247b18742e52c92f78, type: 3}
   sfxTrigger: {fileID: 1423879452}
@@ -6943,7 +6943,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.721
+  m_Volume: 0.517
   m_Pitch: 1
   Loop: 1
   Mute: 0

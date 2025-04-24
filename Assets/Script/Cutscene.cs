@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
+
     [System.Serializable]
     public struct CutsceneEntry
     {
@@ -54,7 +55,7 @@ public class CutsceneManager : MonoBehaviour
             if (entry.dialogue != null) entry.dialogue.SetActive(false);
         }
 
-        // All done: load next scene
+        // All done: load next scene        
         SceneManager.LoadScene(nextSceneName);
     }
 }

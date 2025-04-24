@@ -3053,11 +3053,11 @@ PrefabInstance:
     - target: {fileID: 9052094462485574333, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: e80d257753217ed4b836bb6622dc3828, type: 3}
+      objectReference: {fileID: 8300000, guid: 72a7c0198b1a6b04ab8158a59efc8c9b, type: 3}
     - target: {fileID: 9052094462485574333, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: e80d257753217ed4b836bb6622dc3828, type: 3}
+      objectReference: {fileID: 8300000, guid: 72a7c0198b1a6b04ab8158a59efc8c9b, type: 3}
     - target: {fileID: 9052094462485574333, guid: e592c913bc170e44fa8e033fa97feb7a, type: 3}
       propertyPath: m_PlayOnAwake
       value: 1
