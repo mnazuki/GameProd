@@ -27,6 +27,9 @@ public class CutsceneManager : MonoBehaviour
     [Tooltip("Name of the scene to load when all cutscenes finish.")]
     public string nextSceneName = "Loading Scene";
 
+    public GameObject lastImage;
+    public GameObject d1;
+
     private IEnumerator Start()
     {
         // Ensure everything is off
@@ -48,6 +51,10 @@ public class CutsceneManager : MonoBehaviour
                 entry.dialogue.SetActive(true);
             }
 
+            if (lastImage.activeInHierarchy == true){
+               yield break;
+            }
+
             yield return new WaitForSeconds(panelDuration);
 
             // Turn both off before next
@@ -56,6 +63,12 @@ public class CutsceneManager : MonoBehaviour
         }
 
         // All done: load next scene        
-        SceneManager.LoadScene(nextSceneName);
+    }
+
+    void Update()
+    {
+        if (d1 == null){
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 }
